@@ -26,6 +26,8 @@ Route::any('/wechat', 'WeChatController@serve');
             $app = Wechat::loadWechat($project->wechat_id);
             $oauth = $app->oauth;
 
+            session('wechat_user','');
+
             // 未登录
             if (empty(session('wechat_user'))) {
                 session('target_url',Request::url());
@@ -37,7 +39,7 @@ Route::any('/wechat', 'WeChatController@serve');
 
             // 已经登录过
             $user = $session('wechat_user');
-            var_dump($user)
+            var_dump($user);
 
         }else{
             App::abort(404);
