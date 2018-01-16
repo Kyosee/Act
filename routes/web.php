@@ -22,7 +22,7 @@ Route::get('/oauth_callback/{id}', 'WeChatController@oauthCallback');
 
 Route::get('/act/{id}/{page}', function ($id, $page) {
     if($project = Project::find($id)){
-        Wechat::oauthCheck($project->wechat_id, Request::url());
+        return Wechat::oauthCheck($project->wechat_id, Request::url());
     }else{
         App::abort(404);
     }
