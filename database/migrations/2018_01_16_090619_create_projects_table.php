@@ -20,6 +20,7 @@ class CreateProjectsTable extends Migration
             $table->string('share_img');
             $table->string('share_title');
             $table->string('share_desc');
+            $table->string('controller_name')->default('DeaultController');
             $table->timestamp('start_time')->nullable();
             $table->timestamp('end_time')->nullable();
             $table->timestamps();
