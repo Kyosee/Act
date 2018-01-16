@@ -10,9 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-use App\Models\Project;
-use App\Models\Wechat;
-use EasyWeChat\Factory;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -20,15 +18,4 @@ Route::get('/', function () {
 
 Route::get('/oauth_callback/{id}', 'WeChatController@oauthCallback');
 
-Route::get('/act/{id}/{page}', function ($id, $page) {
-    if($project = Project::find($id)){
-        if(!session('wechat_user')){
-            return Wechat::oauthCheck($project->wechat_id, Request::url());
-        }else{
-            return Redirect::action($project->controller_name.'@autoPage', ['project_id' => $id, 'page' => $page]);
-        }
-    }else{
-        App::abort(404);
-    }
-    dd(session('wechat_user'));
-});
+Route::any('/act/{project}/{page}', 'ProjectController@autoLoad');
