@@ -7,6 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Wechat extends Model
 {
+
+    /**
+     * create easywechat config from database
+     * @param  [type] $wechat_id wechat table id
+     * @return [type]            [description]
+     */
     private static function buildConfig($wechat_id){
         if($wechat = self::find($wechat_id)){
             return $config = [
@@ -30,11 +36,31 @@ class Wechat extends Model
         }
     }
 
+    /**
+     * load easywechat object
+     * @param  [type] $wechat_id [description]
+     * @return [type]            [description]
+     */
     public static function loadWechat($wechat_id){
         if($config = self::buildConfig($wechat_id)){
             return Factory::officialAccount($config);
         }else{
             return false;
+        }
+    }
+
+    /**
+     * check user oauth
+     * @param  [type] $wechat_id [description]
+     * @return [type]            [description]
+     */
+    public static function oauthCheck($wechat_id){
+        $app = self::loadWechat($wechat_id);
+
+        // 未登录
+        if (empty(session('wechat_user'))) {
+            session()->put('target_url',Request::url());
+            return $app->oauth->redirect();
         }
     }
 }

@@ -22,19 +22,9 @@ Route::get('/oauth_callback/{id}', 'WeChatController@oauthCallback');
 
 Route::get('/act/{id}/{page}', function ($id, $page) {
     if($project = Project::find($id)){
-        $app = Wechat::loadWechat($project->wechat_id);
-
-        // 未登录
-        if (empty(session('wechat_user'))) {
-            session()->put('target_url',Request::url());
-            return $app->oauth->redirect();
-        }
-
-        // 已经登录过
-        $user = session('wechat_user');
-
+        Wechat::oauthCheck($project->wechat_id);
     }else{
         App::abort(404);
     }
-    dd($user);
+    dd(session('wechat_user'));
 });
