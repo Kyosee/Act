@@ -30,8 +30,8 @@ Route::any('/wechat', 'WeChatController@serve');
 
             // 未登录
             if (empty(session('wechat_user'))) {
-                session('target_url',Request::url());
-
+                session('target_url', Request::url());
+                
                 return $oauth->redirect();
                 // 这里不一定是return，如果你的框架action不是返回内容的话你就得使用
                 // $oauth->redirect()->send();
@@ -39,12 +39,10 @@ Route::any('/wechat', 'WeChatController@serve');
 
             // 已经登录过
             $user = $session('wechat_user');
-            var_dump($user);
 
         }else{
             App::abort(404);
         }
-        $user = session('wechat.oauth_user'); // 拿到授权用户资料
         var_dump($user);
         dd($user);
     });
