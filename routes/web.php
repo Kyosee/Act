@@ -10,6 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Models\Project;
+use App\Models\Wechat;
+use EasyWeChat\Factory;
 
 Route::get('/', function () {
     return view('welcome');
@@ -17,10 +20,30 @@ Route::get('/', function () {
 
 Route::any('/wechat', 'WeChatController@serve');
 
-Route::group(['middleware' => ['wechat.oauth:default,snsapi_userinfo']], function () {
-    Route::get('/user', function () {
+// Route::group('/act/{id}', function ($id) {
+    Route::get('/act/{id}/{page}', function ($id, $page) {
+        if($project = Project::find($id)){
+            $app = Wechat::loadWechat($project->wechat_id);
+            $oauth = $app->oauth;
+            
+            // 未登录
+            if (empty($_SESSION['wechat_user'])) {
+
+              $_SESSION['target_url'] = Request::url();
+
+              return $oauth->redirect();
+              // 这里不一定是return，如果你的框架action不是返回内容的话你就得使用
+              // $oauth->redirect()->send();
+            }
+
+            // 已经登录过
+            $user = $_SESSION['wechat_user'];
+
+        }else{
+            App::abort(404);
+        }
         $user = session('wechat.oauth_user'); // 拿到授权用户资料
         var_dump($user);
         dd($user);
     });
-});
+// });
