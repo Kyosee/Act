@@ -20,6 +20,10 @@ class Wechat extends Model
                     'level' => 'debug',
                     'file' => storage_path().'/wechat.log',
                 ],
+                'oauth' => [
+                    'scopes'   => ['snsapi_userinfo'],
+                    'callback' => '/oauth_callback',
+                ],
             ];
         }else{
             return false;
