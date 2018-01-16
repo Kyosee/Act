@@ -2,6 +2,7 @@
 
 namespace App\Models;
 use EasyWeChat\Factory;
+use Illuminate\Http\Request;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -54,12 +55,12 @@ class Wechat extends Model
      * @param  [type] $wechat_id [description]
      * @return [type]            [description]
      */
-    public static function oauthCheck($wechat_id){
+    public static function oauthCheck($wechat_id, $target_url = '/'){
         $app = self::loadWechat($wechat_id);
-
+        
         // 未登录
         if (empty(session('wechat_user'))) {
-            session()->put('target_url',Request::url());
+            session()->put('target_url', $target_url);
             return $app->oauth->redirect();
         }
     }
