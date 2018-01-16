@@ -17,9 +17,9 @@ class CreateProjectsTable extends Migration
             $table->increments('id');
             $table->string('project_name');
             $table->string('wechat_id');
-            $table->string('share_img');
-            $table->string('share_title');
-            $table->string('share_desc');
+            $table->string('share_img')->default('');
+            $table->string('share_title')->default('');
+            $table->string('share_desc')->default('');
             $table->string('controller_name')->default('DeaultController');
             $table->timestamp('start_time')->nullable();
             $table->timestamp('end_time')->nullable();
