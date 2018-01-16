@@ -15,6 +15,11 @@ class CreateWechatsTable extends Migration
     {
         Schema::create('wechats', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('wechat_name');
+            $table->string('app_id');
+            $table->string('secret');
+            $table->string('token')->default('');
+            $table->string('aes_key')->default('');
             $table->timestamps();
         });
     }
