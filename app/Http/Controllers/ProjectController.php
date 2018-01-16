@@ -19,6 +19,6 @@ class ProjectController extends Controller
             App::abort(404);
         }
         echo $project->project_name. '.' .$page;exit;
-        retrun view($project->project_name. '.' .$page);
+        // retrun view($project->project_name. '.' .$page);
     }
 }
