@@ -18,7 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::any('/wechat', 'WeChatController@serve');
+Route::get('/oauth_callback', 'WeChatController@oauthCallback');
 
 // Route::group('/act/{id}', function ($id) {
     Route::get('/act/{id}/{page}', function ($id, $page) {
@@ -31,7 +31,7 @@ Route::any('/wechat', 'WeChatController@serve');
             // 未登录
             if (empty(session('wechat_user'))) {
                 session('target_url', Request::url());
-                
+
                 return $oauth->redirect();
                 // 这里不一定是return，如果你的框架action不是返回内容的话你就得使用
                 // $oauth->redirect()->send();
