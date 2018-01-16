@@ -22,7 +22,7 @@ class Wechat extends Model
                 ],
                 'oauth' => [
                     'scopes'   => ['snsapi_userinfo'],
-                    'callback' => '/oauth_callback',
+                    'callback' => '/oauth_callback/'.$wechat_id,
                 ],
             ];
         }else{
