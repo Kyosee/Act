@@ -20,7 +20,7 @@ class ProjectController extends Controller
         }
 
         if($project->controller_name !== 'ProjectController'){
-            $auto_load_controller = new eval($project->controller_name);
+            $auto_load_controller = new Function($project->controller_name);
             return $auto_load_controller->autoLoad($project, $page);
         }else{
             return view($project->project_name. '.' .$page);
