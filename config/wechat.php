@@ -8,11 +8,7 @@
  * This source file is subject to the MIT license that is bundled
  * with this source code in the file LICENSE.
  */
-<<<<<<< HEAD
-$wechat = new Models\Wechat();
-=======
 $wechat = new App\Models\Wechat();
->>>>>>> 8f3c5c281295de68d411fa47e078b461476f8b89
 $wechat->all();
 
 return [
