@@ -18,7 +18,12 @@ class ProjectController extends Controller
         }else{
             App::abort(404);
         }
-        echo $project->project_name. '.' .$page;exit;
-        // retrun view($project->project_name. '.' .$page);
+
+        if($project->controller_name !== 'ProjectController'){
+            $auto_load_controller = new eval($project->controller_name);
+            return $auto_load_controller->autoLoad($project, $page);
+        }else{
+            return view($project->project_name. '.' .$page);
+        }
     }
 }
