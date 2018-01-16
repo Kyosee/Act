@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class DeaultController extends Controller
+class DefaultController extends Controller
 {
     public function autoPage($project_id, $page){
         echo $project_id;
