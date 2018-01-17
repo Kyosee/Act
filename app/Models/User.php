@@ -18,7 +18,7 @@ class User extends Model{
      */
     public function userSignup($user, $wechat_id){
 
-        if(!$currentUser = $this->where('openid', $user['id'])->first()){
+        if(!$currentUser = $this->where('openid', $user['id'])->first()->toArray()){
             $this->openid = $user['id'];
             $this->wechat_id = $wechat_id;
             $this->nickname = $user['nickname'];
@@ -30,7 +30,7 @@ class User extends Model{
             $this->country = $user['original']['country'];
             $this->save();
 
-            $currentUser = $this->where('openid', $user['id'])->first();
+            $currentUser = $this->where('openid', $user['id'])->first()->toArray();
         }
 
         session(['wechat_user' => $currentUser]);
