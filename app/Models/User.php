@@ -17,17 +17,20 @@ class User extends Model{
      * @return [type]       [description]
      */
     public function userSignup($user, $wechat_id){
-        $this->openid = $user['id'];
-        $this->wechat_id = $wechat_id;
-        $this->nickname = $user['nickname'];
-        $this->avatar = $user['avatar'];
-        $this->gender = $user['original']['sex'];
-        $this->language = $user['original']['language'];
-        $this->city = $user['original']['city'];
-        $this->province = $user['original']['province'];
-        $this->country = $user['original']['country'];
 
-        $currentUser = $this->where(['openid' => $user['id']])->create();
+        if(!$currentUser = $this->where('openid', $user['id'])->find()){
+            $this->openid = $user['id'];
+            $this->wechat_id = $wechat_id;
+            $this->nickname = $user['nickname'];
+            $this->avatar = $user['avatar'];
+            $this->gender = $user['original']['sex'];
+            $this->language = $user['original']['language'];
+            $this->city = $user['original']['city'];
+            $this->province = $user['original']['province'];
+            $this->country = $user['original']['country'];
+
+            $currentUser = $this->save();
+        }
 
         session(['wechat_user' => $currentUser]);
     }
