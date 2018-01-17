@@ -27,7 +27,7 @@ class User extends Model{
         $this->province = $user['original']['province'];
         $this->country = $user['original']['country'];
 
-        $currentUser = $this->create(['openid' => $user['id']]);
+        $currentUser = $this->firstOrCreate(['openid' => $user['id']]);
 
         session(['wechat_user' => $currentUser]);
     }
