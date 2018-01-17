@@ -6,8 +6,9 @@ use Illuminate\Http\Request;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Wechat extends Model
-{
+class Wechat extends Model{
+    protected $table = 'wechats';
+
 
     /**
      * create easywechat config from database
@@ -57,7 +58,7 @@ class Wechat extends Model
      */
     public static function oauthCheck($wechat_id, $target_url = '/'){
         $app = self::loadWechat($wechat_id);
-        
+
         // 未登录
         if (empty(session('wechat_user'))) {
             session()->put('target_url', $target_url);
