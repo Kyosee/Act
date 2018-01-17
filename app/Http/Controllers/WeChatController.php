@@ -12,13 +12,13 @@ class WeChatController extends Controller
 	/**
 	 * 用户授权callback
 	 */
-    public function oauthCallback($id){
-		$app = Wechat::loadWechat($id);
+    public function oauthCallback($wechat_id){
+		$app = Wechat::loadWechat($wechat_id);
 
 		// 获取 OAuth 授权结果用户信息
         if($wechat_user = $app->oauth->user()->toArray()){
             $user = new User();
-            $user->userSignup($wechat_user);
+            $user->userSignup($wechat_user, $wechat_id);
         }
 
 		$targetUrl = empty(session('target_url')) ? '/' : session('target_url');
