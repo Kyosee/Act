@@ -12,7 +12,7 @@ class User extends Model{
      * @return [type]       [description]
      */
     public function userSignup($user){
-        $this->openid = $user['openid'];
+        $this->openid = $user['id'];
         $this->nickname = $user['nickname'];
         $this->avatar = $user['avatar'];
         $this->gender = $user['original']['sex'];
