@@ -12,7 +12,6 @@ class User extends Model{
      * @return [type]       [description]
      */
     public function userSignup($user){
-        session()->put('wechat_user', $currentUser);
         $this->openid = $user['openid'];
         $this->nickname = $user['nickname'];
         $this->avatar = $user['avatar'];
