@@ -18,7 +18,7 @@ class User extends Model{
      */
     public function userSignup($user, $wechat_id){
 
-        if(!$currentUser = $this->where('openid', $user['id'])->find()){
+        if(!$currentUser = $this->where('openid', $user['id'])->first()){
             $this->openid = $user['id'];
             $this->wechat_id = $wechat_id;
             $this->nickname = $user['nickname'];
