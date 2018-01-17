@@ -9,8 +9,7 @@ use EasyWeChat\Factory;
 
 class ProjectController extends Controller
 {
-    public function autoLoad(Project $project, $page){
-        $request = new Request();
+    public function autoLoad(Project $project, $page,Request $request){
         if($project){
             if(!session('wechat_user')){
                 return Wechat::oauthCheck($project->wechat_id, $request->url());
