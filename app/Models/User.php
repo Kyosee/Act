@@ -8,7 +8,7 @@ class User extends Model{
     protected $table = 'users';
 
     protected $fillable = [
-        'openid', 'nickname', 'avatar', 'gender', 'language', 'city', 'province', 'country'
+        'wechat_id', 'openid', 'nickname', 'avatar', 'gender', 'language', 'city', 'province', 'country'
     ];
 
     /**
