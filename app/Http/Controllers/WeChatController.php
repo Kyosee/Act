@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Wechat;
-use App\Models\Project;
+use App\Models\User;
 use EasyWeChat\Factory;
 
 class WeChatController extends Controller
@@ -16,9 +16,10 @@ class WeChatController extends Controller
 		$app = Wechat::loadWechat($id);
 
 		// 获取 OAuth 授权结果用户信息
-		$user = $app->oauth->user();
-
-		session()->put('wechat_user', $user->toArray());
+        if($wechat_user = $app->oauth->user()->toArray()){
+            $user = new User();
+            $user->userSignup($wechat_user);
+        }
 
 		$targetUrl = empty(session('target_url')) ? '/' : session('target_url');
 
