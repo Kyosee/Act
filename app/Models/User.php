@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class User extends Model{
     protected $table = 'users';
 
+    protected $fillable = [
+        'openid', 'nickname', 'avatar', 'gender', 'language', 'city', 'province', 'country'
+    ];
+
     /**
      * create or login wechat user info
      * @param  [type] $user [description]
