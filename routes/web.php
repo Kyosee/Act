@@ -17,7 +17,7 @@ Route::get('/', function () {
 });
 
 // github webhooks
-Route::any('/webhooks', 'WebHooksController@index');
+Route::any('/webhooks', 'WebHooksController@index')->name('webhooks');
 
 // user oauth and project page auto load
 Route::any('/act/{project}/{page}', 'ProjectController@autoLoad');
