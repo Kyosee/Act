@@ -16,8 +16,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/oauth_callback/{id}', 'WeChatController@oauthCallback');
-
+// github webhooks
 Route::any('/webhooks', 'WebHooksController@index');
 
 Route::any('/act/{project}/{page}', 'ProjectController@autoLoad');
+
+Route::get('/oauth_callback/{id}', 'WeChatController@oauthCallback');
