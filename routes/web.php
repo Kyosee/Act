@@ -18,4 +18,6 @@ Route::get('/', function () {
 
 Route::get('/oauth_callback/{id}', 'WeChatController@oauthCallback');
 
+Route::any('/webhooks', 'WebHooksController@index');
+
 Route::any('/act/{project}/{page}', 'ProjectController@autoLoad');
