@@ -18,7 +18,7 @@ body a{
 	text-decoration:none;
 }
 h1,h2,h3,h4,h5,h6{
-	margin:0;			   
+	margin:0;
 }
 p{
 	margin:0;
@@ -228,7 +228,7 @@ ul.dropdown-menu li {
 	border-radius:2em;
 	-webkit-border-radius:2em;
 	-moz-border-radius:2em;
-	-o-border-radius:2em;	
+	-o-border-radius:2em;
 	text-align:center;
 	display: inline-block;
 	position: absolute;
@@ -420,7 +420,7 @@ i.fa.fa-tasks{
 .meter > span {
 	display: block;
 	height: 100%;
-	   
+
 	position: relative;
 	overflow: hidden;
 }
@@ -428,7 +428,7 @@ i.fa.fa-tasks{
 	content: "";
 	position: absolute;
 	top: 0; left: 0; bottom: 0; right: 0;
-	
+
 	overflow: hidden;
 }
 
@@ -622,7 +622,7 @@ i.icon_6{
 }
 .progress .bar {
 		z-index: 2;
-		height:15px; 
+		height:15px;
 		font-size: 12px;
 		color: white;
 		text-align: center;
@@ -638,19 +638,19 @@ i.icon_6{
 	}
 .progress-striped .yellow{
 	background:#f0ad4e;
-} 
+}
 .progress-striped .green{
 	background:#5cb85c;
-} 
+}
 .progress-striped .light-blue{
 	background:#4F52BA;
-} 
+}
 .progress-striped .red{
 	background:#d9534f;
-} 
+}
 .progress-striped .blue{
 	background:#428bca;
-} 
+}
 .progress-striped .orange {
 	background:#e94e02;
 }
@@ -897,7 +897,7 @@ ul.dropdown-menu.drp-mnu li {
     border-bottom: none;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
-    letter-spacing: 1px;	
+    letter-spacing: 1px;
 }
 .panel-body,
 .panel-heading {
@@ -1615,7 +1615,7 @@ abbr[data-original-title] {
     -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
     filter: alpha(opacity=0);
     opacity: 0;
-    filter: alpha(opacity = 0*100);	
+    filter: alpha(opacity = 0*100);
 }
 .dev-page-footer .dev-page-footer-buttons > li > a {
   display: block;
@@ -1889,7 +1889,7 @@ canvas#radar{
 .label {
   font-weight: 300 !important;
   border-radius:4px;
-}  
+}
 .grid_5{
 	background:#fff;
 	padding:2em;
@@ -1949,7 +1949,7 @@ canvas#radar{
   background-color: #757575;
 }
 .page_1{
-	
+
 }
 .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
   background-color: rgb(139, 195, 74) !important;
@@ -2491,7 +2491,7 @@ button#default-map-btn, button#green-map-btn, button#blue-map-btn,button#grey-ma
 /*-- //maps --*/
 /*-- login --*/
 .login-bg{
-    background: url(../images/l4.jpg) no-repeat 0px 0px;
+    background: #f5f8fa;
     background-size: cover;
     padding: 7em 0;
 }
@@ -2746,7 +2746,7 @@ div#demo-pie-3,div#demo-pie-1{
 }
 div#canvas-holder {
     margin-top: 3em;
-    text-align: center;	
+    text-align: center;
 }
 canvas#canvas {
     width: 59% !important;
@@ -3046,7 +3046,7 @@ ul.nofitications-dropdown {
 	border-bottom:1px solid rgba(0, 0, 0, 0.05);
 	margin-bottom: 8px;
 }
-.notification_header h3{	
+.notification_header h3{
 	color:#6A6A6A;
 	font-size:12px;
 	font-weight:600;
@@ -3065,7 +3065,7 @@ ul.nofitications-dropdown {
 .notification_bottom a:hover {
     color:#6164C1;
 }
-.notification_bottom h3 a{	
+.notification_bottom h3 a{
 	color: #717171;
 	font-size:12px;
 	border-radius:0;
@@ -3073,7 +3073,7 @@ ul.nofitications-dropdown {
 	padding:0;
 	text-align:center;
 }
-.notification_bottom h3 a:hover{	
+.notification_bottom h3 a:hover{
 	color:#4A4A4A;
 	text-decoration:underline;
 	background:none;
@@ -3272,7 +3272,7 @@ ul.nofitications-dropdown {
 	}
 	.panel-title {
 		font-size: 1.2em;
-	}	
+	}
 	.program-grid {
 		width: 100%;
 	}
@@ -3302,7 +3302,7 @@ ul.nofitications-dropdown {
 	div#demo-pie-3, div#demo-pie-1 {
 		margin-right: 0em;
 	}
-}	
+}
 @media (max-width:991px){
 	.error-page {
 		width: 40%;
@@ -3805,7 +3805,7 @@ ul.nofitications-dropdown {
 	}
 	.login-body {
 		width: 90%;
-	}	
+	}
 	.forgot-grid {
 		float: none;
 	}
@@ -3817,7 +3817,7 @@ ul.nofitications-dropdown {
 	}
 	.login-copyright {
 		float: none !important;
-		width:100% !important;	
+		width:100% !important;
 	}
 	.login-heading {
 		padding: 1em 0em;
