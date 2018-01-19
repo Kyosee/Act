@@ -21,26 +21,32 @@ Route::get('/', function () {
 Route::any('/webhooks', 'WebHooksController@index')->name('webhooks');
 
 // user oauth and project page auto load
-Route::any('/act/{project}/{page}', 'ProjectController@autoLoad');
+Route::any('/app/{project}/{page}', 'ProjectController@autoLoad');
 
 // wechat oauth check
 Route::get('/oauth_callback/{id}', 'WeChatController@oauthCallback');
 
+// user passport
 Route::group(['prefix' => 'passport'], function(Router $router){
-    Route::get('register', 'PassportController@register')->name('register');
-    Route::post('register', 'PassportController@subReg');
+    $router->get('register', 'PassportController@register')->name('register');
+    $router->post('register', 'PassportController@subReg');
 
-    Route::get('login', 'PassportController@login')->name('login');
-    Route::post('login', 'PassportController@subLogin');
+    $router->get('login', 'PassportController@login')->name('login');
+    $router->post('login', 'PassportController@subLogin');
 
-    Route::get('forget', 'PassportController@forget')->name('forget');
-    Route::post('forget', 'PassportController@subForget');
+    $router->get('forget', 'PassportController@forget')->name('forget');
+    $router->post('forget', 'PassportController@subForget');
 
-    Route::get('logout', 'PassportController@logout')->name('logout');
+    $router->get('logout', 'PassportController@logout')->name('logout');
 
-    Route::get('captcha', 'PassportController@captcha')->name('passport.captcha');
+    $router->get('captcha', 'PassportController@captcha')->name('passport.captcha');
 });
 
-// business user manage
+// admin user dashboard group
+Route::group(['prefix' => 'dashboard', 'namespace' => 'Dashboard'], function(Router $router){
+    $router->get('/', 'HomeController@index');
+});
+
+// user manage group
 Route::group(['prefix' => 'manage', 'namespace' => 'Manage'], function (Router $router){
 });

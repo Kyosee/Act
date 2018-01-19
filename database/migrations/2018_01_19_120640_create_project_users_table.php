@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUsersTable extends Migration
+class CreateProjectUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,19 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('project_users', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nickname')->default('')->comment('用户昵称');
+            $table->integer('wechat_id');
+            $table->string('openid');
+            $table->string('nickname');
             $table->string('avatar')->default('');
             $table->smallInteger('gender')->default(1);
-            $table->string('email')->default('')->unique();
-            $table->integer('mobile')->default('')->unique();
-            $table->string('password');
-            $table->rememberToken();
-            $table->timestamp('activated_at');
-            $table->timestamps();
+            $table->string('language')->default('');
+            $table->string('city')->default('');
+            $table->string('province')->default('');
+            $table->string('country')->default('');
             $table->softDeletes();
+            $table->timestamps();
         });
     }
 
@@ -35,6 +36,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('project_users');
     }
 }

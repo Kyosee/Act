@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUsersPrizeTable extends Migration
+class CreateProjectTemplatesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class CreateUsersPrizeTable extends Migration
      */
     public function up()
     {
-        Schema::create('users_prize', function (Blueprint $table) {
+        Schema::create('project_templates', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('uid');
+            $table->string('template_name')->comment('模板名称');
+            $table->string('controller_name')->default('ProjectController');
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ class CreateUsersPrizeTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users_prize');
+        Schema::dropIfExists('project_templates');
     }
 }

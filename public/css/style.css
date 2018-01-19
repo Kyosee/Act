@@ -111,7 +111,7 @@ button#showLeftPush {
 	transition: all 0.3s ease;
 }
 .cbp-spmenu-push div#page-wrapper {
-    margin: 0em 19.3em 0 0;
+    margin: 0em 22em 0 0;
     transition: .3s all;
     -webkit-transition: .3s all;
     -moz-transition: .3s all;
@@ -302,7 +302,7 @@ i.fa.fa-tasks{
 .logo a h1 {
     color: #fff;
     font-size: 2em;
-    line-height: 1.2em;
+    line-height: 0.3em;
     font-weight: 700;
 }
 .logo a span {

@@ -1,4 +1,5 @@
-@extends('passport._default')
+@extends('layouts._default')
+@section('title', '用户登录')
 @section('content')
 	<div class="login-body">
 		<div class="login-heading">

@@ -15,12 +15,13 @@ class CreateProjectsTable extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('project_name');
-            $table->string('wechat_id');
-            $table->string('share_img')->default('');
-            $table->string('share_title')->default('');
-            $table->string('share_desc')->default('');
-            $table->string('controller_name')->default('ProjectController');
+            $table->integer('uid')->comment('应用所属用户ID');
+            $table->integer('wechat_id')->comment('应用所述公众号ID');
+            $table->string('project_name')->comment('应用名称');
+            $table->integer('project_template_id')->default(1)->comment('应用所属模板ID');
+            $table->string('share_img')->default('')->comment('应用微信分享图片');
+            $table->string('share_title')->default('')->comment('应用微信分享标题');
+            $table->string('share_desc')->default('')->comment('应用微信分享描述');
             $table->timestamp('start_time')->nullable();
             $table->timestamp('end_time')->nullable();
             $table->timestamps();
