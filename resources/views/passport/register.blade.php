@@ -12,7 +12,7 @@
 				<input type="password" name="password" class="lock" placeholder="确认密码">
 				<input type="submit" name="Sign In" value="立即注册">
 				<div class="signup-text">
-					<a href="{{ route('login') }}">已经有账号？点此登录.</a>
+					<a href="{{ route('login') }}">已经有账号？点此登录</a>
 				</div>
 			</form>
 		</div>
