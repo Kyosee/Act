@@ -18,7 +18,7 @@
 						</ul>
 					</div>
 					<div class="forgot">
-						<a href="#">忘记密码sss？</a>
+						<a href="#">忘记密码？</a>
 					</div>
 					<div class="clearfix"> </div>
 				</div>

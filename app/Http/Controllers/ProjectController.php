@@ -15,7 +15,7 @@ class ProjectController extends Controller
                 return Wechat::oauthCheck($project->wechat_id, $request->url());
             }
         }else{
-            App::abort(404);
+            abort(404);
         }
 
         if($project->controller_name !== 'ProjectController'){
