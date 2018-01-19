@@ -758,19 +758,14 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.5.31",
+            "version": "v5.5.28",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "a47b50a5981c0cf0139939dfaea4191784b65acb"
+                "reference": "cfafae1f2043208390a7c984e3070696f4969605"
             },
             "dist": {
                 "type": "zip",
-<<<<<<< HEAD
-                "url": "https://api.github.com/repos/laravel/framework/zipball/a47b50a5981c0cf0139939dfaea4191784b65acb",
-                "reference": "a47b50a5981c0cf0139939dfaea4191784b65acb",
-                "shasum": ""
-=======
                 "url": "https://api.github.com/repos/laravel/framework/zipball/cfafae1f2043208390a7c984e3070696f4969605",
                 "reference": "cfafae1f2043208390a7c984e3070696f4969605",
                 "shasum": "",
@@ -780,7 +775,6 @@
                         "preferred": true
                     }
                 ]
->>>>>>> ca37f881ae5534e9182122af9843b0dd6247bd4e
             },
             "require": {
                 "doctrine/inflector": "~1.1",
@@ -900,7 +894,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2018-01-16T15:39:45+00:00"
+            "time": "2017-12-26T16:24:40+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -1312,19 +1306,14 @@
         },
         {
             "name": "overtrue/laravel-wechat",
-            "version": "4.0.7",
+            "version": "4.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/overtrue/laravel-wechat.git",
-                "reference": "c17a50d307e544297e46ead78e890f6227d06203"
+                "reference": "efc4ebc90d191f8e184957e62f0bc311925030e1"
             },
             "dist": {
                 "type": "zip",
-<<<<<<< HEAD
-                "url": "https://api.github.com/repos/overtrue/laravel-wechat/zipball/c17a50d307e544297e46ead78e890f6227d06203",
-                "reference": "c17a50d307e544297e46ead78e890f6227d06203",
-                "shasum": ""
-=======
                 "url": "https://api.github.com/repos/overtrue/laravel-wechat/zipball/efc4ebc90d191f8e184957e62f0bc311925030e1",
                 "reference": "efc4ebc90d191f8e184957e62f0bc311925030e1",
                 "shasum": "",
@@ -1334,7 +1323,6 @@
                         "preferred": true
                     }
                 ]
->>>>>>> ca37f881ae5534e9182122af9843b0dd6247bd4e
             },
             "require": {
                 "illuminate/container": "^5.1",
@@ -1373,7 +1361,7 @@
                 "wechat",
                 "weixin"
             ],
-            "time": "2018-01-18T02:50:54+00:00"
+            "time": "2018-01-08T03:15:37+00:00"
         },
         {
             "name": "overtrue/socialite",
@@ -1433,19 +1421,14 @@
         },
         {
             "name": "overtrue/wechat",
-            "version": "4.0.13",
+            "version": "4.0.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/overtrue/wechat.git",
-                "reference": "b182ac420332538b0bfb9e54035d1ed2b3f7c6bc"
+                "reference": "ca8d2b05b7110f8b59e08150b3561e299bd08a14"
             },
             "dist": {
                 "type": "zip",
-<<<<<<< HEAD
-                "url": "https://api.github.com/repos/overtrue/wechat/zipball/b182ac420332538b0bfb9e54035d1ed2b3f7c6bc",
-                "reference": "b182ac420332538b0bfb9e54035d1ed2b3f7c6bc",
-                "shasum": ""
-=======
                 "url": "https://api.github.com/repos/overtrue/wechat/zipball/ca8d2b05b7110f8b59e08150b3561e299bd08a14",
                 "reference": "ca8d2b05b7110f8b59e08150b3561e299bd08a14",
                 "shasum": "",
@@ -1455,7 +1438,6 @@
                         "preferred": true
                     }
                 ]
->>>>>>> ca37f881ae5534e9182122af9843b0dd6247bd4e
             },
             "require": {
                 "easywechat-composer/easywechat-composer": "^0.1",
@@ -1466,7 +1448,8 @@
                 "overtrue/socialite": "~2.0",
                 "php": ">=7.0",
                 "pimple/pimple": "^3.0",
-                "symfony/cache": "^3.3|^4.0",
+                "psr/simple-cache": "^1.0",
+                "symfony/cache": "^3.0|^4.0",
                 "symfony/http-foundation": "^2.7|^3.0|^4.0",
                 "symfony/psr-http-message-bridge": "^0.3|^1.0"
             },
@@ -1503,7 +1486,7 @@
                 "weixin",
                 "weixin-sdk"
             ],
-            "time": "2018-01-17T03:23:20+00:00"
+            "time": "2018-01-15T09:43:47+00:00"
         },
         {
             "name": "paragonie/random_compat",
@@ -4912,21 +4895,21 @@
         },
         {
             "name": "symfony/thanks",
-            "version": "v1.0.2",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/thanks.git",
-                "reference": "0621e9e403cbae531165c98c99f05221bf3b9dba"
+                "reference": "b637913a92664571afd1067fc645ecb30c9cf5b2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/thanks/zipball/0621e9e403cbae531165c98c99f05221bf3b9dba",
-                "reference": "0621e9e403cbae531165c98c99f05221bf3b9dba",
+                "url": "https://api.github.com/repos/symfony/thanks/zipball/b637913a92664571afd1067fc645ecb30c9cf5b2",
+                "reference": "b637913a92664571afd1067fc645ecb30c9cf5b2",
                 "shasum": ""
             },
             "require": {
                 "composer-plugin-api": "^1.1",
-                "php": "^5.5.9|^7.0.0"
+                "php": "^5.5.9|^7.0.8"
             },
             "type": "composer-plugin",
             "extra": {
@@ -4951,7 +4934,7 @@
                 }
             ],
             "description": "Give thanks (in the form of a GitHub ⭐) to your fellow PHP package maintainers (not limited to Symfony components)!",
-            "time": "2018-01-10T15:41:47+00:00"
+            "time": "2018-01-03T09:30:52+00:00"
         },
         {
             "name": "theseer/tokenizer",
