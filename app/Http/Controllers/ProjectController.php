@@ -10,7 +10,6 @@ use EasyWeChat\Factory;
 class ProjectController extends Controller{
 
     public function autoLoad(Project $project, $page, Request $request){
-        var_dump($project);exit;
         if(!$project){
             abort(404);
         }
