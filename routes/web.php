@@ -44,7 +44,10 @@ Route::group(['prefix' => 'passport'], function(Router $router){
 
 // admin user dashboard group
 Route::group(['prefix' => 'dashboard', 'namespace' => 'Dashboard'], function(Router $router){
-    $router->get('/', 'HomeController@index');
+    $router->get('/', 'HomeController@index')->name('dashboard.index');
+
+    // project template
+    $router->resource('project_templates', 'ProjectTemplateController');
 });
 
 // user manage group
