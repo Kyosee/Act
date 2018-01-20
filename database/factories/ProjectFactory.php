@@ -7,7 +7,7 @@ $factory->define(App\Models\Project::class, function (Faker $faker) {
 
     return [
         'project_name' => $faker->name,
-        'project_folder' => $faker->name,
+        'template_id' => 1,
         'wechat_id' => 1,
         'share_title' => $faker->name,
         'share_desc' => $faker->text,
