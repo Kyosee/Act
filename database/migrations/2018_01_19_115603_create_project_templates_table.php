@@ -16,7 +16,10 @@ class CreateProjectTemplatesTable extends Migration
         Schema::create('project_templates', function (Blueprint $table) {
             $table->increments('id');
             $table->string('template_name')->comment('模板名称');
-            $table->string('controller_name')->default('ProjectController');
+            $table->text('template_desc')->nullable()->comment('模板描述');
+            $table->string('template_folder')->comment('模板所属文件夹');
+            $table->string('controller_name')->default('')->commnet('模板控制器');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
