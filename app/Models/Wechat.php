@@ -57,12 +57,12 @@ class Wechat extends Model{
      * @return [type]            [description]
      */
     public static function oauthCheck($wechat_id, $target_url = '/'){
-        $app = self::loadWechat($wechat_id);
-
-        // 未登录
-        if (empty(session('wechat_user'))) {
+        if($app = self::loadWechat($wechat_id)){
+            // 未登录
             session()->put('target_url', $target_url);
             return $app->oauth->redirect();
+        }else{
+            return abort(404);
         }
     }
 }

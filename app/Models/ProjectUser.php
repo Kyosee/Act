@@ -16,7 +16,7 @@ class ProjectUser extends Model{
      */
     public function userSignup($user, $wechat_id){
 
-        if(!$currentUser = $this->where('openid', $user['id'])->first()->toArray()){
+        if(!$currentUser = $this->where('openid', $user['id'])->first()){
             $this->openid = $user['id'];
             $this->wechat_id = $wechat_id;
             $this->nickname = $user['nickname'];
@@ -28,9 +28,9 @@ class ProjectUser extends Model{
             $this->country = $user['original']['country'];
             $this->save();
 
-            $currentUser = $this->where('openid', $user['id'])->first()->toArray();
+            $currentUser = $this->where('openid', $user['id'])->first();
         }
 
-        session(['wechat_user' => $currentUser]);
+        session(['wechat_user' => $currentUser->toArray()]);
     }
 }
