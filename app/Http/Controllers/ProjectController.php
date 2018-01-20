@@ -15,7 +15,7 @@ class ProjectController extends Controller{
         }
 
         if(!session('wechat_user')){
-            return Wechat::oauthCheck($project->wechat_id, $request->url());
+            // return Wechat::oauthCheck($project->wechat_id, $request->url());
         }
 
         if($project->controller_name){
