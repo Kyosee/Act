@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('avatar')->default('');
             $table->smallInteger('gender')->default(1);
             $table->string('email')->default('')->unique();
-            $table->integer('mobile')->default('')->unique();
+            $table->integer('mobile')->nullable('')->unique();
             $table->string('password');
             $table->rememberToken();
             $table->timestamp('activated_at');
