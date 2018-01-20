@@ -18,7 +18,7 @@ class CreatePrizesTable extends Migration
             $table->string('project_id')->comment('所属应用ID');
             $table->string('prize_name')->comment('奖品名称');
             $table->string('prize_img')->default('')->comment('奖品图片');
-            $table->text('prize_desc')->comment('奖品描述');
+            $table->text('prize_desc')->nullable()->comment('奖品描述');
             $table->integer('chance')->default(0)->comment('中奖概率');
             $table->integer('day_num')->default(0)->comment('奖品每日发放限制数量');
             $table->integer('now_num')->default(0)->comment('奖品剩余数量');
