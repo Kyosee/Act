@@ -19,6 +19,9 @@
     "vue": "^2.5.7"
   },
   "dependencies": {
-    "font-awesome": "^4.7.0"
+    "animate": "^1.0.0",
+    "animate.css": "^3.5.2",
+    "font-awesome": "^4.7.0",
+    "layui-src": "^2.2.5"
   }
 }

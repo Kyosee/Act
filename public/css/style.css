@@ -2512,7 +2512,13 @@ button#default-map-btn, button#green-map-btn, button#blue-map-btn,button#grey-ma
     padding: 4em 1.5em 1em;
     background: #FFFFFF;
 }
-.login-info input[type="text"], .login-info input[type="password"] {
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none !important;
+    margin: 0;
+}
+.login-info input[type="text"], .login-info input[type="number"],
+.login-info input[type="password"] {
     font-size: 0.9em;
     padding: 10px 0px;
     width: 100%;

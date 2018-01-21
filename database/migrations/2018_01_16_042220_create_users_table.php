@@ -21,10 +21,11 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('mobile')->unique();
             $table->string('password');
-            $table->rememberToken();
+            $table->boolean('is_admin')->default(false);
             $table->timestamp('activated_at');
-            $table->timestamps();
+            $table->rememberToken();
             $table->softDeletes();
+            $table->timestamps();
         });
     }
 

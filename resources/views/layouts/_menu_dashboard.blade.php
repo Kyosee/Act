@@ -16,7 +16,7 @@
                         </a>
                         <ul class="nav nav-second-level collapse">
                             <li>
-                                <a href="buttons.html">所有用户</a>
+                                <a href="{{ route('users.index') }}">所有用户</a>
                             </li>
                             <li>
                                 <a href="typography.html">公众号管理</a>

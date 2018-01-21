@@ -8,6 +8,10 @@
 // Bootstrap
 @import "~bootstrap-sass/assets/stylesheets/bootstrap";
 
-@import "node_modules/font-awesome/scss/font-awesome.scss";
+@import "~font-awesome/scss/font-awesome.scss";
+
+@import "~layui-src/dist/css/layui.css";
+
+@import "~animate.css/animate.min.css";
 
 @import "/css/style.css";

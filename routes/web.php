@@ -38,13 +38,14 @@ Route::group(['prefix' => 'passport'], function(Router $router){
     $router->post('forget', 'PassportController@subForget');
 
     $router->get('logout', 'PassportController@logout')->name('logout');
-
-    $router->get('captcha', 'PassportController@captcha')->name('passport.captcha');
 });
 
 // admin user dashboard group
 Route::group(['prefix' => 'dashboard', 'namespace' => 'Dashboard'], function(Router $router){
+
     $router->get('/', 'HomeController@index')->name('dashboard.index');
+
+    $router->resource('users', 'UserController');
 
     // project template
     $router->resource('project_templates', 'ProjectTemplateController');
@@ -53,3 +54,7 @@ Route::group(['prefix' => 'dashboard', 'namespace' => 'Dashboard'], function(Rou
 // user manage group
 Route::group(['prefix' => 'manage', 'namespace' => 'Manage'], function (Router $router){
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
