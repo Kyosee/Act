@@ -8,8 +8,8 @@
 		<div class="login-heading">
 			<h1>新用户注册</h1>
 		</div>
-		<div class="login-info" method="POST">
-			<form class="passport-form">
+		<div class="login-info">
+			<form class="passport-form" method="POST">
 				<input type="number" class="user" name="mobile" placeholder="手机号">
 				<input type="text" class="user" name="email" placeholder="邮箱">
 				<input type="password" name="password" class="lock" placeholder="密码6-12位">

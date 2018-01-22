@@ -11,11 +11,7 @@ use Illuminate\Routing\Router;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::any('/', 'HomeController@index');
 
 // github webhooks
 Route::any('/webhooks', 'WebHooksController@index')->name('webhooks');
@@ -54,7 +50,3 @@ Route::group(['prefix' => 'dashboard', 'namespace' => 'Dashboard'], function(Rou
 // user manage group
 Route::group(['prefix' => 'manage', 'namespace' => 'Manage'], function (Router $router){
 });
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

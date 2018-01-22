@@ -18,11 +18,36 @@ class PassportController extends Controller
     }
 
     /**
+     * user login
+     */
+    public function subLogin(Request $request){
+        $field = filter_var($request->username, FILTER_VALIDATE_EMAIL) ? 'email' : 'mobile';
+        $this->validate($request, [
+            'username' => 'required|'.$field.'|max:30',
+            'password' => 'required|min:6',
+        ]);
+
+
+        $request->merge([$field => $request->input('login')]);
+
+        $credentials = [
+            $field     => $request->username,
+            'password' => $request->password,
+        ];
+
+        // user login and remember me
+        if(Auth::attempt($credentials, $request->has('remember'))){
+            return response()->json(['result' => true, 'redirect_url' => route('/')]);
+        }else{
+            return response()->json(['result' => false, 'msg' => '用户不存在或用户名密码有误']);
+        }
+    }
+
+    /**
      * user register page
      * @return [type] [description]
      */
     public function register(){
-        dd(auth()->user());
         return view('passport.register');
     }
 

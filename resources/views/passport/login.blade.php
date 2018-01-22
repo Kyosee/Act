@@ -1,19 +1,22 @@
 @extends('layouts._default')
 @section('title', '用户登录')
+@section('head')
+	<script src="{{ mix('/js/passport.js') }}"></script>
+@endsection
 @section('content')
 	<div class="login-body">
 		<div class="login-heading">
 			<h1>用户登录</h1>
 		</div>
 		<div class="login-info">
-			<form>
-				<input type="text" class="user" name="email" placeholder="用户名/邮箱/手机号" required="">
+			<form class="passport-form" method="POST">
+				<input type="text" class="user" name="username" placeholder="邮箱/手机号" required="">
 				<input type="password" name="password" class="lock" placeholder="密码">
 				<div class="forgot-top-grids">
 					<div class="forgot-grid">
 						<ul>
 							<li>
-								<input type="checkbox" id="brand1" value="">
+								<input type="checkbox" id="brand1" name="remember" value="1">
 								<label for="brand1"><span></span>下次自动登录</label>
 							</li>
 						</ul>
@@ -28,6 +31,7 @@
 					<a href="{{ route('register') }}">还没有账号？现在就去注册~</a>
 				</div>
 				<hr>
+				{{ csrf_field()}}
 			</form>
 		</div>
 	</div>
