@@ -11,7 +11,7 @@ use Illuminate\Routing\Router;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::any('/', 'HomeController@index');
+Route::get('/', 'HomeController@index')->name('/');
 
 // github webhooks
 Route::any('/webhooks', 'WebHooksController@index')->name('webhooks');
@@ -33,7 +33,10 @@ Route::group(['prefix' => 'passport'], function(Router $router){
     $router->get('forget', 'PassportController@forget')->name('forget');
     $router->post('forget', 'PassportController@subForget');
 
-    $router->get('logout', 'PassportController@logout')->name('logout');
+    $router->any('logout', function(){
+        auth()->logout();
+        return redirect('/');
+    })->name('logout');
 });
 
 // admin user dashboard group
