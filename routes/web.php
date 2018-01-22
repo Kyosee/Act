@@ -40,15 +40,15 @@ Route::group(['prefix' => 'passport'], function(Router $router){
 });
 
 // admin user dashboard group
-Route::group(['prefix' => 'dashboard', 'namespace' => 'Dashboard'], function(Router $router){
-
-    $router->get('/', 'HomeController@index')->name('dashboard.index');
-
-    $router->resource('users', 'UserController');
-
-    // project template
-    $router->resource('project_templates', 'ProjectTemplateController');
-});
+// Route::group(['prefix' => 'dashboard', 'namespace' => 'Dashboard'], function(Router $router){
+//
+//     $router->get('/', 'HomeController@index')->name('dashboard.index');
+//
+//     $router->resource('users', 'UserController');
+//
+//     // project template
+//     $router->resource('project_templates', 'ProjectTemplateController');
+// });
 
 // user manage group
 Route::group(['prefix' => 'manage', 'namespace' => 'Manage'], function (Router $router){
