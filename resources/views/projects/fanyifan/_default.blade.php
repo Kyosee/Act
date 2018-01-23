@@ -12,6 +12,7 @@
     <meta http-equiv="pragram" content="no-cache" />
     <link rel="stylesheet" type="text/css" href="/css/projects/{{ $project->template->template_folder }}/main.css"/>
     <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script src="/js/jquery-1.11.1.min.js"></script>
     <!--移动端版本兼容 -->
     <script type="text/javascript">
     var phoneWidth = parseInt(window.screen.width);
@@ -31,9 +32,7 @@
     } else {
         document.write('<meta name="viewport" content="width=640,height=1030, user-scalable=no, target-densitydpi=device-dpi">');
     }
-    document.querySelector('body').addEventListener('touchstart', function (ev) {
-        event.preventDefault();
-    });
+    document.addEventListener('touchmove', function(e){e.preventDefault()}, false);
     </script>
 
     @yield('head')
