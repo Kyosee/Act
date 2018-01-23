@@ -41,24 +41,16 @@ return [
 
         'template_name' => [
             'title'    => '模板名称',
-            'sortable' => false,
-            'output' => function ($name, $model) {
-                return '<a href="/users/'.$model->id.'" target=_blank>'.$name.'</a>';
-            },
         ],
 
-        'mobile' => [
-            'title' => '手机号',
+        'template_desc' => [
+            'title' => '模板描述',
+            'type' =>'textarea'
         ],
 
-        'email' => [
-            'title' => '邮箱',
+        'template_folder' => [
+            'title' => '模板所属文件夹',
         ],
-
-        'created_at' => [
-            'title' => '注册时间',
-        ],
-
         'operation' => [
             'title'  => '管理',
             'sortable' => false,
@@ -67,38 +59,21 @@ return [
 
     // 『模型表单』设置项
     'edit_fields' => [
-        'nickname' => [
-            'title' => '用户昵称',
+        'template_name' => [
+            'title'    => '模板名称',
         ],
-        'mobile' => [
-            'title' => '手机号',
+
+        'template_desc' => [
+            'title' => '模板描述',
+            'type' =>'textarea'
         ],
-        'email' => [
-            'title' => '邮箱',
+
+        'template_folder' => [
+            'title' => '模板所属文件夹',
         ],
-        'password' => [
-            'title' => '密码',
-
-            // 表单使用 input 类型 password
-            'type' => 'password',
-        ],
-        'avatar' => [
-            'title' => '用户头像',
-
-            // 设置表单条目的类型，默认的 type 是 input
-            'type' => 'image',
-
-            // 图片上传必须设置图片存放路径
-            'location' => public_path() . '/uploads/images/avatars/',
-        ],
-        'roles' => [
-            'title'      => '用户角色',
-
-            // 指定数据的类型为关联模型
-            'type'       => 'relationship',
-
-            // 关联模型的字段，用来做关联显示
-            'name_field' => 'name',
+        'operation' => [
+            'title'  => '管理',
+            'sortable' => false,
         ],
     ],
 
@@ -107,16 +82,10 @@ return [
         'id' => [
 
             // 过滤表单条目显示名称
-            'title' => '用户 ID',
+            'title' => '模板 ID',
         ],
         'nickname' => [
-            'title' => '用户昵称',
-        ],
-        'mobile' => [
-            'title' => '手机号',
-        ],
-        'email' => [
-            'title' => '邮箱',
+            'title' => '模板名称',
         ],
     ],
 ];
