@@ -20,7 +20,7 @@ Route::any('/webhooks', 'WebHooksController@index')->name('webhooks');
 Route::any('/app/{project}/',function($project){
     return redirect("/app/{$project}/index");
 });
-Route::any('/app/{project}/{page}', 'ProjectController@autoLoad');
+Route::any('/app/{project}/{page}', 'Projects\ProjectController@autoLoad')->middleware('project_auto');
 
 // wechat oauth check
 Route::get('/oauth_callback/{id}', 'WeChatController@oauthCallback');

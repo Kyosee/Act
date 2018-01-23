@@ -852,3 +852,6 @@ textarea:focus,input:focus { border: 1px solid #71b643; }
 	padding: 5px 0;
 	width: 181px !important;
 }
+.box{
+	overflow: hidden;
+}
