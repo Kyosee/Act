@@ -31,7 +31,11 @@
     } else {
         document.write('<meta name="viewport" content="width=640,height=1030, user-scalable=no, target-densitydpi=device-dpi">');
     }
+    document.querySelector('body').addEventListener('touchstart', function (ev) {
+        event.preventDefault();
+    });
     </script>
+
     @yield('head')
 </head>
 <body>
