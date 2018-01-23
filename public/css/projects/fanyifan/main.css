@@ -846,9 +846,9 @@ textarea:focus,input:focus { border: 1px solid #71b643; }
 }
 
 .row{
-	padding: 240px 25px;
+	padding: 240px 48px 0 48px;
 }
 .col-xs-4{
-	padding: 0;
+	padding: 5px 0;
 	width: 181px !important;
 }

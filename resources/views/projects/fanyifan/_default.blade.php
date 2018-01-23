@@ -2,7 +2,7 @@
 <!doctype html>
 <html>
 <head>
-    <title>旺年驾Dog</title>
+    <title>{{ $project->project_name }}</title>
     <meta charset="utf-8" />
     <meta name="apple-touch-fullscreen" content="YES" />
     <meta name="format-detection" content="telephone=no" />
