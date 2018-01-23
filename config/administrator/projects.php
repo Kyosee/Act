@@ -1,5 +1,6 @@
 <?php
 use App\Models\User;
+use Illuminate\Contracts\View\View;
 
 return [
     // 页面标题

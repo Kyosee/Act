@@ -17,6 +17,9 @@ Route::get('/', 'HomeController@index')->name('/');
 Route::any('/webhooks', 'WebHooksController@index')->name('webhooks');
 
 // user oauth and project page auto load
+Route::any('/app/{project}/',function($project){
+    return redirect("/app/{$project}/index");
+});
 Route::any('/app/{project}/{page}', 'ProjectController@autoLoad');
 
 // wechat oauth check
