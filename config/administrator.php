@@ -21,7 +21,7 @@ return array(
      *
      * @type string
      */
-    'title' => env('APP_NAME', 'Laravel'),
+    'title' => env('APP_NAME', 'ACT'),
 
     /*
      * The path to your model config directory
@@ -61,6 +61,13 @@ return array(
     'menu' => [
         '用户与权限' => [
             'users',
+        ],
+        '公众号管理' => [
+            'wechat',
+        ],
+        '项目与应用' => [
+            'projects',
+            'project_templates',
         ],
     ],
 
@@ -108,7 +115,7 @@ return array(
      *
      * @type string
      */
-    'login_path' => 'login',
+    'login_path' => '/passport/login',
 
     /*
      * The logout path is the path where Administrator will send the user when they click the logout link
