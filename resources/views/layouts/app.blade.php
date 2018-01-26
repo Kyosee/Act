@@ -75,9 +75,9 @@
     </div>
 
     <!-- Scripts -->
-    @if (app()->isLocal())
+    {{-- @if (app()->isLocal())
         @include('sudosu::user-selector')
-    @endif
+    @endif --}}
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
