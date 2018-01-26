@@ -15,3 +15,21 @@
 @import "~animate.css/animate.min.css";
 
 @import "/css/style.css";
+
+a, a:hover, a:active{
+    text-decoration: none;
+}
+
+.wechat-btn-list{
+    .col-md-4{
+        padding: 10px;
+        a{
+            display: block;
+            color: #6BC30D;
+
+            h3{
+                line-height: 100px;
+            }
+        }
+    }
+}

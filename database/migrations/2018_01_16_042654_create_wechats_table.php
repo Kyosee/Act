@@ -17,8 +17,8 @@ class CreateWechatsTable extends Migration
             $table->increments('id');
             $table->integer('uid')->default(1)->comment('公众号所属用户UID');
             $table->string('wechat_name')->comment('公众号名称');
-            $table->string('app_id')->comment('公众号APPID');
-            $table->string('secret')->comment('公众号APPsecret');
+            $table->string('appid')->comment('公众号APPID');
+            $table->string('appsecret')->comment('公众号APPsecret');
             $table->string('token')->default('');
             $table->string('aes_key')->default('');
             $table->timestamps();

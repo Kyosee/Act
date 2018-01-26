@@ -11,7 +11,7 @@ use Illuminate\Routing\Router;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', 'HomeController@index')->name('/');
+Route::get('/', 'Manage\HomeController@index')->name('/');
 
 // github webhooks
 Route::any('/webhooks', 'WebHooksController@index')->name('webhooks');
@@ -54,5 +54,10 @@ Route::group(['prefix' => 'passport'], function(Router $router){
 // });
 
 // user manage group
-Route::group(['prefix' => 'manage', 'namespace' => 'Manage'], function (Router $router){
+Route::group(['prefix' => 'manage', 'namespace' => 'Manage', 'middleware' => 'auth'], function (Router $router){
+    $router->get('/', 'HomeController@index')->name('/');
+
+    $router->resource('wechat', 'WechatController');
+
+    $router->resource('wechat.project', 'ProjectController');
 });

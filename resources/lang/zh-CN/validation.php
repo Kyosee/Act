@@ -119,6 +119,9 @@ return [
     */
 
     'attributes'           => [
+        'project_name'          => '应用名称',
+        'template_id'           => '应用模板',
+        'wechat_name'           => '公众号名称',
         'name'                  => '名称',
         'username'              => '用户名',
         'email'                 => '邮箱',

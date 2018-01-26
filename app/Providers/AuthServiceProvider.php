@@ -14,6 +14,8 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected $policies = [
         'App\Model' => 'App\Policies\ModelPolicy',
+        'App\Models\Wechat' => 'App\Policies\WechatPolicy',
+        'App\Models\Project' => 'App\Policies\ProjectPolicy',
     ];
 
     /**

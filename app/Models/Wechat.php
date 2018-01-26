@@ -9,6 +9,8 @@ use Illuminate\Database\Eloquent\Model;
 class Wechat extends Model{
     protected $table = 'wechats';
 
+    protected $guarded = ['uid'];
+
 
     /**
      * create easywechat config from database

@@ -11414,3 +11414,22 @@ button.close {
   clip: auto;
 }
 
+a,
+a:hover,
+a:active {
+  text-decoration: none;
+}
+
+.wechat-btn-list .col-md-4 {
+  padding: 10px;
+}
+
+.wechat-btn-list .col-md-4 a {
+  display: block;
+  color: #6BC30D;
+}
+
+.wechat-btn-list .col-md-4 a h3 {
+  line-height: 100px;
+}
+
