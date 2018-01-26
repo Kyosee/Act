@@ -41,6 +41,7 @@ class WechatController extends Controller {
      */
     public function store(WechatRequest $request){
         $data = $request->toArray();
+        unset($data['pathinfo']);
         $data['uid'] = auth()->user()->id;
         if(Wechat::create($data)){
             return redirect()->route('wechat.index')->with('success', '新增公众号成功！');
