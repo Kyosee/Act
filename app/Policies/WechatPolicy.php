@@ -21,6 +21,6 @@ class WechatPolicy
     }
 
     public function checkUser(User $currentUser, Wechat $wechat){
-        return $currentUser->id === $wechat->uid;
+        return (int)$currentUser->id === (int)$wechat->uid;
     }
 }
