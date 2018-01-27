@@ -11,7 +11,7 @@ use Illuminate\Routing\Router;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', 'Manage\HomeController@index')->name('/');
+Route::get('/', 'Manage\HomeController@index')->name('/')->middleware('auth');
 
 // github webhooks
 Route::any('/webhooks', 'WebHooksController@index')->name('webhooks');
