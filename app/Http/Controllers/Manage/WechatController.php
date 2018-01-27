@@ -40,10 +40,14 @@ class WechatController extends Controller {
      * @return [type] [description]
      */
     public function store(WechatRequest $request){
-        $data = $request->toArray();
-        unset($data['pathinfo']);
-        $data['uid'] = auth()->user()->id;
-        if(Wechat::create($data)){
+        $wechat = new Wechat();
+
+        $wechat->wechat_name = $request->wechat_name;
+        $wechat->appid = $request->appid;
+        $wechat->appsecret = $request->appsecret;
+        $wechat->uid = auth()->user()->id;
+
+        if($wechat->save()){
             return redirect()->route('wechat.index')->with('success', '新增公众号成功！');
         }else{
             return redirect()->back()->with('danger', '新增公众号失败请稍后重试');
