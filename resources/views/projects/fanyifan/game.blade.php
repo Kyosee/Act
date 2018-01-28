@@ -24,19 +24,21 @@
                 _this.attr('src', _this.data('img'));
                 var model = _this.data('model');
 
-                if(_this.data('special')){
-                    $.ajax({
-                        type: 'post',
-                        async : false,
-                        success: function(data){
-                            if(data.is_lucky){
-                                model = data.model
-                            }
+                $.ajax({
+                    type: 'post',
+                    async: false,
+                    data: {
+                        'prize': _this.data('prize'),
+                        'special': _this.data('special')
+                    },
+                    success: function(data){
+                        if(data.is_lucky){
+                            model = data.model
+                            $('.model').html(model)
                         }
-                    })
-                }
+                    }
+                })
 
-                $('.model').html(model)
                 toggleModel()
             }else{
                 return false;
