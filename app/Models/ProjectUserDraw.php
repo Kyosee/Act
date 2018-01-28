@@ -5,6 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 class ProjectUserDraw extends Model {
+    
+    protected $guarded = [];
 
     /**
      * 创建用户抽奖记录

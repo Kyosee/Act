@@ -17,7 +17,7 @@ class CreateProjectUserDrawsTable extends Migration
             $table->increments('id');
             $table->integer('uid');
             $table->integer('project_id');
-            $table->text('added')->default('')->nullable();
+            $table->text('added')->nullable();
             $table->timestamps();
         });
     }
