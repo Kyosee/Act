@@ -88,10 +88,21 @@ class FanyifanController extends ProjectController{
             'project_id' => $project_id,
         ])->get()->toArray();
 
+        $prize_list = $this->checkPrize($new_prize_list ? $new_prize_list : $prize_list, $draw_log_list)
     	return view('projects.fanyifan.game', [
             'project' => $request->project,
-            'prizes' => $new_prize_list ? $new_prize_list : $prize_list,
-            'draw_log_list' => $draw_log_list
+            'prizes' => $prize_list,
         ]);
+    }
+
+    public function checkPrize($prize_list, $draw_log_list){
+        foreach ($prize_list as $key => $value) {
+            foreach ($draw_log_list as $log) {
+                if($value['id'] == $log['added']){
+                    $prize_list[$key]['has_draw'] = 1;
+                }
+            }
+        }
+        return $prize_list;
     }
 }

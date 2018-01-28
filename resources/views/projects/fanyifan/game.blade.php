@@ -6,26 +6,12 @@
     <img src="/images/projects/{{ $project->template->template_folder }}/all_bg.png" class="pa">
 <div class="box">
     <div class="row">
-        @php
-	    	function checkPrize($prize_id, $draw_log_list){
-                foreach ($draw_log_list as $log => $value) {
-                    if($prize_id == $value['added']){
-						return true;
-					}else{
-						return false;
-					}
-                }
-	    	}
-		@endphp
-        @foreach ($draw_log_list as $log)
-
-            @foreach ($prizes as $prize)
-                @if($prize['id'] == $log['added'])
-                    <div class="col-xs-4"><img width="180" height="168"data-model="{{ $prize['prize_desc'] }}" data-prize="{{ $prize['id'] }}" data-special="{{ $prize['is_special'] }}" src="{{ $prize['prize_img'] }}" class="draw_img animated flipInX"></div>
-                @else
-                    <div class="col-xs-4"><img width="181" height="168" data-img="{{ $prize['prize_img'] }}" data-model="{{ $prize['prize_desc'] }}" data-prize="{{ $prize['id'] }}" data-special="{{ $prize['is_special'] }}" src="/images/projects/{{ $project->template->template_folder }}/game_fan.png" class="draw_img animated flipInX"></div>
-                @endif
-            @endforeach
+        @foreach ($prizes as $prize)
+            @if($prize['has_draw'])
+                <div class="col-xs-4"><img width="180" height="168"data-model="{{ $prize['prize_desc'] }}" data-prize="{{ $prize['id'] }}" data-special="{{ $prize['is_special'] }}" src="{{ $prize['prize_img'] }}" class="draw_img animated flipInX"></div>
+            @else
+                <div class="col-xs-4"><img width="181" height="168" data-img="{{ $prize['prize_img'] }}" data-model="{{ $prize['prize_desc'] }}" data-prize="{{ $prize['id'] }}" data-special="{{ $prize['is_special'] }}" src="/images/projects/{{ $project->template->template_folder }}/game_fan.png" class="draw_img animated flipInX"></div>
+            @endif
         @endforeach
     </div>
     <img src="/images/projects/{{ $project->template->template_folder }}/guize.png" class="pa" style="left: -10px">
