@@ -98,9 +98,9 @@ class FanyifanController extends ProjectController{
                     }
                 }
             }
-        }
 
-        $prize_list = $new_prize_list ? $new_prize_list : $prize_list;
+            $prize_list = $new_prize_list;
+        }
 
         foreach ($prize_list as $key => $value) {
             foreach ($draw_log_list as $logs) {
