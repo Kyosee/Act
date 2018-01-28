@@ -18,10 +18,9 @@ class FanyifanController extends ProjectController{
 
         // 开始抽奖
     	if($request->isMethod('post')){
-dd(session('wechat_user'));
             // 创建抽奖记录
             ProjectUserDraw::createLog([
-                'uid' => session('wechat_user')->get('id'),
+                'uid' => session('wechat_user')['id'],
                 'project_id' => $project_id,
                 'added' => $request->prize
             ]);
