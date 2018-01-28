@@ -20,7 +20,7 @@ class FanyifanController extends ProjectController{
 
             // 创建抽奖记录
             ProjectUserDraw::createLog([
-                'uid' => session('wechat_user')->get('id'),
+                'uid' => session('wechat_user')['id'],
                 'project_id' => $project_id,
                 'added' => $request->prize
             ]);
@@ -69,7 +69,7 @@ class FanyifanController extends ProjectController{
 
         // 按照用户第一次抽奖的栏位顺序重新排序
         if($log = $userPartLogs->makeLog([
-            'uid' => 0,
+            'uid' => session('wechat_user')['id'],
             'project_id' => $project_id,
             'added' => serialize($arr)
         ])){
