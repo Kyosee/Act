@@ -19,7 +19,7 @@ class CreateProjectUserPrizesTable extends Migration
             $table->integer('project_id')->commont('应用ID');
             $table->integer('prize_id')->commont('奖品ID');
             $table->boolean('exchange')->default(false)->nullable()->commont('是否兑换过');
-            $table->timstamp('exchange_time')->default('')->nullable()->commont('兑换时间');
+            $table->timestamp('exchange_time')->nullable()->commont('兑换时间');
             $table->timestamps();
         });
     }
