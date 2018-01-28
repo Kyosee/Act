@@ -8,13 +8,13 @@
     <div class="row">
         @php
 	    	function checkPrize($prize_id, $draw_log_list){
-	    		foreach ($draw_log_list as $log){
-					if($prize_id == $log['added']){
+                foreach ($draw_log_list as $log => $value) {
+                    if($prize_id == $value['added']){
 						return true;
 					}else{
 						return false;
 					}
-	    		}
+                }
 	    	}
 		@endphp
         @foreach ($prizes as $prize)
