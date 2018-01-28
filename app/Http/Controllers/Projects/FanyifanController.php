@@ -21,8 +21,9 @@ class FanyifanController extends ProjectController{
 
         // 开始抽奖
     	if($request->isMethod('post')){
-            if(count($draw_log_list) >= (int)$request->route('project')->game_count)
+            if(count($draw_log_list) >= (int)$request->route('project')->game_count){
                 return false;
+            }
 
             // 创建抽奖记录
             ProjectUserDraw::createLog([
