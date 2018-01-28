@@ -100,6 +100,8 @@ class FanyifanController extends ProjectController{
             foreach ($draw_log_list as $log) {
                 if($value['id'] == $log['added']){
                     $prize_list[$key]['has_draw'] = 1;
+                }else{
+                    $prize_list[$key]['has_draw'] = 0;
                 }
             }
         }
