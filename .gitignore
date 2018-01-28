@@ -2,6 +2,7 @@
 /public/hot
 #/config/wechat.php
 /public/storage
+/public/uploader
 /storage/*.key
 /vendor
 /.idea
