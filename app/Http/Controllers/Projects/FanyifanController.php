@@ -6,17 +6,24 @@ use App\Models\Prize;
 use App\Models\ProjectUserDraw;
 use Illuminate\Http\Request;
 use App\Models\ProjectUserPartLogs;
+use App\Models\ProjectUserPrize;
 use App\Http\Controllers\Controller;
 
 class FanyifanController extends ProjectController{
 
     public function game(Request $request){
-
-
         $project_id = $request->route('project')->id;
+
+        $draw_log_list = ProjectUserDraw::where([
+            'uid' => session('wechat_user')['id'],
+            'project_id' => $project_id,
+        ])->get()->toArray();
 
         // 开始抽奖
     	if($request->isMethod('post')){
+
+            if(count($draw_log_list) >= $request->route('project')->game_count)
+                return false;
 
             // 创建抽奖记录
             ProjectUserDraw::createLog([
@@ -35,6 +42,16 @@ class FanyifanController extends ProjectController{
                 ])->get()->toArray();
 
                 $chance = $prize->getRand($prize_list);
+
+                // 增加奖品纪录
+                if(!$chance['is_default']){
+                    ProjectUserPrize::createLog([
+                        'uid' => session('wechat_user')['id'],
+                        'project_id' => $project_id,
+                        'prize_id' => $chance['id'],
+                        'exchange' => false
+                    ])
+                }
 
                 $return['id'] = $chance['id'];
                 $return['model'] = $chance['prize_desc'];
@@ -83,10 +100,7 @@ class FanyifanController extends ProjectController{
             }
         }
 
-        $draw_log_list = ProjectUserDraw::where([
-            'uid' => session('wechat_user')['id'],
-            'project_id' => $project_id,
-        ])->get()->toArray();
+
 
         $prize_list = $new_prize_list ? $new_prize_list : $prize_list;
 
