@@ -86,7 +86,7 @@ class FanyifanController extends ProjectController{
         $draw_log_list = ProjectUserDraw::where([
             'uid' => session('wechat_user')['id'],
             'project_id' => $project_id,
-        ])->get();
+        ])->get()->toArray();
 
     	return view('projects.fanyifan.game', [
             'project' => $request->project,
