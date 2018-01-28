@@ -20,8 +20,8 @@ class Wechat extends Model{
     private static function buildConfig($wechat_id){
         if($wechat = self::find($wechat_id)){
             return $config = [
-                'app_id' => $wechat->app_id,
-                'secret' => $wechat->secret,
+                'app_id' => $wechat->appid,
+                'secret' => $wechat->appsecret,
 
                 // 指定 API 调用返回结果的类型：array(default)/collection/object/raw/自定义类名
                 'response_type' => 'array',
