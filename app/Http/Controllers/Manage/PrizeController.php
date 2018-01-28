@@ -26,7 +26,7 @@ class PrizeController extends Controller {
             $wechat = !empty($requests->route('wechat')->id) ? $requests->route('wechat') : Wechat::find($requests->route('wechat'));
             $project = !empty($requests->route('project')->wechat_id) ? $requests->route('project') : Project::find($requests->route('project'));
 
-            if($wechat->uid !== auth()->user()->id || $project->wechat_id !== $wechat->id){
+            if($wechat->uid != auth()->user()->id || $project->wechat_id != $wechat->id){
                 abort(403, 'This action is unauthorized.');
             }
             return $next($requests);
