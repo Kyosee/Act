@@ -859,7 +859,7 @@ textarea:focus,input:focus { border: 1px solid #71b643; }
 .model{
     display: none;
     position: absolute;
-    top: 60px;
+    top: 126px;
     text-align: center;
     width: 100%;
     z-index: 10

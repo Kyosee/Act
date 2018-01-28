@@ -73,8 +73,8 @@ class PrizeController extends Controller {
         $prize->chance = $request->chance;
         $prize->day_num = $request->day_num;
         $prize->prize_num = $request->prize_num;
-        $prize->is_default = $request->is_default;
-        $prize->is_special = $request->is_special;
+        $prize->is_default = $request->is_default ? $request->is_default : false;
+        $prize->is_special = $request->is_special ? $request->is_special : false;
 
         if ($request->prize_img) {
             $result = $uploader->save($request->prize_img, 'wechats/'.$this->wechat->id.'/projects', str_random(3), 180);
@@ -118,8 +118,9 @@ class PrizeController extends Controller {
          $prize->chance = $request->chance;
          $prize->day_num = $request->day_num;
          $prize->prize_num = $request->prize_num;
-         $prize->is_default = $request->is_default;
-         $prize->is_special = $request->is_special;
+         $prize->is_default = $request->is_default ? $request->is_default : false;
+         $prize->is_special = $request->is_special ? $request->is_special : false;
+
 
          if ($request->prize_img) {
              $result = $uploader->save($request->prize_img, 'wechats/'.$this->wechat->id.'/projects', str_random(3), 180);

@@ -20,6 +20,9 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         {{ $project->project_name }} - 新增奖品
+                        <div class="pull-right">
+                            <a href="{{ route('wechat.project.prize.index', [$wechat, $project]) }}" class="btn btn-info">返回奖品列表</a>
+                        </div>
                     </div>
                     <div class="panel-body">
                         @include('common.error')
@@ -32,14 +35,7 @@
                                     <input type="text" class="form-control" name="prize_name" id="prize_name" value="{{ old('prize_name') }}" placeholder="请输入奖品名称">
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="prize_desc" class="col-sm-2 control-label">奖品描述</label>
-                                <div class="col-sm-10">
-                                    <textarea name="prize_desc" rows="8" cols="80" id="editor">
-                                        {{ old('prize_desc') }}
-                                    </textarea>
-                                </div>
-                            </div>
+
                             <div class="form-group col-md-6">
                                 <label for="chance" class="col-sm-4 control-label">中奖概率</label>
                                 <div class="col-sm-8">
@@ -75,6 +71,15 @@
                                 <label for="is_special" class="col-sm-4 control-label">是否为特殊奖品</label>
                                 <div class="col-sm-8 switch switch-large">
                                     <input type="checkbox" name="is_special" class="is_default" value="1" />
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="form-group">
+                                <label for="prize_desc" class="col-sm-2 control-label">奖品描述</label>
+                                <div class="col-sm-10">
+                                    <textarea name="prize_desc" rows="8" cols="80" id="editor">
+                                        {{ old('prize_desc') }}
+                                    </textarea>
                                 </div>
                             </div>
                             {{ csrf_field() }}

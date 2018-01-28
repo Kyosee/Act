@@ -35,14 +35,7 @@
                                     <input type="text" class="form-control" name="prize_name" id="prize_name" value="{{ old('prize_name', $prize->prize_name) }}" placeholder="请输入奖品名称">
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="prize_desc" class="col-sm-2 control-label">奖品描述</label>
-                                <div class="col-sm-10">
-                                    <textarea name="prize_desc" rows="8" cols="80" id="editor">
-                                        {{ old('prize_desc', $prize->prize_desc) }}
-                                    </textarea>
-                                </div>
-                            </div>
+
                             <div class="form-group col-md-6">
                                 <label for="chance" class="col-sm-4 control-label">中奖概率</label>
                                 <div class="col-sm-8">
@@ -64,13 +57,14 @@
                             <div class="form-group col-md-6">
                                 <label for="is_default" class="col-sm-4 control-label">是否为默认谢谢参与奖品</label>
                                 <div class="col-sm-8 switch switch-large">
-                                    <input type="checkbox" name="is_default" id="is_default" {{ $prize->is_default ? 'checked' : '' }} value="1" />
+                                    <input type="checkbox" name="is_default" class="is_default" {{ $prize->is_default ? 'checked' : '' }} value="1" />
                                 </div>
                             </div>
+                            <div class="clearfix"></div>
                             <div class="form-group col-md-6">
                                 <label for="prize_img" class="col-sm-4 control-label">奖品图片</label>
                                 <div class="col-sm-8">
-                                    <input type="file" name="prize_img" class="form-control" value="">
+                                    <input type="file" name="prize_img" accpet="image/gif,image/png,image/jpeg,image/jpg,image/bmp" class="form-control" value="">
                                     @if($prize->prize_img)
                                         <br>
                                         <img class="thumbnail img-responsive" src="{{ $prize->prize_img }}" width="200" />
@@ -81,6 +75,15 @@
                                 <label for="is_special" class="col-sm-4 control-label">是否为特殊奖品</label>
                                 <div class="col-sm-8 switch switch-large">
                                     <input type="checkbox" name="is_special" class="is_default" {{ $prize->is_special ? 'checked' : '' }} value="1" />
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="form-group">
+                                <label for="prize_desc" class="col-sm-2 control-label">奖品描述</label>
+                                <div class="col-sm-10">
+                                    <textarea name="prize_desc" rows="8" cols="80" id="editor">
+                                        {{ old('prize_desc', $prize->prize_desc) }}
+                                    </textarea>
                                 </div>
                             </div>
                             <input name="_method" type="hidden" value="PATCH">

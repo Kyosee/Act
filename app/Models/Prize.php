@@ -9,19 +9,11 @@ class Prize extends Model{
     protected $guarded = ['project_id'];
 
     /**
-    * 抽奖概率计算
-    * @param  integer $project_id 所属应用项目ID
-    * @return [type]             [description]
-    */
-    public function getRand($project_id) {
-        // 查询该应用下所有奖品
-        if(!$prize_list = $this->where([
-                ['project_id', '=', $project_id],
-                ['prize_num', '>', '0']
-            ])->get()->toArray()){
-            return false;
-        }
-
+     * 抽奖概率计算
+     * @param  [type] $prize_list 概率数组
+     * @return [type]              [description]
+     */
+    public function getRand($prize_list) {
         $proSum = 0;
         //概率数组的总概率精度
         foreach ($prize_list as $key => $value) {
