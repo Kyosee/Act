@@ -7,7 +7,13 @@
 <div class="box">
     <div class="row">
         @foreach ($prizes as $prize)
-            <div class="col-xs-4"><img width="181" height="168" data-img="{{ $prize['prize_img'] }}" data-model="{{ $prize['prize_desc'] }}" data-prize="{{ $prize['id'] }}" data-special="{{ $prize['is_special'] }}" src="/images/projects/{{ $project->template->template_folder }}/game_fan.png" class="draw_img animated flipInX"></div>
+            @foreach ($draw_log_list as $log)
+                @if($prize['id'] == $log['added'])
+                    <div class="col-xs-4"><img width="181" height="168"data-model="{{ $prize['prize_desc'] }}" data-prize="{{ $prize['id'] }}" data-special="{{ $prize['is_special'] }}" src="{{ $prize['prize_img'] }}" class="draw_img animated flipInX"></div>
+                @else
+                    <div class="col-xs-4"><img width="181" height="168" data-img="{{ $prize['prize_img'] }}" data-model="{{ $prize['prize_desc'] }}" data-prize="{{ $prize['id'] }}" data-special="{{ $prize['is_special'] }}" src="/images/projects/{{ $project->template->template_folder }}/game_fan.png" class="draw_img animated flipInX"></div>
+                @endif
+            @endforeach
         @endforeach
     </div>
     <img src="/images/projects/{{ $project->template->template_folder }}/guize.png" class="pa" style="left: -10px">
