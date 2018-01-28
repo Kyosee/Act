@@ -16,7 +16,7 @@ class WeChatController extends Controller
 		$app = Wechat::loadWechat($wechat_id);
 
 		// 获取 OAuth 授权结果用户信息
-        if(!empty(session('wechat_user'))){
+        if($wechat_user = $app->oauth->user()->toArray()){
             $project_user = new ProjectUser();
             $project_user->userSignup($wechat_user, $wechat_id);
         }
