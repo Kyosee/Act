@@ -50,7 +50,7 @@ class FanyifanController extends ProjectController{
                         'project_id' => $project_id,
                         'prize_id' => $chance['id'],
                         'exchange' => false
-                    ])
+                    ]);
                 }
 
                 $return['id'] = $chance['id'];
@@ -99,8 +99,6 @@ class FanyifanController extends ProjectController{
                 }
             }
         }
-
-
 
         $prize_list = $new_prize_list ? $new_prize_list : $prize_list;
 
