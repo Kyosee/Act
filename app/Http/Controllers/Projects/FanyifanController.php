@@ -12,13 +12,12 @@ class FanyifanController extends ProjectController{
 
     public function game(Request $request){
 
-        // dd($request);
 
         $project_id = $request->route('project')->id;
 
         // 开始抽奖
     	if($request->isMethod('post')){
-dd(session('wechat_user'));
+
             // 创建抽奖记录
             ProjectUserDraw::createLog([
                 'uid' => session('wechat_user')->get('id'),
