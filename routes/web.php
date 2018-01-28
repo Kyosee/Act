@@ -13,6 +13,7 @@ use Illuminate\Routing\Router;
 */
 Route::get('/', 'Manage\HomeController@index')->name('/')->middleware('auth');
 
+
 // github webhooks
 Route::any('/webhooks', 'WebHooksController@index')->name('webhooks');
 
@@ -20,7 +21,7 @@ Route::any('/webhooks', 'WebHooksController@index')->name('webhooks');
 Route::any('/app/{project}/',function($project){
     return redirect("/app/{$project}/index");
 });
-Route::any('/app/{project}/{page}', 'Projects\ProjectController@autoLoad')->middleware('project_auto');
+Route::any('/app/{project}/{page}', 'Projects\ProjectController@autoLoad')->name('app')->middleware('project_auto');
 
 // wechat oauth check
 Route::get('/oauth_callback/{id}', 'WeChatController@oauthCallback');
@@ -57,7 +58,11 @@ Route::group(['prefix' => 'passport'], function(Router $router){
 Route::group(['prefix' => 'manage', 'namespace' => 'Manage', 'middleware' => 'auth'], function (Router $router){
     $router->get('/', 'HomeController@index')->name('/');
 
+    $router->post('/uploader', 'HomeController@uploader')->name('manage.uploader');
+
     $router->resource('wechat', 'WechatController');
 
     $router->resource('wechat.project', 'ProjectController');
+
+    $router->resource('wechat.project.prize', 'PrizeController');
 });

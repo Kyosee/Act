@@ -20,11 +20,7 @@ class ProjectPolicy
         //
     }
 
-    public function update(User $currentUser, Project $project){
+    public function checkProject(User $currentUser, Project $project){
         return (int)$currentUser->id === (int)$project->uid;
-    }
-
-    public function checkUser(User $currentUser, Wechat $wechat){
-        return (int)$currentUser->id === (int)$wechat->uid;
     }
 }

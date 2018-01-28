@@ -12,4 +12,8 @@ class Project extends Model{
     public function template(){
         return $this->belongsTo('App\Models\ProjectTemplate', 'template_id');
     }
+
+    public function prize(){
+        return $this->hasManay('App\Models\Prize', 'project_id');
+    }
 }

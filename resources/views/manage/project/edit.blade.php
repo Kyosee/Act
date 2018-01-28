@@ -7,8 +7,19 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         {{ $wechat->wechat_name }} - 修改应用
+                        <div class="pull-right">
+                            <a href="{{ route('wechat.project.index', [$wechat]) }}" class="btn btn-info">返回应用列表</a>
+                        </div>
                     </div>
                     <div class="panel-body">
+                        <div class="bg-info project-control">
+                            <a class="btn btn-success" href="{{ route('wechat.project.prize.index', [$wechat, $project]) }}">管理该应用的奖品</a>
+                            <p>
+                                <br />
+                                当前应用链接：<input type="text" disabled style="width:100%" class="form-control" value="{{ route('app', [$project, 'index']) }}" placeholder="请输入用户可参与次数">
+                            </p>
+                        </div>
+
                         @include('common.error')
                         @include('layouts._message')
                         <form class="form-horizontal" action="{{ route('wechat.project.update', [$wechat, $project]) }}" method="post" accept-charset="UTF-8"
@@ -65,7 +76,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="appid" class="col-sm-2 control-label">应用分享描述</label>
+                                <label for="share_desc" class="col-sm-2 control-label">应用分享描述</label>
                                 <div class="col-sm-10">
                                     <textarea name="share_desc" class="form-control" rows="8" cols="80">{{ old('share_desc', $project->share_desc) }}</textarea>
                                 </div>

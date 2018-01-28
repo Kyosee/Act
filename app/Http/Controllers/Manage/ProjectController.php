@@ -85,7 +85,7 @@ class ProjectController extends Controller {
      */
     public function edit(Wechat $wechat, Project $project){
         $this->authorize('checkUser', $this->wechat);
-        $this->authorize('update', $project);
+        $this->authorize('checkProject', $project);
 
         return view('manage.project.edit', [
             'project' => $project,
@@ -96,7 +96,7 @@ class ProjectController extends Controller {
 
     public function update(ProjectRequest $request, Wechat $wechat, Project $project, ImageUploadHandler $uploader){
         $this->authorize('checkUser', $wechat);
-        $this->authorize('update', $project);
+        $this->authorize('checkProject', $project);
 
         $project->project_name = $request->project_name;
         $project->game_count = $request->game_count;

@@ -32,7 +32,7 @@ class ProjectController extends Controller{
     public function pageCheck($controller, Request $request){
         $project = $request->project;
         $page = $request->page;
-
+        
         if( method_exists($controller, $page) ){
             $cont = new $controller;
             return $cont->$page($request);

@@ -13,6 +13,7 @@ class VerifyCsrfToken extends Middleware
      */
     protected $except = [
         'wechat',
-    	'webhooks',
+        'webhooks',
+    	'manage/uploader',
     ];
 }

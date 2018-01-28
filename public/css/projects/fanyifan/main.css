@@ -60,7 +60,7 @@ body h1,body h2,body h3,body h4,body h5,body h6,body strong,body em {font-weight
 textarea:focus,input:focus { border: 1px solid #71b643; }
 
 /*sprite图片合并*/
-.css_sprite01 { background-image:url(../images/css_sprite01.png)!important;  background-repeat: no-repeat!important; } 
+.css_sprite01 { background-image:url(../images/css_sprite01.png)!important;  background-repeat: no-repeat!important; }
 
 /**
  * = function 功能样式
@@ -104,7 +104,7 @@ textarea:focus,input:focus { border: 1px solid #71b643; }
 .u-audio .btn_audio strong { width: 57px; font-size: 24px; color: #fff; opacity: 1; }
 .u-audio .btn_audio .audio_open { position: absolute; bottom: 0; left: 56px; width: 44px; }
 .u-audio .btn_audio strong.z-hide { opacity: 0; }
-.u-audio .btn_audio strong.z-move { 
+.u-audio .btn_audio strong.z-move {
 	-webkit-transition:opacity 0.5s;
   	   -moz-transition:opacity 0.5s;
 	    -ms-transition:opacity 0.5s;
@@ -123,7 +123,7 @@ textarea:focus,input:focus { border: 1px solid #71b643; }
  * 提示小纸条
  * -u-note
  */
-.u-note { position: fixed; left: 120px; top:50%; margin-top:-40px;  width: 400px; padding: 15px 0; text-align: center; font-size: 26px; border-radius: 8px; 
+.u-note { position: fixed; left: 120px; top:50%; margin-top:-40px;  width: 400px; padding: 15px 0; text-align: center; font-size: 26px; border-radius: 8px;
 	 opacity: 0;
 	 z-index: -1;
 	-webkit-transition: all 0.4s;
@@ -142,7 +142,7 @@ textarea:focus,input:focus { border: 1px solid #71b643; }
 .p-ct { position: relative; width: 640px; height: 100%; overflow: hidden; }
 .p-ct.fixed { overflow: hidden; }
 
-.translate-front { position: fixed; top: 0; left: 0; z-index: 100; height: 100%; width: 100%; opacity: 0; 
+.translate-front { position: fixed; top: 0; left: 0; z-index: 100; height: 100%; width: 100%; opacity: 0;
 	-webkit-transition: opacity 1s;
 	   -moz-transition: opacity 1s;
 	    -ms-transition: opacity 1s;
@@ -198,7 +198,7 @@ textarea:focus,input:focus { border: 1px solid #71b643; }
 .bigTxt-bd p { padding:0 65px 0 25px; color: #000; }
 .bigTxt-title { position: absolute; top: 0; left: 0; width: 100%; padding:25px 0; overflow: hidden; font-size: 28px; }
 .bigTxt-title p { height: 100%; line-height: 130%; overflow: hidden; }
-.bigTxt-arrow { position: absolute; bottom: 5px; right: 20px; display: inline-block; width: 34px; height: 34px; background-position: 0 -46px; 
+.bigTxt-arrow { position: absolute; bottom: 5px; right: 20px; display: inline-block; width: 34px; height: 34px; background-position: 0 -46px;
 	-webkit-transform: rotate(0);
 	   -moz-transform: rotate(0);
 	    -ms-transform: rotate(0);
@@ -274,7 +274,7 @@ textarea:focus,input:focus { border: 1px solid #71b643; }
 .smallTxt-bd:last-child  .smallTxt-detail { bottom: 150px; }
 .smallTxt-bd:last-child  .smallTxt-detail p { border-bottom:2px solid #fff; }
 
-.z-left .bd-wrap { left: 30px; 
+.z-left .bd-wrap { left: 30px;
 	-webkit-transform: translate(200px,0);
 	   -moz-transform: translate(200px,0);
 	    -ms-transform: translate(200px,0);
@@ -282,7 +282,7 @@ textarea:focus,input:focus { border: 1px solid #71b643; }
 	        transform: translate(200px,0);
 }
 
-.z-right .bd-wrap { right: 30px; 
+.z-right .bd-wrap { right: 30px;
 	-webkit-transform: translate(-200px,0);
 	   -moz-transform: translate(-200px,0);
 	    -ms-transform: translate(-200px,0);
@@ -335,7 +335,7 @@ textarea:focus,input:focus { border: 1px solid #71b643; }
 .video-con { position: relative; width: 640px; height: 400px; background: #000; }
 .video-con video { position: absolute; top: 0; left: 0; z-index: 1; width: 100%; height: 100%; }
 .video-con .img { position: absolute; top: 0; left: 0; z-index: 10; width: 100%; height: 100%; }
-.video-con .img span { display: inline-block; position: absolute; top: 50%; left: 50%; width:77px; height: 77px; margin-left: -38px; margin-top: -38px; z-index: 11; background-position: 0 -233px; 
+.video-con .img span { display: inline-block; position: absolute; top: 50%; left: 50%; width:77px; height: 77px; margin-left: -38px; margin-top: -38px; z-index: 11; background-position: 0 -233px;
 	-webkit-animation: video_btnPlay 1s linear infinite; opacity: 1;
 	-moz-animation: video_btnPlay 1s linear infinite; opacity: 1;
 	animation: video_btnPlay 1s linear infinite; opacity: 1;
@@ -350,10 +350,10 @@ textarea:focus,input:focus { border: 1px solid #71b643; }
 
 /**
  * 预约模块
- * -m-book 
+ * -m-book
  */
 .book-bd { position: relative; height: 100%; padding: 0 40px; }
-.book-bd .bd-map { position: relative; height: 250px; overflow: hidden; 
+.book-bd .bd-map { position: relative; height: 250px; overflow: hidden;
 	-webkit-transform: translate(0,-250px);
 	   -moz-transform: translate(0,-250px);
 	    -ms-transform: translate(0,-250px);
@@ -367,7 +367,7 @@ textarea:focus,input:focus { border: 1px solid #71b643; }
 	        transition:all 0.5s;
 }
 .book-bd .bd-map span { position: absolute; top: 70px; right: 100px; display: inline-block; width: 55px; height: 72px; background-position: 0 -159px; }
-.book-bd .bd-map .map-animate { position: absolute; top: 140px; right: 119px; width: 20px; height: 20px; border-radius: 50%; background:#fff; 
+.book-bd .bd-map .map-animate { position: absolute; top: 140px; right: 119px; width: 20px; height: 20px; border-radius: 50%; background:#fff;
 	-webkit-transform: rotateX(-110deg);
 	   -moz-transform: rotateX(-110deg);
 	        transform: rotateX(-110deg);
@@ -403,7 +403,7 @@ textarea:focus,input:focus { border: 1px solid #71b643; }
 	     -o-transition:all 0.5s .5s;
 	        transition:all 0.5s .5s;
 }
-.book-bd .bd-form { position: absolute; bottom: 120px; left: 40px; width: 480px; padding:30px 40px; background: #e5e5e5; border-radius:12px; overflow: hidden; 
+.book-bd .bd-form { position: absolute; bottom: 120px; left: 40px; width: 480px; padding:30px 40px; background: #e5e5e5; border-radius:12px; overflow: hidden;
 	-webkit-transform: translate(0,500px);
 	   -moz-transform: translate(0,500px);
 	    -ms-transform: translate(0,500px);
@@ -415,7 +415,7 @@ textarea:focus,input:focus { border: 1px solid #71b643; }
 	    -ms-transition:all 0.5s;
 	     -o-transition:all 0.5s;
 	        transition:all 0.5s;
-} 
+}
 .book-bd .bd-form p { position: relative; padding-left: 70px; margin-bottom: 20px; text-align: left; }
 .book-bd .bd-form p a { font-size: 30px; color: #34495e; }
 .book-bd .bd-form p span { position: absolute; top: 0; left: 0; display: inline-block; width: 32px; height: 29px; }
@@ -425,7 +425,7 @@ textarea:focus,input:focus { border: 1px solid #71b643; }
 .book-bd .bd-form .btn { width: 420px; height: 80px; margin:0 auto; line-height: 80px; text-align: center; color: #34495e; background: #e67e22; border-radius: 12px; font-size: 36px; }
 .book-bd .bd-form .btn.z-stop { background: #bbb; }
 
-.book-bg { position: absolute; top: 0; left: 0; z-index: 40; width: 100%; height: 100%; background: rgba(0,0,0,0); 
+.book-bg { position: absolute; top: 0; left: 0; z-index: 40; width: 100%; height: 100%; background: rgba(0,0,0,0);
 	-webkit-transition:background 0.5s;
   	   -moz-transition:background 0.5s;
 	    -ms-transition:background 0.5s;
@@ -542,7 +542,7 @@ textarea:focus,input:focus { border: 1px solid #71b643; }
 .m-imgBox { height: 380px; width: 640px; }
 
 /*地图*/
-.ylmap { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index:300; overflow: hidden;  
+.ylmap { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index:300; overflow: hidden;
 	-webkit-transition: all 0.8s;
 	   -moz-transition: all 0.8s;
 	    -ms-transition: all 0.8s;
@@ -555,7 +555,7 @@ textarea:focus,input:focus { border: 1px solid #71b643; }
 	     -o-transform: translate(0,100%);
 	        transform: translate(0,100%);
 }
-.ylmap.mapOpen { 
+.ylmap.mapOpen {
 	-webkit-transform: translate(0,0);
 	   -moz-transform: translate(0,0);
 	    -ms-transform: translate(0,0);
@@ -654,7 +654,7 @@ textarea:focus,input:focus { border: 1px solid #71b643; }
 /**
  * 模版提示的样式以及动画
  */
-.m-alert strong { font-size: 35px; opacity: 0; 
+.m-alert strong { font-size: 35px; opacity: 0;
 	-webkit-transition: opacity .8s;
 	   -moz-transition: opacity .8s;
 	        transition: opacity .8s;
@@ -669,7 +669,7 @@ textarea:focus,input:focus { border: 1px solid #71b643; }
   -webkit-animation: anim-plane 1s linear infinite alternate forwards;
      -moz-animation: anim-plane 1s linear infinite alternate forwards;
           animation: anim-plane 1s linear infinite alternate forwards;
-  
+
   -webkit-transform: translateY(80px);
      -moz-transform: translateY(80px);
 		  transform: translateY(80px);
@@ -692,7 +692,7 @@ textarea:focus,input:focus { border: 1px solid #71b643; }
    	      animation-duration:6s;
 
   -webkit-transform: scale(0.5);
-     -moz-transform: scale(0.5); 
+     -moz-transform: scale(0.5);
           transform: scale(0.5);
 }
 .cloud--medium{ top:95px;
@@ -705,8 +705,8 @@ textarea:focus,input:focus { border: 1px solid #71b643; }
           animation-delay:1s;
 
   -webkit-transform: scale(0.7);
-     -moz-transform: scale(0.7); 
-          transform: scale(0.7); 
+     -moz-transform: scale(0.7);
+          transform: scale(0.7);
 }
 .cloud--large{ top:95px;
   -webkit-animation-duration:4.5s;
@@ -716,27 +716,27 @@ textarea:focus,input:focus { border: 1px solid #71b643; }
   -webkit-animation-delay:2.5s;
      -moz-animation-delay:2.5s;
           animation-delay:2.5s;
-  
+
   -webkit-transform: scale(0.8);
-     -moz-transform: scale(0.8); 
+     -moz-transform: scale(0.8);
           transform: scale(0.8);
 }
 
 /*飞机*/
-@keyframes anim-plane{ 
+@keyframes anim-plane{
   to{
     transform:translateY(95px);
-  }    
+  }
 }
-@-webkit-keyframes anim-plane{ 
+@-webkit-keyframes anim-plane{
   to{
     -webkit-transform:translateY(95px);
-  }    
+  }
 }
-@-moz-keyframes anim-plane{ 
+@-moz-keyframes anim-plane{
   to{
     -moz-transform:translateY(95px);
-  }    
+  }
 }
 
 /*云*/
@@ -759,28 +759,28 @@ textarea:focus,input:focus { border: 1px solid #71b643; }
   100%{ opacity:0;}
 }
 
-@keyframes move{  
-  from{ 
-    left:200px; 
+@keyframes move{
+  from{
+    left:200px;
   }
-  to{ 
-    left:0px; 
-  }
-}
-@-webkit-keyframes move{  
-  from{ 
-    left:200px; 
-  }
-  to{ 
-    left:0px; 
+  to{
+    left:0px;
   }
 }
-@-moz-keyframes move{  
-  from{ 
-    left:200px; 
+@-webkit-keyframes move{
+  from{
+    left:200px;
   }
-  to{ 
-    left:0px; 
+  to{
+    left:0px;
+  }
+}
+@-moz-keyframes move{
+  from{
+    left:200px;
+  }
+  to{
+    left:0px;
   }
 }
 
@@ -854,4 +854,13 @@ textarea:focus,input:focus { border: 1px solid #71b643; }
 }
 .box{
 	overflow: hidden;
+}
+
+.model{
+    display: none;
+    position: absolute;
+    top: 60px;
+    text-align: center;
+    width: 100%;
+    z-index: 10
 }

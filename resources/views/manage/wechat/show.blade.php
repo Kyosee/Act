@@ -6,7 +6,7 @@
             <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        当前公众号：{{ $wechat->wechat_name }}
+                        {{ $wechat->wechat_name }}
                         <a class="btn btn-success pull-right" href="{{ route('wechat.index') }}">返回公众号列表</a>
                     </div>
                     <div class="panel-body wechat-btn-list">

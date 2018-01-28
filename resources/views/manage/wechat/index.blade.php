@@ -28,7 +28,6 @@
                                         <td>{{ $wechat['token'] }}</td>
                                         <td>
                                             <a href="{{ route('wechat.show', $wechat) }}" class="btn btn-sm btn-success">管理公众号</a>
-                                            <a href="" class="btn btn-sm btn-info">修改信息</a>
                                             <a href="" class="btn btn-sm btn-danger">删除该公众号</a>
                                         </td>
                                     </tr>

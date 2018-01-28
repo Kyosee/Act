@@ -19,11 +19,12 @@ class CreatePrizesTable extends Migration
             $table->string('prize_name')->comment('奖品名称');
             $table->string('prize_img')->default('')->comment('奖品图片');
             $table->text('prize_desc')->nullable()->comment('奖品描述');
-            $table->integer('chance')->default(0)->comment('中奖概率');
-            $table->integer('day_num')->default(0)->comment('奖品每日发放限制数量');
-            $table->integer('now_num')->default(0)->comment('奖品剩余数量');
-            $table->integer('origin_num')->default(0)->comment('奖品原有数量');
-            $table->boolean('is_default')->default(false)->comment('是否为默认奖品注：其他奖品抽完后则抽这个奖品可以放谢谢参与');
+            $table->integer('chance')->default(0)->nullable()->comment('中奖概率');
+            $table->integer('day_num')->default(0)->nullable()->comment('奖品每日发放限制数量');
+            $table->integer('prize_num')->default(0)->nullable()->comment('奖品库存量');
+            $table->boolean('is_default')->default(false)->nullable()->comment('是否为默认奖品注：其他奖品抽完后则抽这个奖品可以放谢谢参与');
+            $table->boolean('is_special')->default(false)->nullable()->comment('是否为特殊奖品');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

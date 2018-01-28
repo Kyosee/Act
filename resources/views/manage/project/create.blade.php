@@ -60,7 +60,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="appid" class="col-sm-2 control-label">应用分享描述</label>
+                                <label for="share_desc" class="col-sm-2 control-label">应用分享描述</label>
                                 <div class="col-sm-10">
                                     <textarea name="share_desc" class="form-control" rows="8" cols="80"></textarea>
                                 </div>

@@ -25,6 +25,7 @@ class CreateProjectsTable extends Migration
             $table->string('share_desc')->default('')->nullable()->comment('应用微信分享描述');
             $table->timestamp('start_time')->nullable();
             $table->timestamp('end_time')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

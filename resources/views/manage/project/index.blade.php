@@ -31,7 +31,7 @@
                                         <td>{{ $project['start_time'] }}</td>
                                         <td>{{ $project['end_time'] }}</td>
                                         <td>
-                                            <a href="{{ route('wechat.project.edit', [$wechat, $project->id]) }}" class="btn btn-sm btn-success">管理应用</a>
+                                            <a href="{{ route('wechat.project.edit', [$wechat, $project->id]) }}" class="btn btn-sm btn-success">修改信息</a>
                                             <a href="" class="btn btn-sm btn-info">应用数据</a>
                                             <a href="" class="btn btn-sm btn-danger">删除应用</a>
                                         </td>
