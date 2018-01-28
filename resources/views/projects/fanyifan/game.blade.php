@@ -34,12 +34,11 @@
                     success: function(data){
                         if(data.is_lucky){
                             model = data.model
-                            $('.model').html(model)
                         }
+                        $('.model').html(model)
+                        toggleModel()
                     }
                 })
-
-                toggleModel()
             }else{
                 return false;
             }
