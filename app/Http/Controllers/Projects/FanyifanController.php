@@ -113,11 +113,17 @@ class FanyifanController extends ProjectController{
         }
 
         // 创建抽奖记录
-        ProjectUserDraw::createLog([
+        if(!ProjectUserDraw::where([
             'uid' => session('wechat_user')['id'],
             'project_id' => $project->id,
             'added' => $request->prize
-        ]);
+        ])->first()){
+            ProjectUserDraw::createLog([
+                'uid' => session('wechat_user')['id'],
+                'project_id' => $project->id,
+                'added' => $request->prize
+            ]);
+        }
 
         //判定是否为礼牌
         if($request->special){
