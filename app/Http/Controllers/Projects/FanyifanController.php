@@ -123,10 +123,17 @@ class FanyifanController extends ProjectController{
         if($request->special){
         	$thanks = Prize::where(['is_default' => true, 'is_special' => true, 'project_id' => $project->id])->first()->toArray();
         	if(ProjectUserDraw::where(['added' => $thanks['id'], 'project_id' => $project->id])->first() && !$user_prize){
+                // 创建抽奖记录
+                if(!ProjectUserDraw::getLog($condition)){
+                    ProjectUserDraw::createLog($condition);
+                }
+            
             	$return['exchange'] = false;
             	$return['is_lucky'] = false;
             	return $return;
         	}
+
+
 
         	// 检测是否有中奖纪录
             if($user_prize){
@@ -167,9 +174,9 @@ class FanyifanController extends ProjectController{
             $return['is_lucky'] = $chance['is_default'] ? false : true;
 
             // 创建抽奖记录
-	        if(!ProjectUserDraw::getLog($condition)){
-	            ProjectUserDraw::createLog($condition);
-	        }
+            if(!ProjectUserDraw::getLog($condition)){
+                ProjectUserDraw::createLog($condition);
+            }
 
             return $return;
         }
