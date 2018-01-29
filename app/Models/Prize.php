@@ -33,4 +33,8 @@ class Prize extends Model{
         }
         return $prize_list[$result];
     }
+
+    public static function minusPrizeNum($prize_id){
+        self::where('id', $prize_id)->decrement('prize_num');
+    }
 }

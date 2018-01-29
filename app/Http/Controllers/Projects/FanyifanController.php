@@ -145,6 +145,9 @@ class FanyifanController extends ProjectController{
                     $chance['is_default'] = '';
 
                 }else{
+                    // 减少库存
+                    Prize::minusPrizeNum($chance['id']);
+                    // 发放奖品
                     $ProjectUserPrize->createLog([
                         'uid' => session('wechat_user')['id'],
                         'project_id' => $project->id,
