@@ -36,7 +36,7 @@
                         'special': _this.data('special')
                     },
                     success: function(data){
-                        if(data.is_lucky){
+                        if(data.is_lucky || data.model){
                             model = data.model
                         }
                         $('.model').html(model)
