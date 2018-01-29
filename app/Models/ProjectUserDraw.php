@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 class ProjectUserDraw extends Model {
-    
+
     protected $guarded = [];
 
     /**
@@ -14,5 +14,9 @@ class ProjectUserDraw extends Model {
      */
     public static function createLog($data){
         return self::create($data);
+    }
+
+    public static function getLog($where){
+        return ProjectUserDraw::where($where)->first();
     }
 }
