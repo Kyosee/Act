@@ -22,7 +22,7 @@ class FanyifanController extends ProjectController{
 
         // 开始抽奖
     	if($request->isMethod('post')){
-            return $this->_startDraw($request, $draw_log_list);
+            return response()->json($this->_startDraw($request, $draw_log_list));
     	}
 
         // 初始化游戏格子位置
@@ -106,7 +106,7 @@ class FanyifanController extends ProjectController{
             ])->first()){
                 $prize = Prize::find($user_prize->prize_id);
                 $return['model'] = $chance['prize_desc'];
-                return response()->json($return);
+                return $return;
             }else{
                 return false;
             }
@@ -145,7 +145,7 @@ class FanyifanController extends ProjectController{
             $return['model'] = $chance['prize_desc'];
             $return['is_lucky'] = $chance['is_default'] ? false : true;
 
-            return response()->json($return);
+            return $return;
         }
 
         return false;
