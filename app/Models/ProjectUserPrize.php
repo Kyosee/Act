@@ -6,10 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class ProjectUserPrize extends Model
 {
-    public static function createLog($data){
-        self::uid = $data['uid'] ? $data['uid'] : 0;
-        self::project_id = $data['project_id'];
-        self::added = $data['added'] ? $data['added'] : '';
-        self::save();
+    public function createLog($data){
+        $this->uid = $data['uid'] ? $data['uid'] : 0;
+        $this->project_id = $data['project_id'];
+        $this->added = $data['added'] ? $data['added'] : '';
+        $this->save();
     }
 }

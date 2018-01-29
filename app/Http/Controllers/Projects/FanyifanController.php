@@ -96,7 +96,7 @@ class FanyifanController extends ProjectController{
      */
     private function _startDraw($request, $draw_log_list){
         $project = $request->route('project');
-        
+
         // 检测用户抽奖次数
         if(count($draw_log_list) >= (int)$project->game_count){
             // 查询用户是否有奖品
@@ -133,7 +133,8 @@ class FanyifanController extends ProjectController{
 
             // 如果中奖增加奖品纪录
             if(!$chance['is_default']){
-                ProjectUserPrize::createLog([
+                $ProjectUserPrize = new ProjectUserPrize();
+                $ProjectUserPrize->createLog([
                     'uid' => session('wechat_user')['id'],
                     'project_id' => $project->id,
                     'prize_id' => $chance['id'],
