@@ -100,37 +100,26 @@ class FanyifanController extends ProjectController{
         // 检测用户抽奖次数
         if(count($draw_log_list) >= (int)$project->game_count){
             // 查询用户是否有奖品
-            if($request->special && $user_pirze = ProjectUserPrize::where([
+            if($request->special && $user_prize = ProjectUserPrize::where([
                 'uid' => session('wechat_user')['id'],
                 'project_id' => $project->id,
             ])->first()){
                 $prize = Prize::find($user_prize->prize_id);
-                $return['model'] = $chance['prize_desc'];
+                $return['model'] = $prize['prize_desc'];
                 return $return;
             }else{
                 return false;
             }
         }
 
-        // 创建抽奖记录
-        if(!ProjectUserDraw::getLog([
+        $condition = [
             'uid' => session('wechat_user')['id'],
             'project_id' => $project->id,
             'added' => $request->prize
-        ])){
-            ProjectUserDraw::createLog([
-                'uid' => session('wechat_user')['id'],
-                'project_id' => $project->id,
-                'added' => $request->prize
-            ]);
-        }
+        ];
 
         //判定是否为礼牌
-        if($request->special && !ProjectUserDraw::getLog([
-            'uid' => session('wechat_user')['id'],
-            'project_id' => $project->id,
-            'added' => $request->prize
-        ])){
+        if($request->special){
             // 开始抽奖
             $prize = new Prize;
             $prize_list = Prize::where([
@@ -146,13 +135,15 @@ class FanyifanController extends ProjectController{
             if(!$chance['is_default']){
 
                 // 检测是否有中奖纪录
-                if($ProjectUserPrize->where([
+                if($user_prize = $ProjectUserPrize->where([
                     'uid' => session('wechat_user')['id'],
                     'project_id' => $project->id,
-                    'prize_id' => $chance['id'],
                     ])->first()){
-                    $chance['prize_desc'] = '';
+
+                	$prize = Prize::find($user_prize->prize_id);
+                    $chance['prize_desc'] = $prize->prize_desc;
                     $chance['is_default'] = '';
+
                 }else{
                     $ProjectUserPrize->createLog([
                         'uid' => session('wechat_user')['id'],
@@ -167,9 +158,19 @@ class FanyifanController extends ProjectController{
             $return['model'] = $chance['prize_desc'];
             $return['is_lucky'] = $chance['is_default'] ? false : true;
 
+            // 创建抽奖记录
+	        if(!ProjectUserDraw::getLog($condition)){
+	            ProjectUserDraw::createLog($condition);
+	        }
+
             return $return;
         }
 
-        return false;
+        // 创建抽奖记录
+        if(!ProjectUserDraw::getLog($condition)){
+            ProjectUserDraw::createLog($condition);
+        }
+
+        return 'false';
     }
 }
