@@ -17,6 +17,12 @@
     <img src="/images/projects/{{ $project->template->template_folder }}/guize.png" class="pa" style="left: -10px">
 </div>
 <div class="model" >
+	<div class="prize_img">
+		
+	</div>
+	<img class="exc_btn not_exchange_btn" src="/images/projects/{{ $project->template->template_folder }}/bt_hexiao.png" alt="">
+	<img class="exc_btn is_exchange_btn" src="/images/projects/{{ $project->template->template_folder }}/bt_yidui.png" alt="">
+	<img class="exc_btn back_btn" src="/images/projects/{{ $project->template->template_folder }}/bt_jixu.png" alt="">
 </div>
 <script>
     $(function(){
@@ -36,10 +42,27 @@
                         'special': _this.data('special')
                     },
                     success: function(data){
+                    	$(".back_btn").hide();
+                    	$(".not_exchange_btn").hide();
+                        $(".is_exchange_btn").hide();
+
                         if(data.is_lucky || data.model){
                             model = data.model
+
+                            if(data.exchange == 1 && data.is_lucky){
+	                            $(".is_exchange_btn").show();
+	                        }else if(data.exchange == 0 && data.is_lucky){
+	                            $(".not_exchange_btn").show();
+	                        }else if(!data.exchange && data.is_lucky === false){
+	                            $(".back_btn").show();
+	                        }
+                        }else{
+                        	if(!data.exchange && data.is_lucky === false){
+	                            $(".back_btn").show();
+	                        }
                         }
-                        $('.model').html(model)
+
+                        $('.prize_img').html(model)
                         toggleModel()
                     }
                 })
@@ -49,7 +72,13 @@
         });
     })
 
-    $(".model").delegate('img', 'click', toggleModel());
+    $(".back_btn").click(function(event) {
+    	toggleModel();
+    });
+
+    $(".model").delegate('.prize_img', 'click', function(){
+    	toggleModel();
+    });
     
     var toggleModel = function(){
         $(".box").toggle();

@@ -864,3 +864,10 @@ textarea:focus,input:focus { border: 1px solid #71b643; }
     width: 100%;
     z-index: 10
 }
+.prize_img{
+	padding-left: 35px;
+}
+.exc_btn{
+	display: none;
+	margin-top: 40px;
+}
