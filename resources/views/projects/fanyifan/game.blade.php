@@ -16,7 +16,7 @@
     </div>
     <img src="/images/projects/{{ $project->template->template_folder }}/guize.png" class="pa" style="left: -10px">
 </div>
-<div class="model" onclick="toggleModel()">
+<div class="model" >
 </div>
 <script>
     $(function(){
@@ -49,6 +49,8 @@
         });
     })
 
+    $(".model").delegate('img', 'click', toggleModel());
+    
     var toggleModel = function(){
         $(".box").toggle();
         $(".model").toggle();
