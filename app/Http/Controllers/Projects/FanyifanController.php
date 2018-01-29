@@ -181,4 +181,25 @@ class FanyifanController extends ProjectController{
 
         return 'false';
     }
+
+    /**
+     *  用户兑换
+     */
+    public function exchange(Request $request){
+        $condition = ['uid' => session('wechat_user')['id'], 'project_id' => $request->route('project')->id, 'exchange' => false];
+        if($request->pass == '201866'){
+            $user_prize = ProjectUserPrize::where($condition)->first();
+
+            $user_prize->exchange = true;
+            $user_prize->exchange_time = date('Y-m-d H:i:s',time());
+
+            if($user_prize && $user_prize->save()){
+                return response()->json(true);
+            }else{
+                return response()->json(false);
+            }
+        }else{
+            return response()->json(false);
+        }
+    }
 }

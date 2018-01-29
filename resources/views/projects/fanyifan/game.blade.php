@@ -1,6 +1,7 @@
 @extends('projects.fanyifan._default')
 @section('head')
     <link href="https://cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+    <script src="/libs/layui/layui.js"></script>
 @endsection
 @section('content')
     <img src="/images/projects/{{ $project->template->template_folder }}/all_bg.png" class="pa">
@@ -26,6 +27,11 @@
 </div>
 <script>
     $(function(){
+		layui.use(['layer', 'form'], function(){
+			var layer = layui.layer
+			,form = layui.form;
+		});
+
         $(".draw_img").click(function() {
             var _this = $(this);
             if(!_this.data('draw')){
@@ -84,5 +90,27 @@
         $(".box").toggle();
         $(".model").toggle();
     }
+
+    $(".not_exchange_btn").click(function() {
+		layer.prompt({title: '请输入核销密码', formType: 1}, function(pass, index){
+			layer.close(index);
+			$.ajax({
+				url: "{{ '/app/'.$project->id.'/exchange' }}",
+				type: 'post',
+				data: {pass: pass},
+				success: function(data){
+					if(data){
+						layer.alert('核销成功', {
+						  closeBtn: 0
+						},function(){
+							location.reload();
+						})
+					}else{
+						layer.msg('核销失败或密码错误');
+					}
+				}
+			})
+		});
+    });
 </script>
 @endsection
