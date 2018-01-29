@@ -48,5 +48,35 @@
 </head>
 <body>
     @yield('content')
+    <script type="text/javascript" charset="utf-8">
+        wx.config({!! $jssdk->jssdk->buildConfig([
+            'onMenuShareTimeline',
+            'onMenuShareAppMessage',
+            'onMenuShareQQ ',
+            'onMenuShareWeibo',
+            'chooseImage',
+            'uploadImage'
+        ], false) !!});
+        wx.ready(function(){
+            wx.onMenuShareAppMessage({
+                title: "<?=$project->share_title?>", // 分享标题
+                desc: "<?=$project->share_desc?>", // 分享描述
+                link: "<?=request()->url()?>", // 分享链接
+                imgUrl: "<?=$project->share_img?>", // 分享图标
+                success: function () {
+                },
+                cancel: function () { }
+            });
+            wx.onMenuShareTimeline({
+                title: "<?=$project->share_title?>", // 分享标题
+                desc: "<?=$project->share_desc?>", // 分享描述
+                link: "<?=request()->url()?>", // 分享链接
+                imgUrl: "<?=$project->share_img?>", // 分享图标
+                success: function () {
+                },
+                cancel: function () { }
+            });
+        });
+    </script>
 </body>
 </html>

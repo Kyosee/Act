@@ -33,6 +33,8 @@ class ProjectController extends Controller{
         $project = $request->project;
         $page = $request->page;
         
+        view()->share('jssdk', Wechat::loadWechat(Project::where('id', $project->id)->pluck('wechat_id')[0]));
+
         if( method_exists($controller, $page) ){
             $cont = new $controller;
             return $cont->$page($request);

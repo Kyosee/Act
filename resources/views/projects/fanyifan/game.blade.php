@@ -4,7 +4,7 @@
     <script src="/libs/layui/layui.js"></script>
 @endsection
 @section('content')
-    <img src="/images/projects/{{ $project->template->template_folder }}/all_bg.png" class="pa">
+<img src="/images/projects/{{ $project->template->template_folder }}/all_bg.png" class="pa">
 <div class="box">
     <div class="row">
         @foreach ($prizes as $prize)
@@ -78,7 +78,7 @@
         });
     })
 
-    $(".back_btn").click(function(event) {
+    $(".back_btn, .is_exchange_btn").click(function(event) {
     	toggleModel();
     });
 
