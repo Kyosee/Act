@@ -132,14 +132,25 @@ class FanyifanController extends ProjectController{
             $chance = $prize->getRand($prize_list);
 
             // 如果中奖增加奖品纪录
+            $ProjectUserPrize = new ProjectUserPrize();
             if(!$chance['is_default']){
-                $ProjectUserPrize = new ProjectUserPrize();
-                $ProjectUserPrize->createLog([
+
+                // 检测是否有中奖纪录
+                if($ProjectUserPrize->where([
                     'uid' => session('wechat_user')['id'],
                     'project_id' => $project->id,
                     'prize_id' => $chance['id'],
-                    'exchange' => false
-                ]);
+                    ])->first()){
+                    $chance['prize_desc'] = '';
+                    $chance['is_default'] = '';
+                }else{
+                    $ProjectUserPrize->createLog([
+                        'uid' => session('wechat_user')['id'],
+                        'project_id' => $project->id,
+                        'prize_id' => $chance['id'],
+                        'exchange' => false
+                    ]);
+                }
             }
 
             $return['id'] = $chance['id'];
