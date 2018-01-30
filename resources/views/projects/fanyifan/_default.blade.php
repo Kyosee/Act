@@ -56,7 +56,7 @@
             'onMenuShareWeibo',
             'chooseImage',
             'uploadImage'
-        ], true) !!});
+        ], false) !!});
         wx.ready(function(){
             wx.onMenuShareAppMessage({
                 title: "<?=$project->share_title?>", // 分享标题
