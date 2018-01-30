@@ -139,6 +139,8 @@
         <img src="/images/projects/{{ $project->template->template_folder }}/rihgt-top.png" class="s-xguide-top">
         <img src="/images/projects/{{ $project->template->template_folder }}/rihgt-bottm.png" class="s-xguide-botdown">
         <img src="/images/projects/{{ $project->template->template_folder }}/dog2.png" class="s-xguide-ind">
-        <img src="/images/projects/{{ $project->template->template_folder }}/finish-bt.png" class="s-xguide-inb">
+        <div style="text-align:center;">
+            <img src="/images/projects/{{ $project->template->template_folder }}/finish-bt.png">
+        </div>
     </div>
 @endsection
