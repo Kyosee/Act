@@ -32,7 +32,7 @@ class ProjectController extends Controller{
         $project = $request->project;
         $page = $request->page;
 
-        if(time() > $project->end_time){
+        if(time() > strtotime($project->end_time)){
             $page = 'end';
         }
 
