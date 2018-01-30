@@ -36,7 +36,7 @@
         } else {
             document.write('<meta name="viewport" content="width=640,height=1030, user-scalable=no, target-densitydpi=device-dpi">');
         }
-        document.addEventListener('touchmove', function(e){e.preventDefault()}, true);
+        document.addEventListener('touchmove', function(e){e.preventDefault()}, false);
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -56,7 +56,7 @@
             'onMenuShareWeibo',
             'chooseImage',
             'uploadImage'
-        ], false) !!});
+        ], true) !!});
         wx.ready(function(){
             wx.onMenuShareAppMessage({
                 title: "<?=$project->share_title?>", // 分享标题
