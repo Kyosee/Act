@@ -139,7 +139,7 @@
         <img src="/images/projects/{{ $project->template->template_folder }}/rihgt-top.png" class="s-xguide-top">
         <img src="/images/projects/{{ $project->template->template_folder }}/rihgt-bottm.png" class="s-xguide-botdown">
         <img src="/images/projects/{{ $project->template->template_folder }}/dog2.png" class="s-xguide-ind">
-        <div style="text-align:center;">
+        <div style="position: absolute;text-align: center;width: 100%;bottom: 165px;">
             <img src="/images/projects/{{ $project->template->template_folder }}/finish-bt.png">
         </div>
     </div>
