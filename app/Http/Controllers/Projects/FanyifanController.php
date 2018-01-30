@@ -108,6 +108,10 @@ class FanyifanController extends ProjectController{
                 $return['model'] = $prize['prize_desc'];
             	$return['is_lucky'] = true;
                 return $return;
+            }else if($request->special && !$user_prize){
+                $return['exchange'] = false;
+            	$return['is_lucky'] = false;
+            	return $return;
             }else{
                 return false;
             }
@@ -132,8 +136,6 @@ class FanyifanController extends ProjectController{
             	$return['is_lucky'] = false;
             	return $return;
         	}
-
-
 
         	// 检测是否有中奖纪录
             if($user_prize){
