@@ -53,4 +53,31 @@ class WechatController extends Controller {
             return redirect()->back()->with('danger', '新增公众号失败请稍后重试');
         }
     }
+
+    /**
+     * show edit wechat page
+     * @param  Wechat $wechat [description]
+     * @return [type]         [description]
+     */
+    public function edit(Wechat $wechat){
+        $this->authorize('checkUser', $wechat);
+        return view('manage.wechat.edit', ['wechat' => $wechat]);
+    }
+
+    /**
+     * save wechat update data
+     * @param  WechatRequest $request [description]
+     * @param  Wechat        $wechat  [description]
+     * @return [type]                 [description]
+     */
+    public function update(WechatRequest $request, Wechat $wechat){
+        $this->authorize('checkUser', $wechat);
+
+        $wechat->wechat_name = $request->wechat_name;
+        $wechat->appid = $request->appid;
+        $wechat->appsecret = $request->appsecret;
+
+        $wechat->save();
+        return redirect()->back()->with('success', '公众号信息更新成功');
+    }
 }

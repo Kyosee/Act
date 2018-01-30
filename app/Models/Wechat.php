@@ -3,14 +3,22 @@
 namespace App\Models;
 use EasyWeChat\Factory;
 use Illuminate\Http\Request;
-
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Wechat extends Model{
+    use SoftDeletes;
+
+    /**
+     * 需要被转换成日期的属性。
+     *
+     * @var array
+     */
+    protected $dates = ['deleted_at'];
+
     protected $table = 'wechats';
 
     protected $guarded = ['uid'];
-
 
     /**
      * create easywechat config from database

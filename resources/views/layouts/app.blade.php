@@ -8,6 +8,40 @@
     <title>@yield('title', '主页') - {{ config('app.name', 'Laravel') }}</title>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('libs/layui/layui.js') }}"></script>
+    <script type="text/javascript">
+        $(function(){
+            layui.use(['layer', 'form'], function(){
+    			var layer = layui.layer
+    			,form = layui.form;
+    		});
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+        })
+        function delModel(url){
+            layer.confirm('您确定要进行删除吗？删除后将不可恢复', {
+                btn: ['确定','取消'] //按钮
+            }, function(){
+                $.ajax({
+                    type: 'post',
+                    url: url,
+                    data: {
+                        '_method': 'DELETE'
+                    },
+                    success: function(data){
+                        if(data){
+                            // location.reload();
+                        }else{
+                            layer.msg('删除失败请稍后重试');
+                        }
+                    }
+                });
+            });
+        }
+    </script>
     @yield('head')
 </head>
 <body>

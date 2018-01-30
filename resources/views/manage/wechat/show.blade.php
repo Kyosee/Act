@@ -11,13 +11,13 @@
                     </div>
                     <div class="panel-body wechat-btn-list">
                         <div class="col-md-4 text-center">
-                            <a href="{{ route('wechat.project.index', $wechat) }}" class="bg-info"><h3>管理应用</h3></a>
+                            <a href="{{ route('wechat.project.index', $wechat) }}" class="bg-success"><h3>管理应用</h3></a>
                         </div>
                         <div class="col-md-4 text-center">
-                            <a href="#" class="bg-info"><h3>数据统计</h3></a>
+                            <a href="#" class="bg-success"><h3>数据统计</h3></a>
                         </div>
                         <div class="col-md-4 text-center">
-                            <a href="#" class="bg-info"><h3>设置</h3></a>
+                            <a href="{{ route('wechat.edit', $wechat) }}" class="bg-success"><h3>设置</h3></a>
                         </div>
                     </div>
                 </div>

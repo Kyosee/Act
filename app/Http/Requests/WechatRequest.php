@@ -25,8 +25,8 @@ class WechatRequest extends FormRequest
     {
         return [
             'wechat_name' => 'required',
-            'appid' => 'required|unique:wechats',
-            'appsecret' => 'required|unique:wechats',
+            'appid' => 'required',
+            'appsecret' => 'required',
         ];
     }
 }

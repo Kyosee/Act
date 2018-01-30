@@ -17,7 +17,7 @@
                             <thead>
                                 <tr>
                                     <th class="col-md-4">公众号名称</th>
-                                    <th class="col-md-4">Token</th>
+                                    <th class="col-md-4">添加时间</th>
                                     <th class="col-md-4">操作</th>
                                 </tr>
                             </thead>
@@ -25,7 +25,7 @@
                                 @forelse($wechats as $wechat)
                                     <tr>
                                         <td>{{ $wechat['wechat_name'] }}</td>
-                                        <td>{{ $wechat['token'] }}</td>
+                                        <td>{{ $wechat['created_at'] }}</td>
                                         <td>
                                             <a href="{{ route('wechat.show', $wechat) }}" class="btn btn-sm btn-success">管理公众号</a>
                                             <a href="" class="btn btn-sm btn-danger">删除该公众号</a>

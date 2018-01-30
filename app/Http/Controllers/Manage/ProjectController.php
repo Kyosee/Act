@@ -95,6 +95,14 @@ class ProjectController extends Controller {
         ]);
     }
 
+    /**
+     * update project
+     * @param  ProjectRequest     $request  [description]
+     * @param  Wechat             $wechat   [description]
+     * @param  Project            $project  [description]
+     * @param  ImageUploadHandler $uploader [description]
+     * @return [type]                       [description]
+     */
     public function update(ProjectRequest $request, Wechat $wechat, Project $project, ImageUploadHandler $uploader){
         $this->authorize('checkUser', $wechat);
         $this->authorize('checkProject', $project);
@@ -117,5 +125,22 @@ class ProjectController extends Controller {
 
         $project->save();
         return redirect()->back()->with('success', '应用信息更新成功！');
+    }
+
+    /**
+     * soft delete project
+     * @param  Wechat  $wechat  [description]
+     * @param  Project $project [description]
+     * @return [type]           [description]
+     */
+    public function destroy(Wechat $wechat, Project $project){
+        $this->authorize('checkUser', $wechat);
+        $this->authorize('checkProject', $project);
+
+        if($project->softDeletes()){
+            return true;
+        }else{
+            return false;
+        }
     }
 }

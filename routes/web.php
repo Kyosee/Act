@@ -11,7 +11,7 @@ use Illuminate\Routing\Router;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', 'Manage\HomeController@index')->name('/')->middleware('auth');
+Route::get('/', 'Manage\WechatController@index')->name('/')->middleware('auth');
 
 
 // github webhooks
@@ -56,7 +56,7 @@ Route::group(['prefix' => 'passport'], function(Router $router){
 
 // user manage group
 Route::group(['prefix' => 'manage', 'namespace' => 'Manage', 'middleware' => 'auth'], function (Router $router){
-    $router->get('/', 'HomeController@index')->name('/');
+    $router->get('/', 'WechatController@index')->name('/');
 
     $router->post('/uploader', 'HomeController@uploader')->name('manage.uploader');
 
@@ -65,4 +65,6 @@ Route::group(['prefix' => 'manage', 'namespace' => 'Manage', 'middleware' => 'au
     $router->resource('wechat.project', 'ProjectController');
 
     $router->resource('wechat.project.prize', 'PrizeController');
+
+    $router->get('/statistics/project/{project}', 'StatisticsController@project')->name('statistics.project');
 });
