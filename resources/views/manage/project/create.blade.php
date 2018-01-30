@@ -1,5 +1,10 @@
 @extends('layouts.app')
 @section('title', '创建应用 - 应用管理 - '.$wechat->wechat_name)
+@section('head')
+    <link rel="stylesheet" href="/libs/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css">
+    <script src="/libs/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="/libs/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+@endsection
 @section('content')
     <div class="container">
         <div class="row">
@@ -44,13 +49,13 @@
                             <div class="form-group col-md-6">
                                 <label for="start_time" class="col-sm-4 control-label">应用开始时间</label>
                                 <div class="col-sm-8">
-                                    <input type="datetime-local" class="form-control" name="start_time" id="start_time" value="{{ old('start_time') }}" placeholder="请选择应用开始时间">
+                                    <input type="text" class="form-control datetimepicker" name="start_time" id="start_time" value="{{ old('start_time') }}" placeholder="请选择应用开始时间">
                                 </div>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="end_time" class="col-sm-4 control-label">应用结束时间</label>
                                 <div class="col-sm-8">
-                                    <input type="datetime-local" class="form-control" name="end_time" id="end_time" value="{{ old('end_time') }}" placeholder="请选择应用结束时间">
+                                    <input type="text" class="form-control datetimepicker" name="end_time" id="end_time" value="{{ old('end_time') }}" placeholder="请选择应用结束时间">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -83,4 +88,9 @@
             </div>
         </div>
     </div>
+    <script type="text/javascript">
+        $('.datetimepicker').datetimepicker({
+            language: 'zh-CN'
+        });
+    </script>
 @endsection
