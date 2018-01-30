@@ -55,13 +55,13 @@
                             <div class="form-group col-md-6">
                                 <label for="start_time" class="col-sm-4 control-label">应用开始时间</label>
                                 <div class="col-sm-8">
-                                    <input type="datetime-local" class="form-control" name="start_time" id="start_time" value="{{ old('start_time', $project->start_time) }}" placeholder="请选择应用开始时间">
+                                    <input type="datetime-local" class="form-control" name="start_time" id="start_time" value="{{ old('start_time', date('Y-m-d H:i', $project->start_time)) }}" placeholder="请选择应用开始时间">
                                 </div>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="end_time" class="col-sm-4 control-label">应用结束时间</label>
                                 <div class="col-sm-8">
-                                    <input type="datetime-local" class="form-control" name="end_time" id="end_time" value="{{ old('end_time', $project->end_time) }}" placeholder="请选择应用结束时间">
+                                    <input type="datetime-local" class="form-control" name="end_time" id="end_time" value="{{ old('end_time', date('Y-m-d H:i', $project->end_time)) }}" placeholder="请选择应用结束时间">
                                 </div>
                             </div>
                             <div class="form-group">
