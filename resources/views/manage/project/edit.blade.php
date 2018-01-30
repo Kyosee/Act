@@ -40,10 +40,16 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="game_count" class="col-sm-2 control-label">用户可参与次数</label>
-                                <div class="col-sm-10">
-                                    <input type="number" class="form-control" name="game_count" id="game_count" value="{{ old('game_count', $project->game_count) }}" placeholder="请输入用户可参与次数">
+                            <div class="form-group col-md-6">
+                                <label for="game_count" class="col-sm-4 control-label">用户可参与次数</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" name="game_count" id="game_count" value="{{ old('game_count', $project->game_count) }}" placeholder="请输入用户可参与次数">
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="exchange_pass" class="col-sm-4 control-label">兑换密码</label>
+                                <div class="col-sm-8">
+                                    <input type="number" class="form-control" name="exchange_pass" id="exchange_pass" value="{{ old('exchange_pass', $project->exchange_pass) }}" placeholder="请输入兑换密码">
                                 </div>
                             </div>
                             <div class="form-group col-md-6">

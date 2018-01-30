@@ -60,6 +60,7 @@ class ProjectController extends Controller {
         $project->wechat_id = $this->wechat->id;
         $project->uid = auth()->user()->id;
         $project->game_count = $request->game_count;
+        $project->exchange_pass = $request->exchange_pass;
         $project->share_title = $request->share_title;
         $project->share_desc = $request->share_desc;
         $project->start_time = $request->start_time;
@@ -100,6 +101,7 @@ class ProjectController extends Controller {
 
         $project->project_name = $request->project_name;
         $project->game_count = $request->game_count;
+        $project->exchange_pass = $request->exchange_pass;
         $project->share_title = $request->share_title;
         $project->share_desc = $request->share_desc;
         $project->start_time = $request->start_time;

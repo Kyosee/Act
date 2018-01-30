@@ -35,6 +35,12 @@
                                     <input type="number" class="form-control" name="game_count" id="game_count" value="{{ old('game_count') }}" placeholder="请输入用户可参与次数">
                                 </div>
                             </div>
+                            <div class="form-group">
+                                <label for="exchange_pass" class="col-sm-2 control-label">兑换密码</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="exchange_pass" id="exchange_pass" value="{{ old('exchange_pass') }}" placeholder="请输入兑换密码">
+                                </div>
+                            </div>
                             <div class="form-group col-md-6">
                                 <label for="start_time" class="col-sm-4 control-label">应用开始时间</label>
                                 <div class="col-sm-8">

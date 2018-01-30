@@ -127,7 +127,7 @@ class FanyifanController extends ProjectController{
                 if(!ProjectUserDraw::getLog($condition)){
                     ProjectUserDraw::createLog($condition);
                 }
-            
+
             	$return['exchange'] = false;
             	$return['is_lucky'] = false;
             	return $return;
@@ -164,10 +164,10 @@ class FanyifanController extends ProjectController{
 	                    'exchange' => false
 	                ]);
 	            }
-	            
+
             	$return['id'] = $chance['id'];
             }
-         
+
 
             $return['model'] = $chance['prize_desc'];
             $return['exchange'] = isset($user_prize->exchange) ? $user_prize->exchange : false;
@@ -194,7 +194,7 @@ class FanyifanController extends ProjectController{
      */
     public function exchange(Request $request){
         $condition = ['uid' => session('wechat_user')['id'], 'project_id' => $request->route('project')->id, 'exchange' => false];
-        if($request->pass == '201866'){
+        if($request->pass == $request->route('project')->exchange_pass){
             $user_prize = ProjectUserPrize::where($condition)->first();
 
             $user_prize->exchange = true;
