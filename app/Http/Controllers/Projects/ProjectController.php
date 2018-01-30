@@ -13,7 +13,9 @@ class ProjectController extends Controller{
      * 自动加载
      */
     public function autoLoad(Project $project, Request $request){
-
+        if(time() > $project->end_time){
+            return redirect()->route('app', [$project, 'end']);
+        }
         $controller_name = $project->template->controller_name;
         if(!$controller_name || $controller_name === 'ProjectController'){
             return $this->pageCheck($this, $request);
@@ -32,7 +34,7 @@ class ProjectController extends Controller{
     public function pageCheck($controller, Request $request){
         $project = $request->project;
         $page = $request->page;
-        
+
         view()->share('jssdk', Wechat::loadWechat(Project::where('id', $project->id)->pluck('wechat_id')[0]));
 
         if( method_exists($controller, $page) ){
