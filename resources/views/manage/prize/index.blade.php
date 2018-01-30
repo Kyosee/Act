@@ -33,7 +33,7 @@
                                         <td>{{ $prize['prize_num'] }}</td>
                                         <td>
                                             <a href="{{ route('wechat.project.prize.edit', [$wechat, $project, $prize]) }}" class="btn btn-sm btn-success">修改奖品</a>
-                                            <a href="" class="btn btn-sm btn-danger">删除奖品</a>
+                                            <a href="javascript:delModel('{{ route('wechat.project.prize.destroy', [$wechat, $project, $prize]) }}')" class="btn btn-sm btn-danger">删除奖品</a>
                                         </td>
                                     </tr>
                                 @empty

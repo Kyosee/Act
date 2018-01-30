@@ -14,6 +14,6 @@ use App\Http\Controllers\Controller;
     class StatisticsController extends Controller{
 
     public function project(Project $project){
-        return view('manage.statistics.project');
+        return view('manage.statistics.project', ['project' => $project]);
     }
 }

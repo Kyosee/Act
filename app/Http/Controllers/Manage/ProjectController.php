@@ -137,10 +137,6 @@ class ProjectController extends Controller {
         $this->authorize('checkUser', $wechat);
         $this->authorize('checkProject', $project);
 
-        if($project->softDeletes()){
-            return true;
-        }else{
-            return false;
-        }
+        $project->delete();
     }
 }

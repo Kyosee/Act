@@ -32,11 +32,7 @@
                         '_method': 'DELETE'
                     },
                     success: function(data){
-                        if(data){
-                            // location.reload();
-                        }else{
-                            layer.msg('删除失败请稍后重试');
-                        }
+                        location.reload();
                     }
                 });
             });

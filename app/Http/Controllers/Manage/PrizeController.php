@@ -147,4 +147,14 @@ class PrizeController extends Controller {
             abort(403, 'This action is unauthorized.');
         }
     }
+
+    /**
+     * soft delete prize
+     * @param  Wechat  $wechat  [description]
+     * @param  Project $project [description]
+     * @return [type]           [description]
+     */
+    public function destroy(Wechat $wechat, Project $project, Prize $prize){
+        $prize->delete();
+    }
 }

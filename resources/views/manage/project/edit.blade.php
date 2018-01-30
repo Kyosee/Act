@@ -11,7 +11,7 @@
             <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        {{ $wechat->wechat_name }} - 修改应用
+                        <a href="{{ route('wechat.show', $wechat) }}">{{ $wechat->wechat_name }}</a> - 修改应用
                         <div class="pull-right">
                             <a href="{{ route('wechat.project.index', [$wechat]) }}" class="btn btn-info">返回应用列表</a>
                         </div>

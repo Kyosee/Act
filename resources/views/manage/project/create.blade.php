@@ -11,7 +11,7 @@
             <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        {{ $wechat->wechat_name }} - 创建应用
+                        <a href="{{ route('wechat.show', $wechat) }}">{{ $wechat->wechat_name }}</a> - 创建应用
                     </div>
                     <div class="panel-body">
                         @include('common.error')
