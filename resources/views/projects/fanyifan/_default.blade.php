@@ -36,7 +36,7 @@
         } else {
             document.write('<meta name="viewport" content="width=640,height=1030, user-scalable=no, target-densitydpi=device-dpi">');
         }
-        document.addEventListener('touchmove', function(e){e.preventDefault()}, false);
+        document.addEventListener('touchmove', function(e){e.preventDefault()}, true);
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
