@@ -61,7 +61,7 @@
             wx.onMenuShareAppMessage({
                 title: "<?=$project->share_title?>", // 分享标题
                 desc: "<?=$project->share_desc?>", // 分享描述
-                link: "<?=request()->url()?>", // 分享链接
+                link: "<?=route('app', $project->id)?>", // 分享链接
                 imgUrl: "<?=$project->share_img?>", // 分享图标
                 success: function () {
                 },
