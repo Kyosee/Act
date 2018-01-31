@@ -169,24 +169,6 @@
     }
 }
 </style>
-<script>
-var la = {
-    changeClass: function (target,id) {
-        var className = $(target).attr('class');
-        var ids = document.getElementById(id);
-        (className == 'off')
-        ? $(target).removeClass('off').addClass('on')
-        : $(target).removeClass('on').addClass('off');
-        (className == 'off')
-        ? ids.play()
-        : ids.pause();
-    },
-    play:function(){
-        document.getElementById('media').play();
-    }
-}
-la.play();
-</script>
 @endsection
 @section('content')
     <div class="box">
@@ -204,4 +186,22 @@ la.play();
             <img src="/images/projects/{{ $project->template->template_folder }}/index-bt.png" class="s-xguide-inb">
         </a>
     </div>
+    <script>
+    var la = {
+        changeClass: function (target,id) {
+            var className = $(target).attr('class');
+            var ids = document.getElementById(id);
+            (className == 'off')
+            ? $(target).removeClass('off').addClass('on')
+            : $(target).removeClass('on').addClass('off');
+            (className == 'off')
+            ? ids.play()
+            : ids.pause();
+        },
+        play:function(){
+            document.getElementById('media').play();
+        }
+    }
+    la.play();
+    </script>
 @endsection
