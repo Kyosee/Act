@@ -131,59 +131,59 @@
     }
 }
 *{ margin:0; padding:0; list-style:none;}
-
+#la{ position: absolute;}
 #la #audio-btn{width: 44px;height: 44px;}
 #la .off{background: url('/images/projects/pub/music_off.png') no-repeat 0 0;}
 #la .on{background: url('/images/projects/pub/music_on.png') no-repeat 0 0;-webkit-animation: rotating 1.2s linear infinite;animation: rotating 1.2s linear infinite;}
 
 @-webkit-keyframes rotating {
-	from{
-		-webkit-transform: rotate(0deg);
-		-moz-transform: rotate(0deg);
-		-ms-transform: rotate(0deg);
-		-o-transform: rotate(0deg);
-    	transform: rotate(0deg);
-	}
-	to{
-		-webkit-transform: rotate(360deg);
-		-moz-transform: rotate(360deg);
-		-ms-transform: rotate(360deg);
-		-o-transform: rotate(360deg);
-		transform: rotate(360deg);
-	}
-}
-@keyframes rotating {
     from{
         -webkit-transform: rotate(0deg);
-		-moz-transform: rotate(0deg);
-		-ms-transform: rotate(0deg);
-		-o-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
         transform: rotate(0deg);
     }
     to{
         -webkit-transform: rotate(360deg);
-		-moz-transform: rotate(360deg);
-		-ms-transform: rotate(360deg);
-		-o-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@keyframes rotating {
+    from{
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to{
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
         transform: rotate(360deg);
     }
 }
 </style>
 <script>
 var la = {
-	changeClass: function (target,id) {
-       	var className = $(target).attr('class');
-       	var ids = document.getElementById(id);
-       	(className == 'off')
-           	? $(target).removeClass('off').addClass('on')
-           	: $(target).removeClass('on').addClass('off');
-       	(className == 'off')
-           	? ids.play()
-           	: ids.pause();
-   	},
-	play:function(){
-		document.getElementById('media').play();
-	}
+    changeClass: function (target,id) {
+        var className = $(target).attr('class');
+        var ids = document.getElementById(id);
+        (className == 'off')
+        ? $(target).removeClass('off').addClass('on')
+        : $(target).removeClass('on').addClass('off');
+        (className == 'off')
+        ? ids.play()
+        : ids.pause();
+    },
+    play:function(){
+        document.getElementById('media').play();
+    }
 }
 la.play();
 </script>
@@ -191,9 +191,9 @@ la.play();
 @section('content')
     <div class="box">
         <div id="la">
-        <div id="audio-btn" class="on" onclick="la.changeClass(this,'media')">
-        	<audio loop="loop" src="/js/projects/{{ $project->template->template_folder }}/xinnian.mp3" id="media" preload="preload"></audio>
-        </div>
+            <div id="audio-btn" class="off" onclick="la.changeClass(this,'media')">
+                <audio loop="loop" src="/js/projects/{{ $project->template->template_folder }}/xinnian.mp3" id="media" preload="preload"></audio>
+            </div>
         </div>
         <img src="/images/projects/{{ $project->template->template_folder }}/index-bg.png">
         <img src="/images/projects/{{ $project->template->template_folder }}/left-top.png" class="s-xguide-down">
