@@ -133,8 +133,8 @@
 *{ margin:0; padding:0; list-style:none;}
 
 #la #audio-btn{width: 44px;height: 44px;}
-#la .off{background: url('/images/pub/music_off.png') no-repeat 0 0;}
-#la .on{background: url('/images/pub/music_on.png') no-repeat 0 0;-webkit-animation: rotating 1.2s linear infinite;animation: rotating 1.2s linear infinite;}
+#la .off{background: url('/images/projects/pub/music_off.png') no-repeat 0 0;}
+#la .on{background: url('/images/projects/pub/music_on.png') no-repeat 0 0;-webkit-animation: rotating 1.2s linear infinite;animation: rotating 1.2s linear infinite;}
 
 @-webkit-keyframes rotating {
 	from{
