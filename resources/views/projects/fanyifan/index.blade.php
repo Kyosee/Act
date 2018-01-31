@@ -173,7 +173,7 @@
 @section('content')
     <div class="box">
         <div id="la">
-            <div id="audio-btn" class="off" onclick="la.changeClass(this,'media')">
+            <div id="audio-btn" class="on" onclick="la.changeClass(this,'media')">
                 <audio loop="loop" src="/js/projects/{{ $project->template->template_folder }}/xinnian.mp3" id="media" preload="preload"></audio>
             </div>
         </div>
