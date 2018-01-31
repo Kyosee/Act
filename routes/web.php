@@ -65,6 +65,4 @@ Route::group(['prefix' => 'manage', 'namespace' => 'Manage', 'middleware' => 'au
     $router->resource('wechat.project', 'ProjectController');
 
     $router->resource('wechat.project.prize', 'PrizeController');
-
-    $router->get('/statistics/project/{project}', 'StatisticsController@project')->name('statistics.project');
 });

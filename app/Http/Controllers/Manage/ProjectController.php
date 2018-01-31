@@ -29,7 +29,7 @@ class ProjectController extends Controller {
     }
 
     public function show(){
-        return redirect()->route('wechat.project.index', $this->wechat);
+        return redirect()->route('wechat.project.show', $this->wechat);
     }
 
     /**

@@ -33,7 +33,7 @@
                                         <td>
                                             <a href="{{ route('wechat.project.edit', [$wechat, $project]) }}" class="btn btn-sm btn-success">管理应用</a>
                                             <a href="{{ route('wechat.project.prize.index', [$wechat, $project]) }}" class="btn btn-sm btn-warning">管理奖品</a>
-                                            <a href="{{ route('statistics.project', $project) }}" class="btn btn-sm btn-info">应用数据</a>
+                                            <a href="{{ route('wechat.project.show', [$wechat, $project]) }}" class="btn btn-sm btn-info">应用数据</a>
                                             <a href="javascript:delModel('{{ route('wechat.project.destroy', [$wechat, $project]) }}')" class="btn btn-sm btn-danger">删除应用</a>
                                         </td>
                                     </tr>
