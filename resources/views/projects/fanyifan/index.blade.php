@@ -199,7 +199,7 @@
             : ids.pause();
         },
         play:function(){
-            document.getElementById('media').play();
+            $("#media").play();
         }
     }
     la.play();
