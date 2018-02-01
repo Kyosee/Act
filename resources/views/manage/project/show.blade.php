@@ -7,7 +7,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <a href="{{ route('wechat.project.edit', [$wechat, $project]) }}">{{ $project->project_name }}</a> - 应用数据
-                        <a class="btn btn-success pull-right" href="{{ route('wechat.project.index', [$wechat]) }}">返回应用列表</a>
+                        <a class="btn btn-info pull-right" href="{{ route('wechat.project.index', [$wechat]) }}">返回应用列表</a>
                     </div>
                     <div class="panel-body wechat-btn-list">
                         <div class="col-md-4 text-center">

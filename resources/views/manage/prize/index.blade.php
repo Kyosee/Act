@@ -8,8 +8,8 @@
                     <div class="panel-heading">
                         <a href="{{ route('wechat.project.edit', [$wechat, $project]) }}">{{ $project->project_name }}</a> - 奖品管理
                         <div class="pull-right">
-                            <a href="{{ route('wechat.project.edit', [$wechat, $project]) }}" class="btn btn-info">返回应用</a>
                             <a href="{{ route('wechat.project.prize.create', [$wechat, $project]) }}" class="btn btn-success">添加新奖品</a>
+                            <a href="{{ route('wechat.project.edit', [$wechat, $project]) }}" class="btn btn-info">返回应用</a>
                         </div>
                     </div>
                     <div class="panel-body">
