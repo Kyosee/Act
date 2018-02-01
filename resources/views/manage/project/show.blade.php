@@ -11,13 +11,13 @@
                     </div>
                     <div class="panel-body wechat-btn-list">
                         <div class="col-md-4 text-center">
-                            <a href="#" class="bg-info"><h3>参与人数：{{ count($project->part_count) }}人</h3></a>
+                            <a href="#" class="bg-info"><h3>参与人数：{{ count($project->part) }}人</h3></a>
                         </div>
                         <div class="col-md-4 text-center">
-                            <a href="#" class="bg-info"><h3>游戏次数：{{ count($project->draw_count )}}人</h3></a>
+                            <a href="#" class="bg-info"><h3>游戏次数：{{ count($project->draw) }}人</h3></a>
                         </div>
                         <div class="col-md-4 text-center">
-                            <a href="#" class="bg-info"><h3>分享次数：{{ count($project->share_count) }}人</h3></a>
+                            <a href="#" class="bg-info"><h3>分享次数：{{ count($project->share) }}人</h3></a>
                         </div>
                     </div>
                 </div>

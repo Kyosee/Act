@@ -24,18 +24,18 @@ class Project extends Model{
     }
 
     public function prize(){
-        return $this->hasManay('App\Models\Prize', 'project_id');
+        return $this->hasMany('App\Models\Prize', 'project_id');
     }
 
     public function share(){
-        return $this->hasManay('App\Models\ProjectShareLog');
+        return $this->hasMany('App\Models\ProjectShareLog', 'project_id');
     }
 
     public function part(){
-        return $this->hasManay('App\Models\ProjectUserPartLog');
+        return $this->hasMany('App\Models\ProjectUserPartLog', 'project_id');
     }
 
     public function draw(){
-        return $this->hasManay('App\Models\ProjectUserDraw');
+        return $this->hasMany('App\Models\ProjectUserDraw', 'project_id');
     }
 }
