@@ -65,4 +65,6 @@ Route::group(['prefix' => 'manage', 'namespace' => 'Manage', 'middleware' => 'au
     $router->resource('wechat.project', 'ProjectController');
 
     $router->resource('wechat.project.prize', 'PrizeController');
+
+    $router->any('/user/edit', 'UserController@edit')->name('manage.user.edit');
 });

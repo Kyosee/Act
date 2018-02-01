@@ -14,7 +14,7 @@ class AddStatsCodeToProjectsTable extends Migration
     public function up()
     {
         Schema::table('projects', function (Blueprint $table) {
-            $table->string('stats_code')->nullable();
+            $table->text('stats_code')->nullable();
         });
     }
 
