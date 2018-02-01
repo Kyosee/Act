@@ -4,6 +4,7 @@
 /public/storage
 /public/uploads/*
 /storage/*.key
+/storage/wechat.log
 /vendor
 /.idea
 /.vagrant
