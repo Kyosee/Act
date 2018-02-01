@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Projects;
 use App\Models\Prize;
 use App\Models\ProjectUserDraw;
 use Illuminate\Http\Request;
-use App\Models\ProjectUserPartLogs;
+use App\Models\ProjectUserPartLog;
 use App\Models\ProjectUserPrize;
 use App\Http\Controllers\Controller;
 
@@ -58,7 +58,7 @@ class FanyifanController extends ProjectController{
         }
 
         // 按照用户第一次抽奖的栏位顺序重新排序
-        $userPartLogs = new ProjectUserPartLogs();
+        $userPartLogs = new ProjectUserPartLog();
         if($log = $userPartLogs->makeLog([
             'uid' => session('wechat_user')['id'],
             'project_id' => $project_id,
