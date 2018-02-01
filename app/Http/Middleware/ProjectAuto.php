@@ -22,7 +22,6 @@ class ProjectAuto{
         }
 
         // 微信登录检测
-        dd(session('wechat_user'));
         if(!session('wechat_user')){
             return Wechat::oauthCheck($project->wechat_id, $request->url());
         }
