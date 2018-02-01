@@ -28,8 +28,8 @@ class ProjectUser extends Model{
             $this->country = $user['original']['country'];
             $this->save();
 
-            $currentUser = $this->where('openid', $user['id'])->first();
         }
+        $currentUser = $this->where('openid', $user['id'])->first();
 
         session(['wechat_user' => $currentUser->toArray()]);
     }
