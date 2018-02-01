@@ -109,7 +109,7 @@
                 imgUrl: "<?=$project->share_img?>", // 分享图标
                 success: function () {
                     $.ajax({
-                		url: {{ route('app', [$project->id, 'share']) }},
+                		url: "{{ route('app', [$project->id, 'share']) }}",
                 	})
                 },
                 cancel: function () { }
@@ -121,7 +121,7 @@
                 imgUrl: "<?=$project->share_img?>", // 分享图标
                 success: function () {
                     $.ajax({
-                		url: {{ route('app', [$project->id, 'share']) }},
+                		url: "{{ route('app', [$project->id, 'share']) }}",
                 	})
                 },
                 cancel: function () { }
