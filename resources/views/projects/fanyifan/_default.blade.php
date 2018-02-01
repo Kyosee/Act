@@ -78,6 +78,6 @@
             });
         });
     </script>
-    {{ htmlspecialchars_decode($project->stats_code) }}
+    {!! $project->stats_code !!}
 </body>
 </html>
