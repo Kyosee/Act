@@ -53,7 +53,7 @@ class ProjectController extends Controller{
      * @return [type] [description]
      */
     public function share(Request $request){
-        $projectShareLog = new App\Models\ProjectShareLog();
+        $projectShareLog = new \App\Models\ProjectShareLog();
         $projectShareLog->createShareLog($request->project->id);
     }
 }
