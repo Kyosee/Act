@@ -92,6 +92,12 @@
                                     <textarea name="share_desc" class="form-control" rows="8" cols="80">{{ old('share_desc', $project->share_desc) }}</textarea>
                                 </div>
                             </div>
+                            <div class="form-group">
+                                <label for="stats_code" class="col-sm-2 control-label">应用底部统计代码</label>
+                                <div class="col-sm-10">
+                                    <textarea name="stats_code" class="form-control" rows="8" cols="80">{{ old('stats_code', $project->stats_code) }}</textarea>
+                                </div>
+                            </div>
                             <input name="_method" type="hidden" value="PATCH">
                             {{ csrf_field() }}
                             <div class="form-group">

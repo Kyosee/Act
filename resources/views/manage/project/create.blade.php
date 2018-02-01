@@ -76,6 +76,12 @@
                                     <textarea name="share_desc" class="form-control" rows="8" cols="80"></textarea>
                                 </div>
                             </div>
+                            <div class="form-group">
+                                <label for="stats_code" class="col-sm-2 control-label">应用底部统计代码</label>
+                                <div class="col-sm-10">
+                                    <textarea name="stats_code" class="form-control" rows="8" cols="80"></textarea>
+                                </div>
+                            </div>
                             {{ csrf_field() }}
                             <div class="form-group">
                                 <div class="col-sm-offset-5 col-sm-7">
