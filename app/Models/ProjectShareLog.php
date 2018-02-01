@@ -14,7 +14,7 @@ class ProjectShareLog extends Model {
     public function createShareLog($project_id){
         $this->uid = (int)session('wechat_user')['id'];
         $this->project_id = (int)$project_id;
-        $this->wechat_id = (int)Project::where('id', $project_id)->select('wechat_id');
+        $this->wechat_id = (int)Project::select('wechat_id')->find($project_id)->wechat_id;
         $this->save();
     }
 }
