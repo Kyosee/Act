@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', '公众号管理')
+@section('title', '修改应用 - 应用管理 - '.$wechat->wechat_name)
 @section('content')
     <div class="container">
         <div class="row">
