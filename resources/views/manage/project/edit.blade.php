@@ -81,16 +81,10 @@
                                     <input type="text" class="form-control" name="timeline_share_title" id="timeline_share_title" value="{{ old('timeline_share_title', $project->timeline_share_title) }}" placeholder="请填写应用分享标题">
                                 </div>
                             </div>
-                            <div class="form-group col-md-6">
-                                <label for="share_desc" class="col-sm-4 control-label">好友分享描述</label>
-                                <div class="col-sm-8">
+                            <div class="form-group">
+                                <label for="share_desc" class="col-sm-2 control-label">应用分享描述</label>
+                                <div class="col-sm-10">
                                     <textarea name="share_desc" class="form-control" rows="8" cols="80">{{ old('share_desc', $project->share_desc) }}</textarea>
-                                </div>
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="timeline_share_desc" class="col-sm-4 control-label">朋友圈分享描述</label>
-                                <div class="col-sm-8">
-                                    <textarea name="timeline_share_desc" class="form-control" rows="8" cols="80">{{ old('timeline_share_desc', $project->timeline_share_desc) }}</textarea>
                                 </div>
                             </div>
                             <div class="form-group">

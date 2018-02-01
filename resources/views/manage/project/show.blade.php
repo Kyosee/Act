@@ -6,18 +6,18 @@
             <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        当前公众号：{{ $wechat->wechat_name }}
-                        <a class="btn btn-success pull-right" href="{{ route('wechat.index') }}">返回公众号列表</a>
+                        <a href="{{ route('wechat.project.edit', [$wechat, $project]) }}">{{ $project->project_name }}</a> - 应用数据
+                        <a class="btn btn-success pull-right" href="{{ route('wechat.project.index', [$wechat]) }}">返回应用列表</a>
                     </div>
                     <div class="panel-body wechat-btn-list">
                         <div class="col-md-4 text-center">
-                            <a href="#" class="bg-info"><h3>管理应用</h3></a>
+                            <a href="#" class="bg-info"><h3>参与人数：{{ count($project->part_count) }}人</h3></a>
                         </div>
                         <div class="col-md-4 text-center">
-                            <a href="#" class="bg-info"><h3>数据统计</h3></a>
+                            <a href="#" class="bg-info"><h3>游戏次数：{{ count($project->draw_count )}}人</h3></a>
                         </div>
                         <div class="col-md-4 text-center">
-                            <a href="#" class="bg-info"><h3>设置</h3></a>
+                            <a href="#" class="bg-info"><h3>分享次数：{{ count($project->share_count) }}人</h3></a>
                         </div>
                     </div>
                 </div>

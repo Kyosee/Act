@@ -10,13 +10,10 @@
                         <a class="btn btn-success pull-right" href="{{ route('wechat.index') }}">返回公众号列表</a>
                     </div>
                     <div class="panel-body wechat-btn-list">
-                        <div class="col-md-4 text-center">
+                        <div class="col-md-6 text-center">
                             <a href="{{ route('wechat.project.index', $wechat) }}" class="bg-success"><h3>管理应用</h3></a>
                         </div>
-                        <div class="col-md-4 text-center">
-                            <a href="#" class="bg-success"><h3>数据统计</h3></a>
-                        </div>
-                        <div class="col-md-4 text-center">
+                        <div class="col-md-6 text-center">
                             <a href="{{ route('wechat.edit', $wechat) }}" class="bg-success"><h3>设置</h3></a>
                         </div>
                     </div>

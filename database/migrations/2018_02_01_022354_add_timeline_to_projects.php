@@ -15,7 +15,6 @@ class AddTimelineToProjects extends Migration
     {
         Schema::table('projects', function (Blueprint $table) {
             $table->string('timeline_share_title')->nullable();
-            $table->string('timeline_share_desc')->nullable();
         });
     }
 
@@ -28,7 +27,6 @@ class AddTimelineToProjects extends Migration
     {
         Schema::table('projects', function (Blueprint $table) {
             $table->dropColumn('timeline_share_title');
-            $table->dropColumn('timeline_share_desc');
         });
     }
 }

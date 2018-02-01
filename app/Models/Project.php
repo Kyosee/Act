@@ -26,4 +26,16 @@ class Project extends Model{
     public function prize(){
         return $this->hasManay('App\Models\Prize', 'project_id');
     }
+
+    public function share(){
+        return $this->hasManay('App\Models\ProjectShareLog');
+    }
+
+    public function part(){
+        return $this->hasManay('App\Models\ProjectUserPartLog');
+    }
+
+    public function draw(){
+        return $this->hasManay('App\Models\ProjectUserDraw');
+    }
 }

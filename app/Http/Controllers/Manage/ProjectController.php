@@ -28,8 +28,8 @@ class ProjectController extends Controller {
         return view('manage.project.index', ['projects' => $projects, 'wechat' => $this->wechat]);
     }
 
-    public function show(){
-        return redirect()->route('wechat.project.show', $this->wechat);
+    public function show(Wechat $wechat, Project $project){
+        return view('manage.project.show', ['project' => $project, 'wechat' => $this->wechat]);
     }
 
     /**
@@ -64,7 +64,6 @@ class ProjectController extends Controller {
         $project->share_title = $request->share_title;
         $project->share_desc = $request->share_desc;
         $project->timeline_share_title = $request->timeline_share_title;
-        $project->timeline_share_desc = $request->timeline_share_desc;
         $project->stats_code = $request->stats_code;
         $project->start_time = $request->start_time;
         $project->end_time = $request->end_time;
@@ -116,7 +115,6 @@ class ProjectController extends Controller {
         $project->share_title = $request->share_title;
         $project->share_desc = $request->share_desc;
         $project->timeline_share_title = $request->timeline_share_title;
-        $project->timeline_share_desc = $request->timeline_share_desc;
         $project->start_time = $request->start_time;
         $project->stats_code = $request->stats_code;
         $project->end_time = $request->end_time;

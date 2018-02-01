@@ -21,7 +21,7 @@ a, a:hover, a:active{
 }
 
 .wechat-btn-list{
-    .col-md-4{
+    & > div{
         padding: 10px;
         a{
             display: block;

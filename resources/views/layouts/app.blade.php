@@ -65,7 +65,6 @@
                         <li><a href="{{ route('wechat.index') }}">公众号管理</a></li>
                     @if ($wechat = isset($wechat) ? $wechat : '')
                         <li><a href="{{ route('wechat.project.index', $wechat) }}">应用管理</a></li>
-                        <li><a href="">数据统计</a></li>
                     @endif
                     </ul>
 
