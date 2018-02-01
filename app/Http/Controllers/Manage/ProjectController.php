@@ -63,6 +63,8 @@ class ProjectController extends Controller {
         $project->exchange_pass = $request->exchange_pass;
         $project->share_title = $request->share_title;
         $project->share_desc = $request->share_desc;
+        $project->timeline_share_title = $request->timeline_share_title;
+        $project->timeline_share_desc = $request->timeline_share_desc;
         $project->stats_code = $request->stats_code;
         $project->start_time = $request->start_time;
         $project->end_time = $request->end_time;
@@ -113,6 +115,8 @@ class ProjectController extends Controller {
         $project->exchange_pass = $request->exchange_pass;
         $project->share_title = $request->share_title;
         $project->share_desc = $request->share_desc;
+        $project->timeline_share_title = $request->timeline_share_title;
+        $project->timeline_share_desc = $request->timeline_share_desc;
         $project->start_time = $request->start_time;
         $project->stats_code = $request->stats_code;
         $project->end_time = $request->end_time;

@@ -130,53 +130,10 @@
         ease-in-out;
     }
 }
-*{ margin:0; padding:0; list-style:none;}
-#la{ position: absolute;}
-#la #audio-btn{width: 44px;height: 44px;}
-#la .off{background: url('/images/projects/pub/music_off.png') no-repeat 0 0;}
-#la .on{background: url('/images/projects/pub/music_on.png') no-repeat 0 0;-webkit-animation: rotating 1.2s linear infinite;animation: rotating 1.2s linear infinite;}
-
-@-webkit-keyframes rotating {
-    from{
-        -webkit-transform: rotate(0deg);
-        -moz-transform: rotate(0deg);
-        -ms-transform: rotate(0deg);
-        -o-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-    to{
-        -webkit-transform: rotate(360deg);
-        -moz-transform: rotate(360deg);
-        -ms-transform: rotate(360deg);
-        -o-transform: rotate(360deg);
-        transform: rotate(360deg);
-    }
-}
-@keyframes rotating {
-    from{
-        -webkit-transform: rotate(0deg);
-        -moz-transform: rotate(0deg);
-        -ms-transform: rotate(0deg);
-        -o-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-    to{
-        -webkit-transform: rotate(360deg);
-        -moz-transform: rotate(360deg);
-        -ms-transform: rotate(360deg);
-        -o-transform: rotate(360deg);
-        transform: rotate(360deg);
-    }
-}
 </style>
 @endsection
 @section('content')
     <div class="box">
-        <div id="la">
-            <div id="audio-btn" class="on" onclick="la.changeClass(this,'media')">
-                <audio loop="loop" src="/js/projects/{{ $project->template->template_folder }}/xinnian.mp3" id="media" preload="preload"></audio>
-            </div>
-        </div>
         <img src="/images/projects/{{ $project->template->template_folder }}/index-bg.png">
         <img src="/images/projects/{{ $project->template->template_folder }}/left-top.png" class="s-xguide-down">
         <img src="/images/projects/{{ $project->template->template_folder }}/rihgt-top.png" class="s-xguide-top">
@@ -186,51 +143,4 @@
             <img src="/images/projects/{{ $project->template->template_folder }}/index-bt.png" class="s-xguide-inb">
         </a>
     </div>
-    <script>
-    var la = {
-        changeClass: function (target,id) {
-            var className = $(target).attr('class');
-            var ids = document.getElementById(id);
-            (className == 'off')
-            ? $(target).removeClass('off').addClass('on')
-            : $(target).removeClass('on').addClass('off');
-            (className == 'off')
-            ? ids.play()
-            : ids.pause();
-        },
-        play:function(){
-            $("#media").play();
-        }
-    }
-    
-	// 音乐播放
-	function autoPlayMusic() {
-	    // 自动播放音乐效果，解决浏览器或者APP自动播放问题
-	    function musicInBrowserHandler() {
-	        musicPlay(true);
-	        document.body.removeEventListener('touchstart', musicInBrowserHandler);
-	    }
-	    document.body.addEventListener('touchstart', musicInBrowserHandler);
-
-	    // 自动播放音乐效果，解决微信自动播放问题
-	    function musicInWeixinHandler() {
-	        musicPlay(true);
-	        document.addEventListener("WeixinJSBridgeReady", function () {
-	            musicPlay(true);
-	        }, false);
-	        document.removeEventListener('DOMContentLoaded', musicInWeixinHandler);
-	    }
-	    document.addEventListener('DOMContentLoaded', musicInWeixinHandler);
-	}
-	function musicPlay(isPlay) {
-	    var audio = document.getElementById('media');
-	    if (isPlay && audio.paused) {
-	        audio.play();
-	    }
-	    if (!isPlay && !audio.paused) {
-	        audio.pause();
-	    }
-	}
-	autoPlayMusic();
-    </script>
 @endsection

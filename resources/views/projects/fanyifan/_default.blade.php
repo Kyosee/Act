@@ -43,10 +43,54 @@
             }
         });
     </script>
+    <style media="screen">
+    *{ margin:0; padding:0; list-style:none;}
+    #la{ position: absolute;}
+    #la #audio-btn{width: 44px;height: 44px;}
+    #la .off{background: url('/images/projects/pub/music_off.png') no-repeat 0 0;}
+    #la .on{background: url('/images/projects/pub/music_on.png') no-repeat 0 0;-webkit-animation: rotating 1.2s linear infinite;animation: rotating 1.2s linear infinite;}
 
+    @-webkit-keyframes rotating {
+        from{
+            -webkit-transform: rotate(0deg);
+            -moz-transform: rotate(0deg);
+            -ms-transform: rotate(0deg);
+            -o-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+        to{
+            -webkit-transform: rotate(360deg);
+            -moz-transform: rotate(360deg);
+            -ms-transform: rotate(360deg);
+            -o-transform: rotate(360deg);
+            transform: rotate(360deg);
+        }
+    }
+    @keyframes rotating {
+        from{
+            -webkit-transform: rotate(0deg);
+            -moz-transform: rotate(0deg);
+            -ms-transform: rotate(0deg);
+            -o-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+        to{
+            -webkit-transform: rotate(360deg);
+            -moz-transform: rotate(360deg);
+            -ms-transform: rotate(360deg);
+            -o-transform: rotate(360deg);
+            transform: rotate(360deg);
+        }
+    }
+    </style>
     @yield('head')
 </head>
 <body>
+    <div id="la">
+        <div id="audio-btn" class="on" onclick="la.changeClass(this,'media')">
+            <audio loop="loop" src="/js/projects/{{ $project->template->template_folder }}/xinnian.mp3" id="media" preload="preload"></audio>
+        </div>
+    </div>
     @yield('content')
     <script type="text/javascript" charset="utf-8">
         wx.config({!! $jssdk->jssdk->buildConfig([
@@ -64,20 +108,73 @@
                 link: "<?=route('app', [$project->id, 'index'])?>", // 分享链接
                 imgUrl: "<?=$project->share_img?>", // 分享图标
                 success: function () {
+                    $.ajax({
+                		url: {{ route('app', [$project->id, 'share']) }},
+                	})
                 },
                 cancel: function () { }
             });
             wx.onMenuShareTimeline({
-                title: "<?=$project->share_title?>", // 分享标题
-                desc: "<?=$project->share_desc?>", // 分享描述
+                title: "<?=$project->timeline_share_title?>", // 分享标题
+                desc: "<?=$project->timeline_share_desc?>", // 分享描述
                 link: "<?=request()->url()?>", // 分享链接
                 imgUrl: "<?=$project->share_img?>", // 分享图标
                 success: function () {
+                    $.ajax({
+                		url: {{ route('app', [$project->id, 'share']) }},
+                	})
                 },
                 cancel: function () { }
             });
         });
     </script>
     {!! $project->stats_code !!}
+    <script>
+    var la = {
+        changeClass: function (target,id) {
+            var className = $(target).attr('class');
+            var ids = document.getElementById(id);
+            (className == 'off')
+            ? $(target).removeClass('off').addClass('on')
+            : $(target).removeClass('on').addClass('off');
+            (className == 'off')
+            ? ids.play()
+            : ids.pause();
+        },
+        play:function(){
+            $("#media").play();
+        }
+    }
+
+    // 音乐播放
+    function autoPlayMusic() {
+        // 自动播放音乐效果，解决浏览器或者APP自动播放问题
+        function musicInBrowserHandler() {
+            musicPlay(true);
+            document.body.removeEventListener('touchstart', musicInBrowserHandler);
+        }
+        document.body.addEventListener('touchstart', musicInBrowserHandler);
+
+        // 自动播放音乐效果，解决微信自动播放问题
+        function musicInWeixinHandler() {
+            musicPlay(true);
+            document.addEventListener("WeixinJSBridgeReady", function () {
+                musicPlay(true);
+            }, false);
+            document.removeEventListener('DOMContentLoaded', musicInWeixinHandler);
+        }
+        document.addEventListener('DOMContentLoaded', musicInWeixinHandler);
+    }
+    function musicPlay(isPlay) {
+        var audio = document.getElementById('media');
+        if (isPlay && audio.paused) {
+            audio.play();
+        }
+        if (!isPlay && !audio.paused) {
+            audio.pause();
+        }
+    }
+    autoPlayMusic();
+    </script>
 </body>
 </html>

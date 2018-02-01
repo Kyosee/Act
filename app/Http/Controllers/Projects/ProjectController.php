@@ -41,8 +41,19 @@ class ProjectController extends Controller{
         if( method_exists($controller, $page) ){
             $cont = new $controller;
             return $cont->$page($request);
+        }else if(method_exists($this, $page)){
+            return $this->$page($request);
         }else{
             return view('projects' .'.'. $project->template->template_folder. '.' .$page, ['project' => $project]);
         }
+    }
+
+    /**
+     * create share log
+     * @return [type] [description]
+     */
+    public function share(Request $request){
+        $projectShareLog = new App\Models\ProjectShareLog();
+        $projectShareLog->createShareLog($request->project->id);
     }
 }
