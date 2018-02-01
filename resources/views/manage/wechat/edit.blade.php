@@ -8,7 +8,7 @@
                     <div class="panel-heading">
                         {{ $wechat->wechat_name }} - 修改公众号
                         <div class="pull-right">
-                            <a href="{{ route('wechat.show', $wechat) }}" class="btn btn-success">返回公众号管理</a>
+                            <a href="{{ route('wechat.show', $wechat) }}" class="btn btn-info">返回公众号管理</a>
                         </div>
                     </div>
                     <div class="panel-body">

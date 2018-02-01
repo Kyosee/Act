@@ -19,7 +19,9 @@
             <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        {{ $project->project_name }} - 修改奖品 - {{ $prize->prize_name }}
+                        <a href="{{ route('wechat.show', $wechat) }}">{{ $wechat->wechat_name }}</a> - 
+                        <a href="{{ route('wechat.project.edit', [$wechat, $project]) }}">{{ $project->project_name }}</a>
+                         - 修改奖品 - {{ $prize->prize_name }}
                         <div class="pull-right">
                             <a href="{{ route('wechat.project.prize.index', [$wechat, $project]) }}" class="btn btn-info">返回奖品列表</a>
                         </div>
