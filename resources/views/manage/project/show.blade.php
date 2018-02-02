@@ -19,6 +19,9 @@
                         <div class="col-md-4 text-center">
                             <a href="#" class="bg-info"><h3>分享次数：{{ count($project->share) }}次</h3></a>
                         </div>
+                        <div class="col-md-4 text-center">
+                            <a href="#" class="bg-info"><h3>中奖人数：{{ count($project->user_prize) }}人</h3></a>
+                        </div>
                     </div>
                 </div>
             </div>

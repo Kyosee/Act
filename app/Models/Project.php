@@ -38,4 +38,8 @@ class Project extends Model{
     public function draw(){
         return $this->hasMany('App\Models\ProjectUserDraw', 'project_id');
     }
+
+    public function user_prize(){
+        return $this->hasMany('App\Models\ProjectUserPrize', 'project_id');
+    }
 }
