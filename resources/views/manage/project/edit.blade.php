@@ -20,7 +20,7 @@
                     </div>
                     <div class="panel-body">
                         <div class="bg-info project-control">
-                            <a class="btn btn-success" href="{{ route('wechat.project.prize.index', [$wechat, $project]) }}">管理该应用的奖品</a>
+                            <a class="btn btn-success" href="{{ route('wechat.project.prize.index', [$wechat, $project]) }}">管理应用奖品</a>
                             <a class="btn btn-info" href="{{ route('wechat.project.show', [$wechat, $project]) }}">应用数据</a>
                             <p>
                                 <br />
