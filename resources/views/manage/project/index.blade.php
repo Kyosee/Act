@@ -9,6 +9,7 @@
                         <a href="{{ route('wechat.show', $wechat) }}">{{ $wechat->wechat_name }}</a> - 应用管理
                         <div class="pull-right">
                             <a href="{{ route('wechat.project.create', $wechat) }}" class="btn btn-success">添加新应用</a>
+                            <a href="{{ route('wechat.show', $wechat) }}" class="btn btn-info">返回{{ $wechat->wechat_name }}</a>
                         </div>
                     </div>
                     <div class="panel-body">
@@ -20,7 +21,7 @@
                                     <th class="col-md-2">使用模板</th>
                                     <th class="col-md-2">应用开始时间</th>
                                     <th class="col-md-2">应用结束时间</th>
-                                    <th class="col-md-4">操作</th>
+                                    <th class="col-md-2">操作</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -31,9 +32,7 @@
                                         <td>{{ $project['start_time'] }}</td>
                                         <td>{{ $project['end_time'] }}</td>
                                         <td>
-                                            <a href="{{ route('wechat.project.edit', [$wechat, $project]) }}" class="btn btn-sm btn-success">管理应用</a>
-                                            <a href="{{ route('wechat.project.prize.index', [$wechat, $project]) }}" class="btn btn-sm btn-warning">管理奖品</a>
-                                            <a href="{{ route('wechat.project.show', [$wechat, $project]) }}" class="btn btn-sm btn-info">应用数据</a>
+                                            <a href="{{ route('wechat.project.show', [$wechat, $project]) }}" class="btn btn-sm btn-success">管理应用</a>
                                             <a href="javascript:delModel('{{ route('wechat.project.destroy', [$wechat, $project]) }}')" class="btn btn-sm btn-danger">删除应用</a>
                                         </td>
                                     </tr>

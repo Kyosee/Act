@@ -7,6 +7,9 @@ use App\Http\Controllers\Controller;
 
 class UserController extends Controller
 {
+    public function index(){
+        return view('manage.user.index');
+    }
 
     public function edit(Request $request){
         // if(route()->isMethod('post')){

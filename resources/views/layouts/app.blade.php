@@ -55,13 +55,14 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        {{ config('app.name', 'ACT') }}
                     </a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
+                        <li><a href="{{ route('manage.user.index') }}">用户中心</a></li>
                         <li><a href="{{ route('wechat.index') }}">公众号管理</a></li>
                     @if ($wechat = isset($wechat) ? $wechat : '')
                         <li><a href="{{ route('wechat.project.index', $wechat) }}">应用管理</a></li>
@@ -77,13 +78,13 @@
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-                                    {{ Auth::user()->nickname }} <span class="caret"></span>
+                                    欢迎回来，{{ Auth::user()->nickname }} <span class="caret"></span>
                                 </a>
 
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="{{ route('manage.user.edit') }}">
-                                            修改资料
+                                        <a href="{{ route('manage.user.index') }}">
+                                            用户中心
                                         </a>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();

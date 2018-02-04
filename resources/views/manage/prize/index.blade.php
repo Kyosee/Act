@@ -3,13 +3,13 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
+            @include('manage.project._menu')
+            <div class="col-md-11">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <a href="{{ route('wechat.project.edit', [$wechat, $project]) }}">{{ $project->project_name }}</a> - 奖品管理
+                        <a href="{{ route('wechat.project.edit', [$wechat, $project]) }}">{{ $project->project_name }}</a> - 管理奖品
                         <div class="pull-right">
                             <a href="{{ route('wechat.project.prize.create', [$wechat, $project]) }}" class="btn btn-success">添加新奖品</a>
-                            <a href="{{ route('wechat.project.edit', [$wechat, $project]) }}" class="btn btn-info">返回应用</a>
                         </div>
                     </div>
                     <div class="panel-body">

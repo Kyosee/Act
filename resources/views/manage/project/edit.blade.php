@@ -8,7 +8,8 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
+            @include('manage.project._menu')
+            <div class="col-md-11">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <a href="{{ route('wechat.show', $wechat) }}">{{ $wechat->wechat_name }}</a> -
@@ -20,10 +21,7 @@
                     </div>
                     <div class="panel-body">
                         <div class="bg-info project-control">
-                            <a class="btn btn-success" href="{{ route('wechat.project.prize.index', [$wechat, $project]) }}">管理应用奖品</a>
-                            <a class="btn btn-info" href="{{ route('wechat.project.show', [$wechat, $project]) }}">应用数据</a>
                             <p>
-                                <br />
                                 当前应用链接：<input type="text" disabled style="width:100%" class="form-control" value="{{ route('app', [$project, 'index']) }}" placeholder="请输入用户可参与次数">
                             </p>
                         </div>
