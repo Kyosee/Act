@@ -8,7 +8,10 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\WechatRequest;
 
 class WechatController extends Controller {
-
+    public function __construct(){
+        view()->share('controller','wechat');
+    }
+    
     /**
      * wecaht list
      * @return [type] [description]

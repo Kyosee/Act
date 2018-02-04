@@ -20,6 +20,7 @@ class PrizeController extends Controller {
      * @param Request $request [description]
      */
     public function __construct(Request $request){
+        view()->share('controller','project');
 
         $this->middleware(function ($requests, $next) {
             // $wechat = Wechat::find($requests->route('wechat'));

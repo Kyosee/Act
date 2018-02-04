@@ -15,6 +15,8 @@ class ProjectController extends Controller {
     private $wechat;
 
     public function __construct(Request $request){
+        view()->share('controller','project');
+
         $this->wechat = Wechat::find($request->route('wechat'));
     }
 

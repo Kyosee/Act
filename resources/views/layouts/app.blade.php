@@ -62,10 +62,10 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        <li><a href="{{ route('manage.user.index') }}">用户中心</a></li>
-                        <li><a href="{{ route('wechat.index') }}">公众号管理</a></li>
+                        <li class="{{ $controller == 'user' ? 'active' : '' }}"><a href="{{ route('manage.user.index') }}">用户中心</a></li>
+                        <li class="{{ $controller == 'wechat' ? 'active' : '' }}"><a href="{{ route('wechat.index') }}">公众号管理</a></li>
                     @if ($wechat = isset($wechat) ? $wechat : '')
-                        <li><a href="{{ route('wechat.project.index', $wechat) }}">应用管理</a></li>
+                        <li class="{{ $controller == 'project' ? 'active' : '' }}"><a href="{{ route('wechat.project.index', $wechat) }}">应用管理</a></li>
                     @endif
                     </ul>
 
