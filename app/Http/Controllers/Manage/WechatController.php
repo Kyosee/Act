@@ -11,7 +11,7 @@ class WechatController extends Controller {
     public function __construct(){
         view()->share('controller','wechat');
     }
-    
+
     /**
      * wecaht list
      * @return [type] [description]

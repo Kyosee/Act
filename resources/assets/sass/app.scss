@@ -39,3 +39,9 @@ a, a:hover, a:active{
     padding: 15px;
     margin-bottom: 20px;
 }
+
+@media (max-width: 992px){
+    .fixed{
+        position: relative !important;
+    }
+}

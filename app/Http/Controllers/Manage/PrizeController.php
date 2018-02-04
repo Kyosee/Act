@@ -158,4 +158,5 @@ class PrizeController extends Controller {
     public function destroy(Wechat $wechat, Project $project, Prize $prize){
         $prize->delete();
     }
+
 }

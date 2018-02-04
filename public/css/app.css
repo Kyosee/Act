@@ -11442,3 +11442,9 @@ a:active {
   margin-bottom: 20px;
 }
 
+@media (max-width: 992px) {
+  .fixed {
+    position: relative !important;
+  }
+}
+
