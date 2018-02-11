@@ -43,7 +43,6 @@
                                     <input type="password" class="form-control" name="new_password" id="new_password" value="{{ old('new_password') }}" placeholder="请输入新密码">
                                 </div>
                             </div>
-                            <input name="_method" type="hidden" value="PATCH">
                             {{ csrf_field() }}
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-sm-10">
