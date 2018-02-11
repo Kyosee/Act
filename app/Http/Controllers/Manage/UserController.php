@@ -28,8 +28,8 @@ class UserController extends Controller {
 
             $data = [];
             $data['nickname'] = $request->nickname;
-            $data['mobile'] = $request->mobile;
-            $data['email'] = $request->email;
+            // $data['mobile'] = $request->mobile;
+            // $data['email'] = $request->email;
 
             if($request->password && $request->new_password){
                 $now_password = $user->where('id', auth()->user()->id)->value('password');

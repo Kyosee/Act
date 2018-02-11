@@ -22,13 +22,13 @@
                             <div class="form-group">
                                 <label for="mobile" class="col-sm-2 control-label">手机号</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" name="mobile" id="mobile" value="{{ old('mobile', $user->mobile) }}" placeholder="请输入手机号">
+                                    <input type="text" class="form-control" disabled name="mobile" id="mobile" value="{{ old('mobile', $user->mobile) }}" placeholder="请输入手机号">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="email" class="col-sm-2 control-label">邮箱</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" name="email" id="email" value="{{ old('email', $user->email) }}" placeholder="请输入邮箱">
+                                    <input type="text" class="form-control" disabled name="email" id="email" value="{{ old('email', $user->email) }}" placeholder="请输入邮箱">
                                 </div>
                             </div>
                             <div class="form-group">
