@@ -31,8 +31,9 @@ class ProjectController extends Controller{
     public function pageCheck($controller, Request $request){
         $project = $request->project;
         $page = $request->page;
-
-        if(time() > strtotime($project->end_time)){
+        if(time() < strtotime($project->start_time)){
+            $page = 'not_start';
+        }else if(time() > strtotime($project->end_time)){
             $page = 'end';
         }
 
