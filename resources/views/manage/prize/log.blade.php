@@ -27,7 +27,7 @@
                             <tbody>
                                 @forelse($prize_log as $log)
                                     <tr>
-                                        <td>{{ $log['user']['openid'] }}</td>
+                                        <td class="col-md-3">{{ $log['user']['openid'] }}</td>
                                         <td>{{ $log['user']['nickname'] }}</td>
                                         <td>{{ $log['created_at'] }}</td>
                                         <td>{{ $log['exchange_time'] }}</td>
