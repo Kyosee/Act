@@ -126,16 +126,16 @@ class FanyifanController extends ProjectController{
         //判定是否为礼牌
         if($request->special){
         	$thanks = Prize::where(['is_default' => true, 'is_special' => true, 'project_id' => $project->id])->first()->toArray();
-        	if(ProjectUserDraw::where(['added' => $thanks['id'], 'project_id' => $project->id])->first() && !$user_prize){
-                // 创建抽奖记录
-                if(!ProjectUserDraw::getLog($condition)){
-                    ProjectUserDraw::createLog($condition);
-                }
-
+        	if(ProjectUserDraw::where(['added' => $thanks['id'], 'project_id' => $project->id, 'uid' => session('wechat_user')['id']])->first() && !$user_prize){
             	$return['exchange'] = false;
             	$return['is_lucky'] = false;
             	return $return;
         	}
+
+            // 创建抽奖记录
+            if(!ProjectUserDraw::getLog($condition)){
+                ProjectUserDraw::createLog($condition);
+            }
 
         	// 检测是否有中奖纪录
             if($user_prize){
@@ -150,7 +150,6 @@ class FanyifanController extends ProjectController{
 	                ['is_special', '=', true],
 	                ['prize_num', '>', 0],
 	            ])->get()->toArray();
-
 	            $chance = $prize->getRand($prize_list);
 
 	            // 如果中奖增加奖品纪录
