@@ -8,7 +8,6 @@
 @section('content')
     <div class="container">
         <div class="row">
-            @include('manage.project._menu')
             <div class="col-md-11">
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -74,7 +73,7 @@
                             <div class="form-group">
                                 <label for="share_desc" class="col-sm-2 control-label">应用分享描述</label>
                                 <div class="col-sm-10">
-                                    <textarea name="share_desc" class="form-control" rows="8" cols="80">{{ old('share_desc', $project->share_desc) }}</textarea>
+                                    <textarea name="share_desc" class="form-control" rows="8" cols="80">{{ old('share_desc') }}</textarea>
                                 </div>
                             </div>
                             <div class="form-group">
