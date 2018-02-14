@@ -17,8 +17,9 @@
                         <table class="table table-striped">
                             <thead>
                                 <tr>
-                                    <th class="col-md-1">openID</th>
-                                    <th class="col-md-4">微信昵称</th>
+                                    <th class="col-md-3">openID</th>
+                                    <th class="col-md-2">微信昵称</th>
+                                    <th class="col-md-2">奖品</th>
                                     <th class="col-md-2">中奖时间</th>
                                     <th class="col-md-2">兑换时间</th>
                                     <th class="col-md-2">状态</th>
@@ -27,8 +28,9 @@
                             <tbody>
                                 @forelse($prize_log as $log)
                                     <tr>
-                                        <td class="col-md-3">{{ $log['user']['openid'] }}</td>
+                                        <td>{{ $log['user']['openid'] }}</td>
                                         <td>{{ $log['user']['nickname'] }}</td>
+                                        <td>{{ $log['prize']['prize_name'] }}</td>
                                         <td>{{ $log['created_at'] }}</td>
                                         <td>{{ $log['exchange_time'] }}</td>
                                         <td>{{ $log['exchange'] ? '已兑换' : '未兑换' }}</td>

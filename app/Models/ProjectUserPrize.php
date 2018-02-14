@@ -18,4 +18,8 @@ class ProjectUserPrize extends Model {
     public function user(){
         return $this->belongsTo('App\Models\ProjectUser', 'uid');
     }
+
+    public function prize(){
+        return $this->belongsTo('App\Models\Prize');
+    }
 }
