@@ -159,4 +159,12 @@ class PrizeController extends Controller {
         $prize->delete();
     }
 
+    /**
+     * 应用中奖纪录
+     * @return [type] [description]
+     */
+    public function prizeLog(){
+        $this->view_data['prize_log'] = \App\Models\ProjectUserPrize::where('project_id', $this->project->id)->paginate(10);
+        return view('manage.prize.log', $this->view_data);
+    }
 }

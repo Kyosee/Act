@@ -9,5 +9,8 @@
         <a href="{{ route('wechat.project.prize.index', [$wechat, $project]) }}" class="list-group-item {{ request()->is("manage/wechat/$wechat->id/project/$project->id/prize*") ? 'active' : '' }}">
             管理奖品
         </a>
+        <a href="{{ route('wechat.project.prize.log', [$wechat, $project]) }}" class="list-group-item {{ request()->is("manage/wechat/$wechat->id/project/$project->id/log") ? 'active' : '' }}">
+            中奖纪录
+        </a>
     </div>
 </div>
