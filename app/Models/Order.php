@@ -9,7 +9,6 @@ class Order extends Model {
 
     public function createOrder($wechat_id, $order_info){
         $app = Wechat::buildPayConfig($wechat_id);
-
         $result = $app->order->unify([
             'body' => '腾讯充值中心-QQ会员充值',
             'out_trade_no' => '20150806125346',
