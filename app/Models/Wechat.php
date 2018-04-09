@@ -89,7 +89,7 @@ class Wechat extends Model{
             'cert_path'          => 'path/to/your/cert.pem', // XXX: 绝对路径！！！！
             'key_path'           => 'path/to/your/key',      // XXX: 绝对路径！！！！
             'notify_url'         => '/pay_callback/notify',     // 你也可以在下单时单独设置来想覆盖它
-            'sub_merchant_id'    => $wechat->sub_merchant_id,
+            'sub_mch_id'         => $wechat->sub_merchant_id,
         ];
 
         return Factory::payment($config);
