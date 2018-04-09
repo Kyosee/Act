@@ -82,6 +82,7 @@ class WechatController extends Controller {
         $wechat->pay_key = $request->pay_key;
         $wechat->merchant_id = $request->merchant_id;
         $wechat->sub_merchant_id = $request->sub_merchant_id;
+        $wechat->sub_appid = $request->sub_appid;
 
         $wechat->save();
         return redirect()->back()->with('success', '公众号信息更新成功');
