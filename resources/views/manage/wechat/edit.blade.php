@@ -53,6 +53,12 @@
                                     <input type="text" class="form-control" name="sub_merchant_id" id="sub_merchant_id" value="{{ old('sub_merchant_id', $wechat->sub_merchant_id) }}" placeholder="请输入子商户号">
                                 </div>
                             </div>
+                            <div class="form-group">
+                                <label for="appsecret" class="col-sm-2 control-label">子商户APPID</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="sub_appid" id="sub_appid" value="{{ old('sub_appid', $wechat->sub_appid) }}" placeholder="请输入子商户APPID">
+                                </div>
+                            </div>
                             <input name="_method" type="hidden" value="PATCH">
                             {{ csrf_field() }}
                             <div class="form-group">
