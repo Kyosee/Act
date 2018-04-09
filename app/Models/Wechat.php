@@ -82,8 +82,7 @@ class Wechat extends Model{
     public static function buildPayConfig($wechat_id, $is_sub = false){
         $wechat = self::find($wechat_id);
         $config = [
-            // 前面的appid什么的也得保留哦
-            'app_id'             => $wechat->appid,
+            'app_id'             => $wechat->sub_appid,
             'mch_id'             => $wechat->merchant_id,
             'key'                => $wechat->pay_key,
             'cert_path'          => 'path/to/your/cert.pem', // XXX: 绝对路径！！！！
@@ -93,7 +92,7 @@ class Wechat extends Model{
 
         $app = Factory::payment($config);
         if($is_sub){
-            $app->setSubMerchant($wechat->sub_merchant_id, $wechat->sub_appid);
+            // $app->setSubMerchant($wechat->sub_merchant_id, $wechat->sub_appid);
         }
 
         return $app;
