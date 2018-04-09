@@ -25,4 +25,11 @@ class WeChatController extends Controller
 
 		return redirect($targetUrl);
     }
+
+    /**
+     * 微信支付异步通知回调地址
+     */
+    public function payNotifyCallback(){
+        
+    }
 }
