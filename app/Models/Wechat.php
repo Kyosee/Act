@@ -92,9 +92,6 @@ class Wechat extends Model{
             'sub_mch_id'         => $wechat->sub_merchant_id,
         ];
 
-        $app = Factory::payment($config);
-        $app->setSubMerchant($wechat->sub_merchant_id, '');
-
-        return $app;
+        return Factory::payment($config);
     }
 }
