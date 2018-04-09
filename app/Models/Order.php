@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model {
 
-    public function createOrder($wechat_id, $order_info){
-        $app = Wechat::buildPayConfig($wechat_id);
+    public function createOrder($wechat_id, $is_sub = false, $order_info){
+        $app = Wechat::buildPayConfig($wechat_id, $is_sub);
         $result = $app->order->unify([
             'body' => '腾讯充值中心-QQ会员充值',
             'out_trade_no' => '20150806125346',
