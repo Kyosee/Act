@@ -82,7 +82,7 @@ class Wechat extends Model{
     public static function buildPayConfig($wechat_id, $is_sub = false){
         $wechat = self::find($wechat_id);
         $config = [
-            'app_id'             => $wechat->sub_appid,
+            'app_id'             => $wechat->appid,
             'mch_id'             => $wechat->merchant_id,
             'key'                => $wechat->pay_key,
             'cert_path'          => 'path/to/your/cert.pem', // XXX: 绝对路径！！！！
