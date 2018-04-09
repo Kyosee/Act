@@ -12,10 +12,9 @@ class TicketController extends ProjectController{
         $order = new Order();
         $result = $order->createOrder(1, ['openid' => session('wechat_user')['openid']], true);
 
-        $config = $jssdk->sdkConfig($result['prepayId']);
 
         return view('projects.ticket.index', [
-            'result' => $config,
+            'config' => $result,
         ]);
     }
 }

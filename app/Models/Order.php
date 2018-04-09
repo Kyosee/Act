@@ -16,7 +16,6 @@ class Order extends Model {
             'trade_type' => 'JSAPI',
             'openid' => $order_info['openid'],
         ]);
-
-        return $result;
+        return $app->sdkConfig($result['prepayId']);
     }
 }
