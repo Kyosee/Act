@@ -23,7 +23,7 @@
 				@switch($ticket->step)
 					@case(1)
 					<a href="#none" class="cancle-btn flex-1">申请退款</a>
-					<a href="#none" class="pay-btn flex-1">立即核销</a>
+					<a href="#none" class="pay-btn flex-1" data-trade="{{ $ticket->out_trade_no }}">立即核销</a>
 					@break
 
 					@case(10)
@@ -49,4 +49,27 @@
         @endforelse
 		</ul>
 	</section>
+	<script>
+		$(".pay-btn").click(function() {
+			layer.prompt({title: '请输入核销密码', formType: 1}, function(pass, index){
+				layer.close(index);
+				$.ajax({
+					url: "{{ '/app/'.$project->id.'/exchange' }}",
+					type: 'post',
+					data: {pass: pass},
+					success: function(data){
+						if(data){
+							layer.alert('核销成功', {
+							  closeBtn: 0
+							},function(){
+								location.reload();
+							})
+						}else{
+							layer.msg('核销失败或密码错误');
+						}
+					}
+				})
+			});
+		});
+	</script>
 @endsection
