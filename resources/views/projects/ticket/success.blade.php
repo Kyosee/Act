@@ -18,20 +18,11 @@
 				</dl>
 
 			</div>
-
-			<div class="barcode-area">
-				<!-- 一维码列表[[ -->
-				<ul class="barcode-list">
-					<li class="flex-box barcode-img">
-						<img src="/images/projects/{{ $project->template->template_folder }}/barcode_demo.png" class="flex-1">
-					</li>
-				</ul>
-				<!-- 一维码列表]] -->
-			</div>
 		</div>
 		<!-- 提示[[ -->
 		<dl class="tips-area">
-			<a href="index" class="btn btn-green pay-btn">再买一张</a>
+			<a href="index" class="btn btn-green pay-btn">再买一张</a><br>
+			<a href="ticket" class="btn btn-green pay-btn">我的门票</a>
             <dd class="tarea-title"></dd>
 			<dd class="tarea-title">兑换须知：</dd>
 			<dt class="num-list">1、</dt><dd class="tips-info">活动地点：烟台大悦城XXXXX</dd>

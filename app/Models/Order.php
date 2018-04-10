@@ -48,7 +48,8 @@ class Order extends Model {
         	$this->out_trade_no = $order['out_trade_no'];
         	$this->openid = $order_info['openid'];
         	$this->prepay_id = $result['prepay_id'];
-        	$this->total_fee = $order['total_fee'];
+            $this->total_fee = $order['total_fee'];
+        	$this->step = 0;
         	$this->save();
 
         	return $app->jssdk->bridgeConfig($result['prepay_id']);

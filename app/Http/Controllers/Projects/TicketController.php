@@ -62,4 +62,44 @@ class TicketController extends ProjectController{
             ]);
         }
     }
+
+    /**
+     * 用户核销
+     */
+    public function exchange(Request $request){
+        $condition = ['uid' => session('wechat_user')['id'], 'project_id' => $request->route('project')->id, 'step' => 1, 'out_trade_no' => $request->trade];
+        if($request->pass == $request->route('project')->exchange_pass){
+            $order = Order::where($condition)->first();
+
+            $order->step = 10;
+            $order->exchange_time = time();
+
+            if($order && $order->save()){
+                return response()->json(true);
+            }else{
+                return response()->json(false);
+            }
+        }else{
+            return response()->json(false);
+        }
+    }
+
+    /**
+     * 用户发起退款申请
+     */
+    public function subRefund(Request $request){
+        $condition = ['uid' => session('wechat_user')['id'], 'project_id' => $request->route('project')->id, 'step' => 1, 'out_trade_no' => $request->trade];
+        if($order = Order::where($condition)->first()){
+            $order->step = -1;
+            $order->sub_refund_at = time();
+            
+            if($order && $order->save()){
+                return response()->json(true);
+            }else{
+                return response()->json(false);
+            }
+        }else{
+            return response()->json(false);
+        }
+    }
 }
