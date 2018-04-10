@@ -8,9 +8,15 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class TicketController extends ProjectController{
-    public function index(){
+	
+    public function index(Request $request){
         $order = new Order();
-        $result = $order->createOrder(2, ['openid' => session('wechat_user')['openid']], true);
+
+        $order_info['openid'] = session('wechat_user')['openid'];
+        $order_info['uid'] = session('wechat_user')['id'];
+        $order_info['body'] = '门票订单';
+        $order_info['project_id'] = $request->route('project')->id;
+        $result = $order->createOrder(2, $order_info, true);
 
 
         return view('projects.ticket.index', [

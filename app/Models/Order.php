@@ -28,14 +28,30 @@ class Order extends Model {
      */
     public function createOrder($wechat_id, $order_info, $is_sub = false){
         $app = Wechat::buildPayConfig($wechat_id, $is_sub);
-        $result = $app->order->unify([
-            'body' => $order_info['body'] ? $order_info['body'] : '用户订单',
-            'out_trade_no' => $order_info['out_trade_no'] ? $order_info['out_trade_no'] : $this->makeOutTradeNo(),
-            'total_fee' => $order_info['total_fee'] ? $order_info['total_fee'] : 1,
+        $order = [
+            'body' => isset($order_info['body']) ? $order_info['body'] : '用户订单',
+            'out_trade_no' => isset($order_info['out_trade_no']) ? $order_info['out_trade_no'] : $this->makeOutTradeNo(),
+            'total_fee' => isset($order_info['total_fee']) ? $order_info['total_fee'] : 1,
             'trade_type' => 'JSAPI',
             'openid' => $order_info['openid'],
-        ]);
-        dd($result);
-        return $app->jssdk->sdkConfig($result['prepay_id']);
+        ];
+        $result = $app->order->unify($order);
+
+        // 订单创建返回
+        if($result['return_code'] === 'SUCCESS'){
+        	// 订单入库
+        	$this->uid = $order_info['uid'];
+        	$this->project_id = $order_info['project_id'];
+        	$this->body = $order['body'];
+        	$this->out_trade_no = $order['out_trade_no'];
+        	$this->openid = $order_info['openid'];
+        	$this->prepay_id = $result['prepay_id'];
+        	$this->total_fee = $order['total_fee'];
+        	$this->save();
+
+        	return $app->jssdk->sdkConfig($result['prepay_id']);
+        }else{
+        	return false;
+        }
     }
 }
