@@ -14,7 +14,7 @@ class AddStepToOrders extends Migration
     public function up()
     {
         Schema::table('orders', function (Blueprint $table) {
-            $table->integer('step')->nullable();
+            $table->integer('step')->default(0);
         });
     }
 
