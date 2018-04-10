@@ -15,5 +15,6 @@ class VerifyCsrfToken extends Middleware
         'wechat',
         'webhooks',
     	'manage/uploader',
+        'pay_callback/',
     ];
 }
