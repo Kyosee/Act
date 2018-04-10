@@ -41,8 +41,26 @@ class TicketController extends Controller
         ];
     }
 
-    public function index(){
-        $this->view_data['tickets'] = Order::where('project_id', $this->project->id)->paginate(10);
-        return view('manage.ticket.index', $this->view_data);
+    public function index(Request $request){
+        if($request->isMethod('post')){
+            return $this->{$request->type}($request->trade);
+        }else{
+            $this->view_data['tickets'] = Order::where('project_id', $this->project->id)->paginate(10);
+            return view('manage.ticket.index', $this->view_data);
+        }
+    }
+
+    private function exchange($trade){
+        $order = Order::where(['out_trade_no' => $trade, 'step' => 1])->first();
+
+        $order->step = 10;
+        $order->exchange_time = time();
+
+        if($order && $order->save()){
+            return response()->json(true);
+        }else{
+            return response()->json(false);
+        }
+     
     }
 }

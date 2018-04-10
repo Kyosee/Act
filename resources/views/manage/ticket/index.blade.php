@@ -31,35 +31,43 @@
                             <tbody>
                                 @forelse($tickets as $order)
                                     <tr>
-                                        <td>{{ $order['openid'] }}</td>
                                         <td>{{ $order['out_trade_no'] }}</td>
+                                        <td>{{ $order['openid'] }}</td>
                                         <td>{{ $order['body'] }}</td>
-                                        <td>{{ $order['total_fee'] }}</td>
-                                        <td>{{ date('Y-m-d H:i:s', $order['pay_time']) }}</td>
+                                        <td>{{ $order['total_fee'] / 100 }}</td>
+                                        <td>{{ $order['pay_at'] ? date('Y-m-d H:i:s', $order['pay_at']) : '' }}</td>
                                         <td>{{ $order['created_at'] }}</td>
-                                        <td>{{ date('Y-m-d H:i:s', $order['exchange_time']) }}</td>
+                                        <td>{{ $order['exchange_at'] ? date('Y-m-d H:i:s', $order['exchange_at']) : '' }}</td>
                                         <td>
-                                            {{
-                                                switch ($order['step']) {
-                                                    case '0':
-                                                        echo '未支付';
-                                                        break;
-                                                    case '1':
-                                                        echo '已支付';
-                                                        break;
-                                                    case '10':
-                                                        echo '已使用';
-                                                        break;
-                                                    case '-1':
-                                                        echo '等待退款';
-                                                        break;
-                                                    case '-10':
-                                                        echo '已退款';
-                                                        break;
-                                                }
-                                            }}
+                                            @switch ($order['step']) 
+                                                @case (0)
+                                                    未支付
+                                                    @break
+                                                @case (1)
+                                                    已支付
+                                                    @break
+                                                @case (10)
+                                                    已用
+                                                    @break
+                                                @case (-1)
+                                                    等待退款
+                                                    @break
+                                                @case (-10)
+                                                    已退款
+                                                    @break
+                                            @endswitch
                                         </td>
-                                        <td></td>
+                                        <td>
+                                            @switch ($order['step']) 
+                                                @case (1)
+                                                    <a href="javascript:;" data-trade="{{ $order['out_trade_no'] }}" class="exchange btn btn-success btn-sm">核销订单</a>
+                                                    <a href="javascript:;" data-trade="{{ $order['out_trade_no'] }}" class="btn btn-danger btn-sm">退款申请</a>
+                                                    @break
+                                                @case (-1)
+                                                    <a href="javascript:;" data-trade="{{ $order['out_trade_no'] }}" class="btn btn-warn btn-sm">同意退款</a>
+                                                    @break
+                                            @endswitch
+                                        </td>
                                     </tr>
                                 @empty
                                     <tr>
@@ -74,4 +82,24 @@
             </div>
         </div>
     </div>
+    <script>
+        $(".exchange").click(function(event) {
+            var _this = $(this)
+            $.ajax({
+                type: 'post',
+                data: {
+                    trade: _this.data('trade'),
+                    type: 'exchange'
+                },
+                success:function (data){
+                    if(data){
+                        alert('核销成功');
+                        location.reload();
+                    }else{
+                        alert('核销失败请稍后重试');
+                    }
+                }
+            })
+        });
+    </script>
 @endsection
