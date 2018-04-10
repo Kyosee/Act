@@ -17,7 +17,6 @@
     <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <script src="/js/bootstrap.min.js"></script>
-    <script src="/libs/layui/layui.all.js"></script>
     <!--移动端版本兼容 -->
     <script type="text/javascript">
     var phoneWidth = parseInt(window.screen.width);
