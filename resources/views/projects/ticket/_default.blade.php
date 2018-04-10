@@ -18,29 +18,37 @@
     <script src="/js/bootstrap.min.js"></script>
     <!--移动端版本兼容 -->
     <script type="text/javascript">
-    var phoneWidth = parseInt(window.screen.width);
-    var phoneScale = phoneWidth / 640;
+        var phoneWidth = parseInt(window.screen.width);
+        var phoneScale = phoneWidth / 640;
 
-    var ua = navigator.userAgent;
-    if (/Android (\d+\.\d+)/.test(ua)) {
-        var version = parseFloat(RegExp.$1);
-        // andriod 2.3
-        if (version > 2.3) {
-            document.write('<meta name="viewport" content="width=640, minimum-scale = ' + phoneScale + ', maximum-scale = ' + phoneScale + ', target-densitydpi=device-dpi">');
-            // andriod 2.3以上
+        var ua = navigator.userAgent;
+        if (/Android (\d+\.\d+)/.test(ua)) {
+            var version = parseFloat(RegExp.$1);
+            // andriod 2.3
+            if (version > 2.3) {
+                document.write('<meta name="viewport" content="width=640, minimum-scale = ' + phoneScale + ', maximum-scale = ' + phoneScale + ', target-densitydpi=device-dpi">');
+                // andriod 2.3以上
+            } else {
+                document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+            }
+            // 其他系统
         } else {
-            document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+            document.write('<meta name="viewport" content="width=640,height=1030, user-scalable=no, target-densitydpi=device-dpi">');
         }
-        // 其他系统
-    } else {
-        document.write('<meta name="viewport" content="width=640,height=1030, user-scalable=no, target-densitydpi=device-dpi">');
-    }
-    document.addEventListener('touchmove', function(e){e.preventDefault()}, false);
-    $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-    });
+        document.addEventListener('touchmove', function(e){e.preventDefault()}, false);
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        wx.config({!! $jssdk->jssdk->buildConfig([
+            'onMenuShareTimeline',
+            'onMenuShareAppMessage',
+            'onMenuShareQQ ',
+            'onMenuShareWeibo',
+            'chooseImage',
+            'uploadImage'
+        ], false) !!});
     </script>
     <style media="screen">
     *{ margin:0; padding:0; list-style:none;}

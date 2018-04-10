@@ -129,20 +129,26 @@
         infinite
         ease-in-out;
     }
+    .pay{
+        font-size: 100px;
+    }
 }
 </style>
 @endsection
 @section('content')
+    <a href="#" class="pay">支付</a>
     <script type="text/javascript" charset="utf-8">
-        wx.chooseWXPay({
-            timestamp: <?= $config['timestamp'] ?>,
-            nonceStr: '<?= $config['nonceStr'] ?>',
-            package: '<?= $config['package'] ?>',
-            signType: '<?= $config['signType'] ?>',
-            paySign: '<?= $config['paySign'] ?>', // 支付签名
-            success: function (res) {
-                // 支付成功后的回调函数
-            }
+        $(".pay").click(function(event) {
+            wx.chooseWXPay({
+                timestamp: <?= $config['timestamp'] ?>,
+                nonceStr: '<?= $config['nonceStr'] ?>',
+                package: '<?= $config['package'] ?>',
+                signType: '<?= $config['signType'] ?>',
+                paySign: '<?= $config['paySign'] ?>', // 支付签名
+                success: function (res) {
+                    // 支付成功后的回调函数
+                }
+            });
         });
     </script>
 @endsection
