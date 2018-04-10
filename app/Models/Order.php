@@ -51,7 +51,7 @@ class Order extends Model {
         	$this->total_fee = $order['total_fee'];
         	$this->save();
 
-        	return $app->jssdk->sdkConfig($result['prepay_id']);
+        	return $app->jssdk->bridgeConfig($result['prepay_id']);
         }else{
         	return false;
         }

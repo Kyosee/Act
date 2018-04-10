@@ -139,16 +139,24 @@
     <a href="#" class="pay">支付</a>
     <script type="text/javascript" charset="utf-8">
         $(".pay").click(function(event) {
-            wx.chooseWXPay({
-                timestamp: <?= $config['timestamp'] ?>,
-                nonceStr: '<?= $config['nonceStr'] ?>',
-                package: '<?= $config['package'] ?>',
-                signType: '<?= $config['signType'] ?>',
-                paySign: '<?= $config['paySign'] ?>', // 支付签名
-                success: function (res) {
-                    // 支付成功后的回调函数
+            $.ajax({
+                url: 'subOD',
+                type: 'post',
+                success: function(data){
+                    if(data.status === 1){
+                        WeixinJSBridge.invoke(
+                            'getBrandWCPayRequest', JSON.parse(data.json),
+                            function(res){
+                                if(res.err_msg == "get_brand_wcpay_request:ok" ) {
+                                    location.href = 'ticket';
+                                }
+                            }
+                        );
+                    }else{
+                        alert('下单失败请稍后重试')
+                    }
                 }
-            });
+            })
         });
     </script>
 @endsection

@@ -31,12 +31,11 @@ class WeChatController extends Controller
      * 微信支付异步通知回调地址
      */
     public function payNotifyCallback(){
-        dd();
-        $app = Factory::officialAccount();
+		$app = Wechat::buildPayConfig(2);
 
         $response = $app->handlePaidNotify(function($message, $fail){
             // 使用通知里的 "微信支付订单号" 或者 "商户订单号" 去自己的数据库找到订单
-            $order = Order::where('active', $message['out_trade_no'])->first();
+            $order = Order::where('out_trade_no', $message['out_trade_no'])->first();
 
             if (!$order || $order->step === 1) { // 如果订单不存在 或者 订单已经支付过了
                 return true; // 告诉微信，我已经处理完了，订单没找到，别再通知我了
@@ -48,11 +47,11 @@ class WeChatController extends Controller
                 // 用户是否支付成功
                 if (array_get($message, 'result_code') === 'SUCCESS') {
                     $order->pay_at = time(); // 更新支付时间为当前时间
-                    $order->step = '1';
+                    $order->step = 1;
 
                 // 用户支付失败
                 } elseif (array_get($message, 'result_code') === 'FAIL') {
-                    $order->step = '0';
+                    $order->step = 0;
                 }
             } else {
                 return $fail('通信失败，请稍后再通知我');
