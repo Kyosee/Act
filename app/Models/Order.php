@@ -32,9 +32,11 @@ class Order extends Model {
             'body' => isset($order_info['body']) ? $order_info['body'] : '用户订单',
             'out_trade_no' => isset($order_info['out_trade_no']) ? $order_info['out_trade_no'] : $this->makeOutTradeNo(),
             'total_fee' => isset($order_info['total_fee']) ? $order_info['total_fee'] : 1,
+            'notify_url' => 'http://act.kuanshipin.com/pay_callback/',
             'trade_type' => 'JSAPI',
             'openid' => $order_info['openid'],
         ];
+        
         $result = $app->order->unify($order);
 
         // 订单创建返回

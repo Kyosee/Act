@@ -7,7 +7,7 @@ use App\Models\Order;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class TicketController extends ProjectController{
+class TicketController extends Controller{
 	
     public function index(Request $request){
         $order = new Order();
