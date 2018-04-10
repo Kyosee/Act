@@ -95,7 +95,8 @@ class TicketController extends ProjectController{
             $order->sub_refund_at = time();
 
             if($order && $order->save()){
-                new OrderRefund()->createOrderRefund();
+                $orderRefund = new OrderRefund();
+                dd($orderRefund->createOrderRefund($order['out_trade_no']));
                 return response()->json(true);
             }else{
                 return response()->json(false);
