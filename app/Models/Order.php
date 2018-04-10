@@ -12,7 +12,7 @@ class Order extends Model {
         $result = $app->order->unify([
             'body' => '腾讯充值中心-QQ会员充值',
             'out_trade_no' => '20150806125346',
-            'total_fee' => 88,
+            'total_fee' => 1,
             'trade_type' => 'JSAPI',
             'openid' => $order_info['openid'],
         ]);
