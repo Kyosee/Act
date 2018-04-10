@@ -19,9 +19,25 @@ class TicketController extends ProjectController{
         return view('projects.ticket.index');
     }
 
-	public function ticket(){
-		return view('projects.ticket.ticket');
+    /**
+     * 门票列表
+     */
+	public function ticket(Request $request){
+		return view('projects.ticket.ticket', ['ticket_list' => Order::where([
+            'project_id' => $request->route('project')->id,
+            'uid' => session('wechat_user')['id']
+        ])->where('step', '!=', 0)->orderBy('created_at', 'desc')->get()]);
 	}
+
+    /**
+     * 支付成功
+     */
+    public function success(Request $request){
+        return view('projects.ticket.success', ['ticket' => Order::where([
+            'project_id' => $request->route('project')->id,
+            'uid' => session('wechat_user')['id']
+        ])->where('step', '!=', 0)->orderBy('created_at', 'desc')->first()]);
+    }
 
 	/**
 	 * 发起订单

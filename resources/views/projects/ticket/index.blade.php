@@ -21,7 +21,7 @@
                             'getBrandWCPayRequest', JSON.parse(data.json),
                             function(res){
                                 if(res.err_msg == "get_brand_wcpay_request:ok" ) {
-                                    location.href = 'ticket';
+                                    location.href = 'success';
                                 }
                             }
                         );
