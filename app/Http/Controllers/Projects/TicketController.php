@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Projects;
 
 use EasyWeChat\Factory;
 use App\Models\Order;
+use App\Models\OrderRefund;
 use App\Models\Project;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -92,8 +93,9 @@ class TicketController extends ProjectController{
         if($order = Order::where($condition)->first()){
             $order->step = -1;
             $order->sub_refund_at = time();
-            
+
             if($order && $order->save()){
+                new OrderRefund()->createOrderRefund();
                 return response()->json(true);
             }else{
                 return response()->json(false);
