@@ -14,7 +14,7 @@ class AddPayAtToOrders extends Migration
     public function up()
     {
         Schema::table('orders', function (Blueprint $table) {
-            $table->timestamp('pay_at')->nullable()->comment('付款时间');
+            $table->string('pay_at')->nullable()->comment('付款时间');
         });
     }
 

@@ -9,11 +9,25 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class TicketController extends Controller{
-	
+
+	/**
+	 * 门票主页
+	 * @param  Request $request [description]
+	 * @return [type]           [description]
+	 */
     public function index(Request $request){
         return view('projects.ticket.index');
     }
 
+	public function ticket(){
+		return view('projects.ticket.ticket');
+	}
+
+	/**
+	 * 发起订单
+	 * @param  Request $request [description]
+	 * @return [type]           [description]
+	 */
     public function subOD(Request $request){
         $order = new Order();
 

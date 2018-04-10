@@ -50,46 +50,6 @@
             'uploadImage'
         ], false) !!});
     </script>
-    <style media="screen">
-    *{ margin:0; padding:0; list-style:none;}
-    #la{ position: absolute; z-index: 99; }
-    #la #audio-btn{width: 44px;height: 44px;}
-    #la .off{background: url('/images/projects/pub/music_off.png') no-repeat 0 0;}
-    #la .on{background: url('/images/projects/pub/music_on.png') no-repeat 0 0;-webkit-animation: rotating 1.2s linear infinite;animation: rotating 1.2s linear infinite;}
-
-    @-webkit-keyframes rotating {
-        from{
-            -webkit-transform: rotate(0deg);
-            -moz-transform: rotate(0deg);
-            -ms-transform: rotate(0deg);
-            -o-transform: rotate(0deg);
-            transform: rotate(0deg);
-        }
-        to{
-            -webkit-transform: rotate(360deg);
-            -moz-transform: rotate(360deg);
-            -ms-transform: rotate(360deg);
-            -o-transform: rotate(360deg);
-            transform: rotate(360deg);
-        }
-    }
-    @keyframes rotating {
-        from{
-            -webkit-transform: rotate(0deg);
-            -moz-transform: rotate(0deg);
-            -ms-transform: rotate(0deg);
-            -o-transform: rotate(0deg);
-            transform: rotate(0deg);
-        }
-        to{
-            -webkit-transform: rotate(360deg);
-            -moz-transform: rotate(360deg);
-            -ms-transform: rotate(360deg);
-            -o-transform: rotate(360deg);
-            transform: rotate(360deg);
-        }
-    }
-    </style>
     @yield('head')
 </head>
 <body>
