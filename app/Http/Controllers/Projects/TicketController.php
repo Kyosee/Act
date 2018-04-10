@@ -8,7 +8,7 @@ use App\Models\Project;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class TicketController extends Controller{
+class TicketController extends ProjectController{
 
 	/**
 	 * 门票主页
