@@ -2,7 +2,6 @@
 <!doctype html>
 <html>
 <head>
-    <title></title>
     <meta charset="utf-8" />
     <meta name="apple-touch-fullscreen" content="YES" />
     <meta name="format-detection" content="telephone=no" />
@@ -32,6 +31,32 @@
             'chooseImage',
             'uploadImage'
         ], false) !!});
+        wx.ready(function(){
+            wx.onMenuShareAppMessage({
+                title: "<?=$project->share_title?>", // 分享标题
+                desc: "<?=$project->share_desc?>", // 分享描述
+                link: "<?=route('app', [$project->id, 'index'])?>", // 分享链接
+                imgUrl: "<?=$project->share_img?>", // 分享图标
+                success: function () {
+                    $.ajax({
+                        url: "{{ route('app', [$project->id, 'share']) }}",
+                    })
+                },
+                cancel: function () { }
+            });
+            wx.onMenuShareTimeline({
+                title: "<?=$project->timeline_share_title?>", // 分享标题
+                desc: "<?=$project->share_desc?>", // 分享描述
+                link: "<?=request()->url()?>", // 分享链接
+                imgUrl: "<?=$project->share_img?>", // 分享图标
+                success: function () {
+                    $.ajax({
+                        url: "{{ route('app', [$project->id, 'share']) }}",
+                    })
+                },
+                cancel: function () { }
+            });
+        });
     </script>
     @yield('head')
 </head>

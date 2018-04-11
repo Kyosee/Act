@@ -492,7 +492,7 @@ color: #333333;display: block;width: 100%;-webkit-box-sizing: border-box;box-siz
 	vertical-align:0.0625rem;
 }
 
-.success .tips-area{
+.tips-area{
 	font-size:0.75rem;
 	color:#B4B4B4;
 	line-height:1.5;
@@ -500,16 +500,16 @@ color: #333333;display: block;width: 100%;-webkit-box-sizing: border-box;box-siz
 	padding:0 0.9375rem;
 }
 
-.success .tips-area .tarea-title{
+.tips-area .tarea-title{
 	padding-bottom:0.375rem;
 }
 
-.success .tips-area .num-list{
+.tips-area .num-list{
 	width:1.125rem;
 	float:left;
 }
 
-.success .tips-area .tips-info{
+.tips-area .tips-info{
 	overflow:hidden;
 }
 

@@ -16,5 +16,6 @@ class VerifyCsrfToken extends Middleware
         'webhooks',
     	'manage/uploader',
         'pay_callback/',
+        'refund_callback/',
     ];
 }

@@ -34,10 +34,15 @@ class TicketController extends ProjectController{
      * 支付成功
      */
     public function success(Request $request){
-        return view('projects.ticket.success', ['ticket' => Order::where([
+        $ticket = Order::where([
             'project_id' => $request->route('project')->id,
             'uid' => session('wechat_user')['id']
-        ])->where('step', '!=', 0)->orderBy('created_at', 'desc')->first()]);
+        ])->where('step', 1)->orderBy('created_at', 'desc')->first();
+
+        if(!$ticket){
+            return $this->index($request);
+        }
+        return view('projects.ticket.success', ['ticket' => $ticket]);
     }
 
 	/**
@@ -68,14 +73,18 @@ class TicketController extends ProjectController{
      * 用户核销
      */
     public function exchange(Request $request){
-        $condition = ['uid' => session('wechat_user')['id'], 'project_id' => $request->route('project')->id, 'step' => 1, 'out_trade_no' => $request->trade];
         if($request->pass == $request->route('project')->exchange_pass){
+            $condition = ['uid' => session('wechat_user')['id'], 'project_id' => $request->route('project')->id, 'step' => 1, 'out_trade_no' => $request->trade];
             $order = Order::where($condition)->first();
+
+            if(!$order){
+                return response()->json(false);
+            }
 
             $order->step = 10;
             $order->exchange_time = time();
 
-            if($order && $order->save()){
+            if($order->save()){
                 return response()->json(true);
             }else{
                 return response()->json(false);
@@ -96,7 +105,7 @@ class TicketController extends ProjectController{
 
             if($order && $order->save()){
                 $orderRefund = new OrderRefund();
-                dd($orderRefund->createOrderRefund($order['out_trade_no']));
+                $orderRefund->createOrderRefund($order['out_trade_no']);
                 return response()->json(true);
             }else{
                 return response()->json(false);

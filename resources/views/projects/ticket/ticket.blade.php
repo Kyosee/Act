@@ -7,7 +7,7 @@
 
 	<section class="main">
 		<div class="tips unpay-tips">
-			<span class="icon-area icon-ok"><!-- 图标 --></span>购票列表
+			<span class="icon-area icon-ok"><!-- 图标 --></span>我的票
 		</div>
 
 		<ul class="order-content">
@@ -48,6 +48,16 @@
 			</li>
         @endforelse
 		</ul>
+		<dl class="tips-area">
+            <dd class="tarea-title"></dd>
+			<dd class="tarea-title">兑换须知：</dd>
+			<dt class="num-list">1、</dt><dd class="tips-info">活动地点：烟台大悦城西南中庭</dd>
+			<dt class="num-list">2、</dt><dd class="tips-info">使用时间：2018年4月21日10时-4月30日20时</dd>
+			<dt class="num-list">3、</dt><dd class="tips-info">使用规则：</dd>
+			<dt class="num-list">&nbsp;</dt><dd class="tips-info">（1）凭购买成功页至现场核销入场；</dd>
+			<dt class="num-list">&nbsp;</dt><dd class="tips-info">（2）每张入场券仅限一人入场；</dd>
+			<dt class="num-list">&nbsp;</dt><dd class="tips-info">（3）儿童需由成人购票陪伴入场。</dd>
+		</dl>
 	</section>
 	<script>
 		$(".exchange-btn").click(function() {
@@ -70,6 +80,7 @@
 							})
 						}else{
 							layer.msg('核销失败或密码错误');
+							location.reload();
 						}
 					}
 				})
@@ -94,6 +105,7 @@
 							})
 						}else{
 							layer.msg('申请失败请稍后重试');
+							location.reload();
 						}
 					}
 				})

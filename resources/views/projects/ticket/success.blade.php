@@ -25,9 +25,12 @@
 			<a href="ticket" class="btn btn-green pay-btn">我的门票</a>
             <dd class="tarea-title"></dd>
 			<dd class="tarea-title">兑换须知：</dd>
-			<dt class="num-list">1、</dt><dd class="tips-info">活动地点：烟台大悦城XXXXX</dd>
-			<dt class="num-list">2、</dt><dd class="tips-info">开放时间：2018年X月XX日-X月XX日（10:00-21:00）</dd>
-			<dt class="num-list">3、</dt><dd class="tips-info">使用规则：XXXXXXXXXXX</dd>
+			<dt class="num-list">1、</dt><dd class="tips-info">活动地点：烟台大悦城西南中庭</dd>
+			<dt class="num-list">2、</dt><dd class="tips-info">使用时间：2018年4月21日10时-4月30日20时</dd>
+			<dt class="num-list">3、</dt><dd class="tips-info">使用规则：</dd>
+			<dt class="num-list">&nbsp;</dt><dd class="tips-info">（1）凭购买成功页至现场核销入场；</dd>
+			<dt class="num-list">&nbsp;</dt><dd class="tips-info">（2）每张入场券仅限一人入场；</dd>
+			<dt class="num-list">&nbsp;</dt><dd class="tips-info">（3）儿童需由成人购票陪伴入场。</dd>
 		</dl>
 		<!-- 提示]] -->
 	</section>

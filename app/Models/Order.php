@@ -31,8 +31,8 @@ class Order extends Model {
         $order = [
             'body' => isset($order_info['body']) ? $order_info['body'] : '用户订单',
             'out_trade_no' => isset($order_info['out_trade_no']) ? $order_info['out_trade_no'] : $this->makeOutTradeNo(),
-            'total_fee' => isset($order_info['total_fee']) ? $order_info['total_fee'] : 1,
-            'notify_url' => 'http://act.kuanshipin.com/pay_callback/',
+            'total_fee'  => isset($order_info['total_fee']) ? $order_info['total_fee'] : 1,
+            'notify_url' => env('APP_URL').'/pay_callback/',
             'trade_type' => 'JSAPI',
             'openid' => $order_info['openid'],
         ];
@@ -47,7 +47,6 @@ class Order extends Model {
         	$this->body = $order['body'];
         	$this->out_trade_no = $order['out_trade_no'];
         	$this->openid = $order_info['openid'];
-        	$this->prepay_id = $result['prepay_id'];
             $this->total_fee = $order['total_fee'];
         	$this->step = 0;
         	$this->save();

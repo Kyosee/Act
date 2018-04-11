@@ -26,6 +26,7 @@ Route::any('/app/{project}/{page}', 'Projects\ProjectController@autoLoad')->name
 // wechat oauth check
 Route::get('/oauth_callback/{id}', 'WeChatController@oauthCallback');
 Route::any('/pay_callback/', 'WeChatController@payNotifyCallback');
+Route::any('/refund_callback/', 'WeChatController@refundNotifyCallback');
 
 // user passport
 Route::group(['prefix' => 'passport'], function(Router $router){

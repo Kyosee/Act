@@ -13,7 +13,7 @@
             中奖纪录
         </a>
         <a href="{{ route('wechat.project.ticket.index', [$wechat, $project]) }}" class="list-group-item {{ request()->is("manage/wechat/$wechat->id/project/$project->id/ticket") ? 'active' : '' }}">
-            购票管理
+            订单管理
         </a>
     </div>
 </div>

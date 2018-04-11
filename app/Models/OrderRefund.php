@@ -20,7 +20,7 @@ class OrderRefund extends Model
             $this->out_refund_no = 'RE'.$orderOBJ->makeOutTradeNo();
         	$this->out_trade_no = $order['out_trade_no'];
         	$this->openid = $order['openid'];
-        	$this->prepay_id = $order['prepay_id'];
+        	$this->transaction_id = $order['transaction_id'];
             $this->total_fee = $order['total_fee'];
             $this->refund_fee = isset($info['refund_fee']) ? $info['refund_fee'] : $order['total_fee'];
             $this->sub_refund_at = time();

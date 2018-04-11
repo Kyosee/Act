@@ -41,7 +41,7 @@
                                 <div class="col-sm-10">
                                     <select class="form-control" id="template_id" name="template_id" value="{{ old('template_id', $project->template_id) }}">
                                         @foreach ($templates as $template)
-                                            <option value="{{ $template->id }}">{{ $template->template_name }}</option>
+                                            <option value="{{ $template->id }}" @if($template->id == $project->template_id) selected @endif>{{ $template->template_name }}</option>
                                         @endforeach
                                     </select>
                                 </div>
