@@ -20,7 +20,7 @@ class CreateOrdersTable extends Migration
             $table->string('body')->default('')->nullable()->comment('订单名称');
             $table->string('openid')->default('')->nullable()->comment('用户openid');
             $table->string('out_trade_no')->default('')->nullable()->comment('商户订单号');
-            $table->string('prepay_id')->default('')->nullable()->comment('微信订单号');
+            $table->string('transaction_id')->default('')->nullable()->comment('微信订单号');
             $table->integer('total_fee')->comment('订单价格');
             $table->integer('sub_refund_at')->nullable()->comment('发起退款申请时间');
             $table->integer('refund_at')->nullable()->comment('退款时间');
