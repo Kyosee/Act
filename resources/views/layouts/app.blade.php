@@ -8,7 +8,7 @@
     <title>@yield('title', '主页') - {{ config('app.name', 'Laravel') }}</title>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <script src="{{ asset('js/app.js') }}"></script>
-    <script src="{{ asset('libs/layui/layui.js') }}"></script>
+    <script src="{{ asset('libs/layui/layui.all.js') }}"></script>
     <script type="text/javascript">
         $(function(){
             layui.use(['layer', 'form'], function(){

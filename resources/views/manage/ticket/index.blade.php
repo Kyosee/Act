@@ -39,7 +39,7 @@
                                         <td>{{ $order['created_at'] }}</td>
                                         <td>{{ $order['exchange_at'] ? date('Y-m-d H:i:s', $order['exchange_at']) : '' }}</td>
                                         <td>
-                                            @switch ($order['step']) 
+                                            @switch ($order['step'])
                                                 @case (0)
                                                     未支付
                                                     @break
@@ -58,7 +58,7 @@
                                             @endswitch
                                         </td>
                                         <td>
-                                            @switch ($order['step']) 
+                                            @switch ($order['step'])
                                                 @case (1)
                                                     <a href="javascript:;" data-trade="{{ $order['out_trade_no'] }}" class="exchange btn btn-success btn-sm">核销订单</a>
                                                     <a href="javascript:;" data-trade="{{ $order['out_trade_no'] }}" class="btn btn-danger btn-sm">退款申请</a>
@@ -93,7 +93,7 @@
                 },
                 success:function (data){
                     if(data){
-                        alert('核销成功');
+                        layer.msg('核销成功');
                         location.reload();
                     }else{
                         alert('核销失败请稍后重试');
