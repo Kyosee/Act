@@ -468,8 +468,8 @@ color: #333333;display: block;width: 100%;-webkit-box-sizing: border-box;box-siz
 
 .success .barcode-list .barcode-img{
 	margin-bottom:1.875rem;
-	height:3.25rem;
-	padding-right:3.4375rem;
+	height:100px;
+	/*padding-right:3.4375rem;*/
 	position:relative;
 }
 

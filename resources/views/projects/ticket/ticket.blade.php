@@ -1,20 +1,19 @@
 @extends('projects.ticket._default')
 @section('head')
-    <title>我的票</title>
+    <title>我的兑换</title>
 @endsection
 @section('content')
-	<a href="index" class="btn btn-green pay-btn">再买一张</a>
 
 	<section class="main">
 		<div class="tips unpay-tips">
-			<span class="icon-area icon-ok"><!-- 图标 --></span>我的票
+			<span class="icon-area icon-ok"><!-- 图标 --></span>我的兑换
 		</div>
 
 		<ul class="order-content">
 		@forelse($ticket_list as $ticket)
 			<li class="line-area order-main">
 				<dl class="info-line">
-					<dd class="info-element station-name">门票一张</dd>
+					<dd class="info-element station-name">{{ $ticket->body }}</dd>
 					<dt class="info-label first-line">订 单 号：</dt><dd class="info-element">{{ $ticket->out_trade_no }}</dd>
 				</dl>
 				<dl class="info-line"><dt class="info-label">购买时间：</dt><dd class="info-element">{{ date('Y-m-d H:i:s', $ticket->pay_at) }}</dd></dl>
@@ -31,10 +30,10 @@
 					@break
 
 					@case(-1)
-					<b class="pay-btn flex-1">等待退款中</b>
+					<b class="pay-btn flex-1" style="color: #999999">退款中</b>
 					@break
 					@case(-10)
-					<b class="pay-btn flex-1">已退款</b>
+					<b class="pay-btn flex-1" style="color: #ff0000">已退款</b>
 					@break
 				@endswitch
 				</div>
@@ -49,6 +48,7 @@
         @endforelse
 		</ul>
 		<dl class="tips-area">
+			<a href="index" class="btn btn-green pay-btn">再买一张</a>
             <dd class="tarea-title"></dd>
 			<dd class="tarea-title">兑换须知：</dd>
 			<dt class="num-list">1、</dt><dd class="tips-info">活动地点：烟台大悦城西南中庭</dd>

@@ -17,6 +17,13 @@ class TicketController extends ProjectController{
 	 * @return [type]           [description]
 	 */
     public function index(Request $request){
+
+        $count = Order::where([
+            'project_id' => $request->route('project')->id,
+        ])->whereIn('step', [1, 10])->count();
+        if($count >= 1000){
+            return view('projects.ticket.end');
+        }
         return view('projects.ticket.index');
     }
 
@@ -55,7 +62,8 @@ class TicketController extends ProjectController{
 
         $order_info['openid'] = session('wechat_user')['openid'];
         $order_info['uid'] = session('wechat_user')['id'];
-        $order_info['body'] = '门票订单';
+        $order_info['body'] = '色的7次方入场券';
+        $order_info['total_fee'] = 1500;
         $order_info['project_id'] = $request->route('project')->id;
         if($result = $order->createOrder(Project::where('id', $request->route('project')->id)->pluck('wechat_id')[0], $order_info, true)){
             return response()->json([

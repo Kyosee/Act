@@ -28,11 +28,12 @@ class WeChatController extends Controller {
 
 		// 获取 OAuth 授权结果用户信息
         if($wechat_user = $app->oauth->user()->toArray()){
+
             $project_user = new ProjectUser();
             $project_user->userSignup($wechat_user, $wechat_id);
         }
 
-		$targetUrl = empty(session('target_url')) ? '/' : session('target_url');
+        $targetUrl = empty(session('target_url')) ? '/' : session('target_url');
 
 		return redirect($targetUrl);
     }

@@ -39,7 +39,8 @@ class Wechat extends Model{
                     'file' => storage_path().'/wechat.log',
                 ],
                 'oauth' => [
-                    'scopes'   => ['snsapi_userinfo'],
+                    'scopes'   => ['snsapi_base'],
+                    // 'scopes'   => ['snsapi_userinfo'],
                     'callback' => '/oauth_callback/'.$wechat_id,
                 ],
             ];

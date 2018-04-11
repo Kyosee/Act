@@ -8,6 +8,7 @@
     </style>
 @endsection
 @section('content')
+    <a href="ticket" style=" top: 0; right: 0; font-size: 16px; padding: 10px; color: #fff; position: absolute;z-index: 999">我的兑换</a>
     <img src="/images/projects/{{ $project->template->template_folder }}/bg.png" width="100%" height="100%" alt="">
     <div style="text-align: center; position: absolute; top: 0; height: 100%; width: 100%;z-index: 99">
         <img src="/images/projects/{{ $project->template->template_folder }}/btn.png" width="45%" class="user-pay" style="position: relative; top: 84%;  z-index: 99;">

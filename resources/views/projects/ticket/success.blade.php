@@ -12,17 +12,31 @@
 		<div class="suc-main">
 			<div class="top-area flex-box">
 				<dl class="station-info flex-1">
-					<dt class="station-name">门票一张</dt>
+					<dt class="station-name">{{ $ticket->body }}</dt>
 					<dd class="time-info">{{ $ticket->created_at }}</dd>
 					<dd class="pwd-info">订单号：{{ $ticket->out_trade_no }}</dd>
 				</dl>
-
+				
+			</div>
+			<div class="barcode-area">
+	            <!-- 一维码列表[[
+				<dl class="area-title">
+					<dd class="area-tips">验证时请出示本券</dd>
+				</dl>
+	             -->
+				<!-- 一维码列表[[ -->
+				<ul class="barcode-list">
+					<li class="flex-box barcode-img">
+						<img src="/images/projects/{{ $project->template->template_folder }}/banner.jpg" width="100%" class="flex-1">
+					</li>
+				</ul>
+				<!-- 一维码列表]] -->
 			</div>
 		</div>
 		<!-- 提示[[ -->
 		<dl class="tips-area">
 			<a href="index" class="btn btn-green pay-btn">再买一张</a><br>
-			<a href="ticket" class="btn btn-green pay-btn">我的门票</a>
+			<a href="ticket" class="btn btn-green pay-btn">我的兑换</a>
             <dd class="tarea-title"></dd>
 			<dd class="tarea-title">兑换须知：</dd>
 			<dt class="num-list">1、</dt><dd class="tips-info">活动地点：烟台大悦城西南中庭</dd>
