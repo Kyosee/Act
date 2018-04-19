@@ -51,7 +51,7 @@ class TicketController extends Controller
         if($request->isMethod('post')){
             return $this->{$request->type}($request->trade);
         }else{
-
+            date_default_timezone_set('PRC');
             if($transaction_id = $request->get('transaction_id')){
                 $condition['transaction_id'] = $transaction_id;
             }
