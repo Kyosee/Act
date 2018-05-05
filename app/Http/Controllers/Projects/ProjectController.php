@@ -9,6 +9,8 @@ use App\Models\Wechat;
 
 class ProjectController extends Controller{
 
+    protected $not_page = ['ticket', 'exchange', 'subRefund'];
+
     /**
      * 自动加载
      */
@@ -34,7 +36,7 @@ class ProjectController extends Controller{
         date_default_timezone_set('PRC');
         if(time() < strtotime($project->start_time)){
             $page = 'not_start';
-        }else if(time() > strtotime($project->end_time)){
+        }else if(time() > strtotime($project->end_time) && !in_array($page, $this->not_page)){
             $page = 'end';
         }
 
