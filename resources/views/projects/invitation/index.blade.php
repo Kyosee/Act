@@ -10,7 +10,7 @@
     <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
     <style media="screen">
     #la{ position: absolute; z-index: 99; }
-    #la #audio-btn{width: 44px;height: 44px;}
+    #la #audio-btn{width: 44px;height: 44px; float: right;}
     #la .off{background: url('/images/projects/pub/music_off.png') no-repeat 0 0;}
     #la .on{background: url('/images/projects/pub/music_on.png') no-repeat 0 0;-webkit-animation: rotating 1.2s linear infinite;animation: rotating 1.2s linear infinite;}
     </style>
