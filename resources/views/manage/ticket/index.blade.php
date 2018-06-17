@@ -9,6 +9,7 @@
                     <div class="panel-heading">
                         <a href="{{ route('wechat.project.edit', [$wechat, $project]) }}">{{ $project->project_name }}</a> - 订单管理
                         <div class="pull-right">
+                            <a href="{{ route('wechat.project.ticket.export_excel', [$wechat, $project]) }}" class="btn btn-danger">导出所有记录</a>
                             <a href="{{ route('wechat.project.show', [$wechat, $project]) }}" class="btn btn-success">返回应用信息</a>
                         </div>
                     </div>

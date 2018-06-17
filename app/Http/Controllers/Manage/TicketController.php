@@ -10,6 +10,8 @@ use App\Models\Order;
 use App\Models\OrderRefund;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Exports\InvoicesExport;
+use Excel;
 
 class TicketController extends Controller
 {
@@ -51,7 +53,7 @@ class TicketController extends Controller
         if($request->isMethod('post')){
             return $this->{$request->type}($request->trade);
         }else{
-
+            date_default_timezone_set('PRC');
             if($transaction_id = $request->get('transaction_id')){
                 $condition['transaction_id'] = $transaction_id;
             }
@@ -141,5 +143,12 @@ class TicketController extends Controller
         }else{
             return response()->json(false);
         }
+    }
+
+    /**
+     * 导出
+     */
+    public function export_excel(){
+        return Excel::download(new InvoicesExport,'ticket.xls');
     }
 }

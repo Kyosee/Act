@@ -11,6 +11,12 @@ use App\Http\Controllers\Controller;
 
 class TicketController extends ProjectController{
 
+    // protected $not_page;
+    // public function __construct(){
+    //     $this->not_page = ['ticket', 'exchange'];
+    // }
+
+
 	/**
 	 * 门票主页
 	 * @param  Request $request [description]
@@ -21,7 +27,23 @@ class TicketController extends ProjectController{
         $count = Order::where([
             'project_id' => $request->route('project')->id,
         ])->whereIn('step', [1, 10])->count();
-        if($count >= 1000){
+        if($count >= 1000 && $request->page == 'index'){
+            return view('projects.ticket.end');
+        }
+        return view('projects.ticket.index');
+    }
+
+    /**
+	 * 门票主页
+	 * @param  Request $request [description]
+	 * @return [type]           [description]
+	 */
+    public function index2(Request $request){
+
+        $count = Order::where([
+            'project_id' => $request->route('project')->id,
+        ])->whereIn('step', [1, 10])->count();
+        if($count >= 1000 && $request->page == 'index'){
             return view('projects.ticket.end');
         }
         return view('projects.ticket.index');

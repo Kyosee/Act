@@ -42,7 +42,7 @@
 		@empty
             <li class="line-area order-main">
 				<dl class="info-line">
-					<dd class="info-element station-name">您还没有买票呢</dd>
+					<dd class="info-element station-name">没有兑换记录</dd>
 				</dl>
 			</li>
         @endforelse

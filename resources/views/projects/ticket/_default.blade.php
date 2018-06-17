@@ -63,6 +63,7 @@
 <body class="@yield('body_class', 'order')">
     @yield('content')
     <div style="display:none;">
+        {!! $project->stats_code !!}
     </div>
 </body>
 </html>
