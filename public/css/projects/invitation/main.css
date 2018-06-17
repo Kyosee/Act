@@ -1,0 +1,173 @@
+/*-----------------------------全局样式-------------------------------------*/
+dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,span,a,input,textarea,p,blockquote,th,td,header,nav,footer,article,section,aside,time,figure{margin:0;padding:0;-webkit-tap-highlight-color:rgba(0,0,0,0)}
+h1,h2,h3,h4,h5,h6{font-size:14px;font-weight:normal}
+ul{list-style:none}
+legend{display:none}
+fieldset,img{border:none;vertical-align:middle}
+em,cite,i{font-style:normal}
+input,button,textarea{outline:none;border:0;vertical-align:middle;border:0;font-family:Microsoft YaHei}
+input[type="submit"],input[type="reset"],input[type="button"],button {-webkit-appearance:none;border-radius:0}
+select{-webkit-appearance:none;-moz-appearance:none;appearance:none}
+textarea{resize:none}
+html{height:100%;-webkit-text-size-adjust:none;overflow:hidden}
+body{font:12px/18px Microsoft YaHei;position:relative;margin:0 auto;color:#000;min-width:320px;word-break:break-all;height:100%;overflow:hidden;color:#fff;max-width:100%}
+body a{color:#fff;text-decoration:none;cursor:pointer}
+body a:hover,body a:active,body a:focus{text-decoration:none;outline:none}
+/*-----------------------------框架-------------------------------------*/
+#wrapper{position:absolute;left:0;right:0;top:0;bottom:0;margin:auto;overflow:hidden}
+.iScrollVerticalScrollbar{position:absolute;right:0;top:0;height:100%;width:4px}
+.iScrollIndicator{position:absolute;right:0;background:rgba(255,255,255,0.2);width:4px;border-radius:2px}
+.page{width:100%;position:relative;overflow:hidden;height:100%}
+.full-img img{width:100%;display:block}
+.auto-x{left:0;right:0;position:absolute;margin:auto}
+.auto-y{top:0;bottom:0;position:absolute;margin:auto}
+.swiper-container{position:absolute;left:0;right:0;top:0;bottom:0;margin:auto;overflow:hidden}
+.swiper-slide{height:100%;position:relative;overflow:hidden}
+.up{position:absolute;left:0;right:0;bottom:0;width:22px;height:34px;margin:auto;display:none;z-index:1000}
+.ups{width:22px;height:14px;background:url(/images/projects/invitation/up.png) no-repeat;background-size:100%;z-index:100;animation:up 1s ease-in infinite;-moz-animation:up 1s ease-in infinite;-webkit-animation:up 1s ease-in infinite;position:absolute;left:0;bottom:10px}
+@-keyframes up{0%{bottom:0;opacity:0}50%{bottom:10px;opacity:1}100%{bottom:20px;opacity:0}}
+@-moz-keyframes up{0%{bottom:0;opacity:0}50%{bottom:10px;opacity:1}100%{bottom:20px;opacity:0}}
+@-webkit-keyframes up{0%{bottom:0;opacity:0}50%{bottom:10px;opacity:1}100%{bottom:20px;opacity:0}}
+/*-----------------------------首页-------------------------------------*/
+/*----------------第一屏---------------------*/
+#page-1 .title{width:195px;height:45px;top:15px}
+/*----------------第二屏---------------------*/
+.point{width:36px;height:56px;position:absolute;top:317px;left:173px}
+.point:after{position:absolute;left:0;right:0;margin:auto;top:0;bottom:0;background:url(./2-point.png) no-repeat;background-size:100%;content:"";z-index:10}
+.point h3{position:absolute;color:#fff;font-size:12px;left:32px;top:38px;width:6em}
+.bo{background:#f08300;width:10px;height:10px;border-radius:5px;left:12px;top:42px;position:absolute}
+.leida{animation:leida 2s linear infinite;-webkit-animation:leida 2s linear infinite}
+@keyframes leida{0%{transform:scale(1,1);opacity:1}100%{transform:scale(12,12);opacity:0}}
+@-webkit-keyframes leida{0%{-webkit-transform:scale(1,1);opacity:1}100%{-webkit-transform:scale(12,12);opacity:0}}
+.note{width:127px;height:227px;left:0;top:0;position:absolute}
+/*----------------第三屏---------------------*/
+#page-3 .title{width:239px;height:43px;top:25px}
+#page-3 .title-2{width:219px;height:36px;top:264px}
+.huan-button{width:138px;height:138px;top:318px}
+.huan-text{width:78px;height:57px}
+.dong img{position:absolute;z-index:999;right:30px;top:375px;width:50px;height:50px;
+transform: rotate(-30deg);
+-ms-transform: rotate(-30deg);/* IE 9 */
+-webkit-transform: rotate(-30deg);/* Safari and Chrome */
+-o-transform: rotate(-30deg);/* Opera */
+-moz-transform: rotate(-30deg);
+animation:xiaoshou 0.5s linear 0.5s infinite alternate;
+-moz-animation:xiaoshou 0.5s linear 0.5s infinite alternate;/* Firefox: */
+-webkit-animation:xiaoshou 0.5s linear 0.5s infinite alternate;/* Safari and Chrome: */
+-o-animation:xiaoshou 0.5s linear 0.5s infinite alternate;/* Opera: */
+}
+@keyframes xiaoshou{0%{right:30px; top:375px;}100% {right:40px; top:365px;}}
+@-moz-keyframes xiaoshou {0%{right:30px; top:375px;}100% {right:40px; top:365px;}}/* Firefox */
+@-webkit-keyframes xiaoshou {0%{right:30px; top:375px;}100% {right:40px; top:365px;}}/* Safari and Chrome */
+@-o-keyframes xiaoshou {0%{right:30px; top:375px;}100% {right:40px; top:365px;}}/* Opera */
+
+.huan-rotate-1{animation:huan-rotate-1 12s linear infinite;-webkit-animation:huan-rotate-1 12s linear infinite}
+@keyframes huan-rotate-1{0%{transform:rotate(0)}100%{transform:rotate(-360deg)}}
+@-webkit-keyframes huan-rotate-1{0%{-webkit-transform:rotate(0)}100%{-webkit-transform:rotate(-360deg)}}
+.huan-rotate-2{animation:huan-rotate-2 12s linear infinite;-webkit-animation:huan-rotate-2 12s linear infinite}
+@keyframes huan-rotate-2{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
+@-webkit-keyframes huan-rotate-2{0%{-webkit-transform:rotate(0)}100%{-webkit-transform:rotate(360deg)}}
+.tag{width:191px;height:117px;top:95px}
+.tag>div{position:absolute;width:78px;height:26px;text-align:center;line-height:26px;font-size:15px;top:0;opacity:0.5}
+.tag-1{left:0;border:#2fae2f 1px solid;color:#2fae2f}
+.tag-2{left:38px;border:#f7ab00 1px solid;color:#f7ab00}
+.tag-3{right:0;border:#e60044 1px solid;color:#e60044}
+.tag-4{left:83px;border:#3e3a39 1px solid;color:#3e3a39}
+.tag-5{left:20px;border:#ffffff 1px solid;color:#ffffff}
+.tag-6{left:65px;border:#2fae2f 1px solid;color:#2fae2f}
+.tag-7{left:35px;border:#f7ab00 1px solid;color:#f7ab00}
+.tag-8{left:0px;border:#e60044 1px solid;color:#e60044}
+.tag-1-move{animation:tag-1-move 8s linear infinite;-webkit-animation:tag-1-move 8s linear infinite}
+.tag-2-move{animation:tag-2-move 8s -1s linear infinite;-webkit-animation:tag-2-move 8s -1s linear infinite}
+.tag-3-move{animation:tag-3-move 8s -2s linear infinite;-webkit-animation:tag-3-move 8s -2s linear infinite}
+.tag-4-move{animation:tag-4-move 8s -3s linear infinite;-webkit-animation:tag-4-move 8s -3s linear infinite}
+.tag-5-move{animation:tag-5-move 8s -4s linear infinite;-webkit-animation:tag-5-move 8s -4s linear infinite}
+.tag-6-move{animation:tag-6-move 8s -5s linear infinite;-webkit-animation:tag-6-move 8s -5s linear infinite}
+.tag-7-move{animation:tag-7-move 8s -2s linear infinite;-webkit-animation:tag-7-move 8s -2s linear infinite}
+.tag-8-move{animation:tag-8-move 8s -1s linear infinite;-webkit-animation:tag-8-move 8s -1s linear infinite}
+@keyframes tag-1-move{0%{transform:translate(0,0) scale(0.8,0.8);opacity:1}25%{transform:translate(50px,50px) scale(1,1);opacity:1}50%{transform:translate(100px,100px) scale(0.8,0.8);opacity:1}75%{transform:translate(50px,50px) scale(0.6,0.6);opacity:0.1}100%{transform:translate(0,0) scale(0.8,0.8);opacity:1}}
+@-webkit-keyframes tag-1-move{0%{-webkit-transform:translate(0,0) scale(0.8,0.8);opacity:1}25%{-webkit-transform:translate(50px,50px) scale(1,1);opacity:1}50%{-webkit-transform:translate(100px,100px) scale(0.8,0.8);opacity:1}75%{-webkit-transform:translate(50px,50px) scale(0.6,0.6);opacity:0.1}100%{-webkit-transform:translate(0,0) scale(0.8,0.8);opacity:1}}
+@keyframes tag-2-move{0%{transform:translate(0,0) scale(0.8,0.8);opacity:1}25%{transform:translate(30px,50px) scale(1,1);opacity:1}50%{transform:translate(60px,100px) scale(0.8,0.8);opacity:1}75%{transform:translate(30px,50px) scale(0.6,0.6);opacity:0.1}100%{transform:translate(0,0) scale(0.8,0.8);opacity:1}}
+@-webkit-keyframes tag-2-move{0%{-webkit-transform:translate(0,0) scale(0.8,0.8);opacity:1}25%{-webkit-transform:translate(30px,50px) scale(1,1);opacity:1}50%{-webkit-transform:translate(60px,100px) scale(0.8,0.8);opacity:1}75%{-webkit-transform:translate(30px,50px) scale(0.6,0.6);opacity:0.1}100%{-webkit-transform:translate(0,0) scale(0.8,0.8);opacity:1}}
+@keyframes tag-3-move{0%{transform:translate(0,0) scale(0.8,0.8);opacity:1}25%{transform:translate(-50px,50px) scale(1,1);opacity:1}50%{transform:translate(-100px,100px) scale(0.8,0.8);opacity:1}75%{transform:translate(-50px,50px) scale(0.6,0.6);opacity:0.1}100%{transform:translate(0,0) scale(0.8,0.8);opacity:1}}
+@-webkit-keyframes tag-3-move{0%{-webkit-transform:translate(0,0) scale(0.8,0.8);opacity:1}25%{-webkit-transform:translate(-50px,50px) scale(1,1);opacity:1}50%{-webkit-transform:translate(-100px,100px) scale(0.8,0.8);opacity:1}75%{-webkit-transform:translate(-50px,50px) scale(0.6,0.6);opacity:0.1}100%{-webkit-transform:translate(0,0) scale(0.8,0.8);opacity:1}}
+@keyframes tag-4-move{0%{transform:translate(0,0) scale(0.8,0.8);opacity:1}25%{transform:translate(0,50px) scale(1,1);opacity:1}50%{transform:translate(0,100px) scale(0.8,0.8);opacity:1}75%{transform:translate(0,50px) scale(0.6,0.6);opacity:0.1}100%{transform:translate(0,0) scale(0.8,0.8);opacity:1}}
+@-webkit-keyframes tag-4-move{0%{-webkit-transform:translate(0,0) scale(0.8,0.8);opacity:1}25%{-webkit-transform:translate(0,50px) scale(1,1);opacity:1}50%{-webkit-transform:translate(0,100px) scale(0.8,0.8);opacity:1}75%{-webkit-transform:translate(0,50px) scale(0.6,0.6);opacity:0.1}100%{-webkit-transform:translate(0,0) scale(0.8,0.8);opacity:1}}
+@keyframes tag-5-move{0%{transform:translate(0,0) scale(0.8,0.8);opacity:1}25%{transform:translate(0,50px) scale(1,1);opacity:1}50%{transform:translate(0,100px) scale(0.8,0.8);opacity:1}75%{transform:translate(0,50px) scale(0.6,0.6);opacity:0.1}100%{transform:translate(0,0) scale(0.8,0.8);opacity:1}}
+@-webkit-keyframes tag-5-move{0%{-webkit-transform:translate(0,0) scale(0.8,0.8);opacity:1}25%{-webkit-transform:translate(0,50px) scale(1,1);opacity:1}50%{-webkit-transform:translate(0,100px) scale(0.8,0.8);opacity:1}75%{-webkit-transform:translate(0,50px) scale(0.6,0.6);opacity:0.1}100%{-webkit-transform:translate(0,0) scale(0.8,0.8);opacity:1}}
+@keyframes tag-6-move{0%{transform:translate(0,0) scale(0.8,0.8);opacity:1}25%{transform:translate(0,50px) scale(1,1);opacity:1}50%{transform:translate(0,100px) scale(0.8,0.8);opacity:1}75%{transform:translate(0,50px) scale(0.6,0.6);opacity:0.1}100%{transform:translate(0,0) scale(0.8,0.8);opacity:1}}
+@-webkit-keyframes tag-6-move{0%{-webkit-transform:translate(0,0) scale(0.8,0.8);opacity:1}25%{-webkit-transform:translate(0,50px) scale(1,1);opacity:1}50%{-webkit-transform:translate(0,100px) scale(0.8,0.8);opacity:1}75%{-webkit-transform:translate(0,50px) scale(0.6,0.6);opacity:0.1}100%{-webkit-transform:translate(0,0) scale(0.8,0.8);opacity:1}}
+@keyframes tag-7-move{0%{transform:translate(0,0) scale(0.8,0.8);opacity:1}25%{transform:translate(0,50px) scale(1,1);opacity:1}50%{transform:translate(0,100px) scale(0.8,0.8);opacity:1}75%{transform:translate(0,50px) scale(0.6,0.6);opacity:0.1}100%{transform:translate(0,0) scale(0.8,0.8);opacity:1}}
+@-webkit-keyframes tag-7-move{0%{-webkit-transform:translate(0,0) scale(0.8,0.8);opacity:1}25%{-webkit-transform:translate(0,50px) scale(1,1);opacity:1}50%{-webkit-transform:translate(0,100px) scale(0.8,0.8);opacity:1}75%{-webkit-transform:translate(0,50px) scale(0.6,0.6);opacity:0.1}100%{-webkit-transform:translate(0,0) scale(0.8,0.8);opacity:1}}
+@keyframes tag-8-move{0%{transform:translate(0,0) scale(0.8,0.8);opacity:1}25%{transform:translate(0,50px) scale(1,1);opacity:1}50%{transform:translate(0,100px) scale(0.8,0.8);opacity:1}75%{transform:translate(0,50px) scale(0.6,0.6);opacity:0.1}100%{transform:translate(0,0) scale(0.8,0.8);opacity:1}}
+@-webkit-keyframes tag-8-move{0%{-webkit-transform:translate(0,0) scale(0.8,0.8);opacity:1}25%{-webkit-transform:translate(0,50px) scale(1,1);opacity:1}50%{-webkit-transform:translate(0,100px) scale(0.8,0.8);opacity:1}75%{-webkit-transform:translate(0,50px) scale(0.6,0.6);opacity:0.1}100%{-webkit-transform:translate(0,0) scale(0.8,0.8);opacity:1}}
+/*----------------第四屏---------------------*/
+/*----------------第五屏---------------------*/
+/*----------------第六屏---------------------*/
+/*----------------第七屏---------------------*/
+/*----------------第八屏---------------------*/
+#page-8 .text{width:223px;height:100%;top:90px;left:0;right:0;margin:auto;position:absolute}
+#page-8 .title{width:223px;height:100%;top:240px}
+/*----------------第九屏---------------------*/
+a.button{color:#fff;width:140px;height:27px;line-height:27px;text-align:center;border:#0090ff 1px solid;background:#1c3052;border-radius:5px;-webkit-transform:rotate(0.00001deg)}
+a.button:hover{background:#192a47}
+.end{width:262px;height:172px;background:#264396;border-radius:10px}
+.end p{line-height:20px;color:#fff;text-align:center;padding:8px 0;background:#0090ff;border-radius:10px 10px 0 0;margin:0 0 40px}
+/*-----------------------------结果页-------------------------------------*/
+.form{position:absolute;left:0;top:0;visibility:hidden;z-index:100}
+.form form{position:absolute;left:30px;right:30px;top:38px;bottom:0;margin:auto}
+.form li{height:40px;border-bottom:#0090ff 1px solid;position:relative;padding:0 0 0 70px}
+.form label{position:absolute;left:0;width:70px;text-align:center;line-height:40px;color:#fff}
+.form input{height:40px;width:100%;background:none;color:#fff;font-size:12px}
+.form ul{margin:0 0 40px}
+.form input.submit{height:36px;color:#fff;border:#0090ff 2px solid;font-size:14px;cursor:pointer}
+.form input.submit:hover{background-color:#00050c}
+.result{z-index:10;visibility:hidden;position:absolute;left:0;top:0;background:#0075c2;text-align:center;}
+.result-div{position:absolute;left:22px;right:22px;top:38px;bottom:0;margin:auto}
+.result-div .full-img{margin:27px 10px 15px}
+.result-div .text{line-height:28px;font-size:11px;margin:0 0 22px}
+.result a.button{top:auto;bottom:52px}
+.inputselect{position:absolute;width:60%;height:70%;background:#0075c2;color:#fff;border:#0090ff 2px solid;font-size:14px;bottom:5px;}
+/*-----------------------------屏幕补充-------------------------------------*/
+/*for iphone4 weixin*/
+@media screen and (max-height:416px){
+#page-1 .title{top:30px}
+.tel{bottom:-120px}
+#page-3 .title{top:20px}
+#page-3 .tag{top:85px}
+#page-3 .title-2{top:224px}
+#page-3 .huan-button{top:268px}
+.result-div{top:0}
+/*----------------结果页---------------------*/
+.form form{top:20px}
+.form ul{margin:0 0 30px}
+.result-div{top:0}
+.result .full-img{margin:10px}
+.result a.button{bottom:20px}
+}
+/*for android-720 weixin*/
+@media screen and (min-width:360px){
+.page{height:100%}
+/*----------------第一屏---------------------*/
+.tel{bottom:20px}
+/*----------------第二屏---------------------*/
+.point{left:196px;top:363px}
+/*----------------第四屏---------------------*/
+#page-4 .text{left:0;top:50px}
+/*----------------第五屏---------------------*/
+#page-5 .text{left:0;top:50px}
+/*----------------第六屏---------------------*/
+#page-6 .text{left:0;top:50px}
+/*----------------第六屏---------------------*/
+#page-7 .text{left:0;top:40px}
+/*----------------第八屏---------------------*/
+#page-8 .text{width:250px;top:102px;left:0;right:0;margin:auto;}
+#page-8 .title{width:250px;top:270px}
+/*----------------结果页---------------------*/
+.form form{left:34px;right:34px;top:43px}
+.result-div .text{line-height:31px;font-size:12px;padding:0 0 0 6px;margin:0 0 25px}
+.form li{height:42px;padding:0 0 0 80px}
+.form label{width:80px;line-height:42px;font-size:13px}
+.form input{height:42px;font-size:13px}
+.form input.submit{height:42px;font-size:16px}
+}
