@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
     <meta name="format-detection" content="telephone=no" />
     <meta name="MobileOptimized" content="320"/>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
     <style media="screen">
     #la{ position: absolute; z-index: 99; }
     #la #audio-btn{width: 44px;height: 44px;}
@@ -29,45 +30,6 @@
                 </div>
             </div>
             @endfor
-        </div>
-    </div>
-    <div class="page form">
-        <form action="" method="get" class="auto-x">
-            <fieldset>
-                <legend>提交表单</legend>
-                <ul>
-                    <li>
-                        <label for="who">您是</label>
-                        <select id="who" name="who" class="inputselect">
-                            <option value="">&nbsp;请选择</option>
-                            <option value="合作伙伴">&nbsp;合作伙伴</option>
-                            <option value="经销商">&nbsp;经销商</option>
-                            <option value="媒体">&nbsp;媒体</option>
-                            <option value="车友会会长">&nbsp;车友会会长</option>
-                        </select>
-                    </li>
-                    <li>
-                        <label for="name">姓 名</label>
-                        <input type="text" id="name" name="name" />
-                    </li>
-                    <li>
-                        <label for="tel">联系电话</label>
-                        <input type="tel" id="tel" name="tel" />
-                    </li>
-                    <li>
-                        <label for="company">公司</label>
-                        <input type="text" id="company" name="company" />
-                    </li>
-                </ul>
-                <input type="submit" value="提 交" class="submit" />
-            </fieldset>
-        </form>
-    </div>
-    <div class="page result">
-        <div class="result-div auto-x">
-            <div class="text" style="">
-                <p style="font-size:25px;margin-top:50px;">期待您的莅临!</p>
-            </div>
         </div>
     </div>
     <div class="up"><div class="ups"></div></div>
